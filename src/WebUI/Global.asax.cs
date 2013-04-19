@@ -5,6 +5,7 @@ using Framework;
 using Framework.Controllers;
 using Framework.Filters;
 using Frontend.Notifications;
+using Model.Solr;
 using SolrNet;
 using log4net;
 using log4net.Config;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SolrNet.Attributes;
 
-namespace Model
+namespace Model.Solr
 {
     public class Product
     {

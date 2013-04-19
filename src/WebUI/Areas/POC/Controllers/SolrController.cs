@@ -8,6 +8,7 @@ using Autofac.Core;
 using Common.Base;
 using Microsoft.Practices.ServiceLocation;
 using Model;
+using Model.Solr;
 using SolrNet;
 
 namespace WebUI.Areas.Solr.Controllers
