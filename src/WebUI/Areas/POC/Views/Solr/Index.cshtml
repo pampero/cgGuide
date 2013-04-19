@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBootstrap.cshtml";
+}
+
+<h2>Index</h2>
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+    <h2>Solr Sample</h2>
+    <p>List of Products</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Manufacturer</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter name" data-bind="value: id" />
+                </td>
+                 <td>
+                    <input type="text" placeholder="Enter name" data-bind="value: manufacturer" />
+                </td>
+                <td data-bind="text: formattedPrice"></td>
+                <td><a href="#" data-bind="click: $root.removeProduct">Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <button class="btn btn-primary btn-large" data-bind="click: addProduct">Add Product</button>
+
+    <h3 data-bind="visible: totalPrice() > 0">Total price: $<span data-bind="text: totalPrice().toFixed(2)"></span>
+    </h3>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+
+    
+        
+        
+    });
+
+</script>
+
+<script src="~/Areas/BackOffice/Views/../../../Scripts/ViewModels/SolrViewModel.js"></script>
+        
+
+     
