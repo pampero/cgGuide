@@ -4,7 +4,7 @@ using Model.Repositories.interfaces;
 
 namespace Model.Repositories.impl
 {
-    public class RoutesRepository : GenericRepository<Route>, IRoutesRepository
+    public class RoutesRepository : GenericUpdatableRepository<Route>, IRoutesRepository
     {
         public RoutesRepository(AppDbContext context)
             : base(context)

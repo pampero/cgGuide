@@ -66,8 +66,8 @@ namespace Framework.Areas.BackOffice.Controllers
                 x.CreatedBy.ToString(),
                 x.Deleted.HasValue ? x.Deleted.ToString() : "",
                 x.DeletedBy != null ? x.DeletedBy : "",
-                x.Updated.HasValue ? x.Updated.ToString() : "",
-                x.UpdatedBy != null ? x.UpdatedBy : "",
+                x.LastUpdated.HasValue ? x.LastUpdated.ToString() : "",
+                x.LastUpdatedBy != null ? x.LastUpdatedBy : "",
                 x.IsDeleted.ToString()
             }).ToArray();
 

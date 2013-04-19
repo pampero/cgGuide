@@ -2,10 +2,11 @@
 using System.Web;
 using System.ComponentModel;
 using System.Collections.Generic;
+using Model.Interfaces;
 
 namespace Model
 {
-    public abstract class BaseClass
+    public abstract class AbstractUpdatableClass: ICreateUpdateDeleteFields
     {
         protected static readonly string _versionDefault = "NotSet";
         private List<BusinessRule> _businessRules = new List<BusinessRule>();
@@ -36,12 +37,12 @@ namespace Model
             get; set;
         }
 
-        public DateTime? Updated
+        public DateTime? LastUpdated
         {
             get; set;
         }
 
-        public string UpdatedBy
+        public string LastUpdatedBy
         {
             get; set;
         }
@@ -78,5 +79,8 @@ namespace Model
             }
             return isValid;
         }
+
+
+       
     }
 }

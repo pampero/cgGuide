@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model.Mappings
 {
-    public class BaseClassMap : EntityTypeConfiguration<BaseClass>
+    public class BaseClassMap : EntityTypeConfiguration<AbstractUpdatableClass>
     {
         public BaseClassMap()
         {
@@ -30,8 +30,8 @@ namespace Model.Mappings
             this.Property(t => t.Deleted).HasColumnName("Deleted");
             this.Property(t => t.DeletedBy).HasColumnName("DeletedBy");
             this.Property(t => t.IsDeleted).HasColumnName("IsDeleted");
-            this.Property(t => t.Updated).HasColumnName("Updated");
-            this.Property(t => t.UpdatedBy).HasColumnName("UpdatedBy");
+            this.Property(t => t.LastUpdated).HasColumnName("Updated");
+            this.Property(t => t.LastUpdatedBy).HasColumnName("UpdatedBy");
         }
     }
 }

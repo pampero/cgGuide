@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Model
 {
-    public class Customer: BaseClass
+    public class Customer : AbstractUpdatableClass
     {
         public string Name
         {

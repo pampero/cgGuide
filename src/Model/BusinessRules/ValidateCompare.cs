@@ -33,7 +33,7 @@ namespace Model
             ErrorMessage = errorMessage;
         }
 
-        public override bool Validate(BaseClass businessObject)
+        public override bool Validate(AbstractUpdatableClass businessObject)
         {
             try
             {

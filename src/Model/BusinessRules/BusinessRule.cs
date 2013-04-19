@@ -40,7 +40,7 @@ namespace Model
         /// </summary>
         /// <param name="businessObject"></param>
         /// <returns></returns>
-        public abstract bool Validate(BaseClass businessObject);
+        public abstract bool Validate(AbstractUpdatableClass businessObject);
 
         /// <summary>
         /// Gets value for given business object's property using reflection.
@@ -48,7 +48,7 @@ namespace Model
         /// <param name="businessObject"></param>
         /// <param name="propertyName"></param>
         /// <returns></returns>
-        protected object GetPropertyValue(BaseClass businessObject)
+        protected object GetPropertyValue(AbstractUpdatableClass businessObject)
         {
             return businessObject.GetType().GetProperty(PropertyName).GetValue(businessObject, null);
         }

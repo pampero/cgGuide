@@ -26,7 +26,7 @@ namespace Model
             ErrorMessage = errorMessage;
         }
 
-        public override bool Validate(BaseClass businessObject)
+        public override bool Validate(AbstractUpdatableClass businessObject)
         {
             return Regex.Match(GetPropertyValue(businessObject).ToString(), Pattern).Success;
         }

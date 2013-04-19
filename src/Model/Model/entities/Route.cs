@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Model
 {
-    public class Route: BaseClass
+    public class Route: AbstractUpdatableClass
     {
         public string Name
         {

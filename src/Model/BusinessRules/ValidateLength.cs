@@ -29,7 +29,7 @@ namespace Model
             ErrorMessage = errorMessage;
         }
 
-        public override bool Validate(BaseClass businessObject)
+        public override bool Validate(AbstractUpdatableClass businessObject)
         {
             int length = GetPropertyValue(businessObject).ToString().Length;
             return length >= _min && length <= _max;

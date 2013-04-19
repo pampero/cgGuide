@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using Model;
+using Model.Interfaces;
 
 namespace Model
 {
@@ -13,12 +14,12 @@ namespace Model
         Expression<Func<TEntity, TType>> SortProperty;
     }
 
-    public class GenericRepository<TEntity> where TEntity : BaseClass
+    public class GenericUpdatableRepository<TEntity> where TEntity : AbstractUpdatableClass
     {
         internal AppDbContext context;
         internal DbSet<TEntity> dbSet;
 
-        public GenericRepository(AppDbContext context)
+        public GenericUpdatableRepository(AppDbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();

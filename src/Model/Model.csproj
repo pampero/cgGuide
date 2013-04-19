@@ -80,7 +80,8 @@
     <Compile Include="Mappings\RouteMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\entities\Account.cs" />
-    <Compile Include="Model\entities\BaseClass.cs" />
+    <Compile Include="Model\entities\AbstractReadOnlyClass.cs" />
+    <Compile Include="Model\entities\AbstractUpdatableClass.cs" />
     <Compile Include="Model\entities\Customer.cs" />
     <Compile Include="Model\entities\Route.cs" />
     <Compile Include="Model\enums\ActiveEnum.cs" />
@@ -96,7 +97,13 @@
     <Compile Include="Model\enums\ZoneEnum.cs" />
     <Compile Include="DBInitializer\DBContext.cs" />
     <Compile Include="DBInitializer\DBContextlInitializer.cs" />
-    <Compile Include="Repositories\impl\GenericRepository.cs" />
+    <Compile Include="Model\interfaces\ICreateFields.cs" />
+    <Compile Include="Model\interfaces\ICreateUpdateFields.cs" />
+    <Compile Include="Model\interfaces\IDeleteFields.cs" />
+    <Compile Include="Model\interfaces\IEntity.cs" />
+    <Compile Include="Model\interfaces\ILastUpdateFields.cs" />
+    <Compile Include="Repositories\impl\GenericReadOnlyRepository.cs" />
+    <Compile Include="Repositories\impl\GenericUpdatableRepository.cs" />
     <Compile Include="Repositories\impl\RoutesRepository.cs" />
     <Compile Include="Repositories\impl\UnitOfWork.cs" />
     <Compile Include="Repositories\interfaces\IRoutesRepository.cs" />
