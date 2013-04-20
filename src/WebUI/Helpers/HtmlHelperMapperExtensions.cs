@@ -10,9 +10,9 @@ namespace Framework.Helpers
             get { return ServiceLocator.Current.GetInstance<IReadOnlyMappingManager>(); }
         }
 
-        //public static string SolrFieldPropName<T>(this HtmlHelper helper, string fieldName)
-        //{
-        //    return mapper.GetFields(typeof(T)).First(p => p.FieldName == fieldName).Property.Name;
-        //}
+        public static string SolrFieldPropName<T>(this HtmlHelper helper, string fieldName)
+        {
+            return mapper.GetFields(typeof(T))[fieldName].Property.Name;
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace Framework
                 "~/css/jquery.datepicker.css",
                 "~/css/jquery.jgrowl.css",
                 "~/css/bootstrap-responsive.css",
-                "~/css/bootstrap.css"));
+                "~/css/bootstrap.css",
+                "~/css/solr.css"));
 
             // INFO: Si se ejecuta en modo release o BundleTable.EnableOptimizations es igual a 'true' se minifican todos los arhcivos. 
             BundleTable.EnableOptimizations = true;

@@ -87,6 +87,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\SolrNet.0.4.0.2002\SolrNet.dll</HintPath>
     </Reference>
+    <Reference Include="SolrNet.DSL">
+      <HintPath>..\packages\SolrNet.0.4.0.2002\SolrNet.DSL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -219,6 +222,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Content Include="css\solr.css" />
     <Compile Include="Filters\HandleAndLogErrorAttribute.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Filters\RoleAuthorizeAttribute.cs" />

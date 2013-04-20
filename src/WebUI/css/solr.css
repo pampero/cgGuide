@@ -1,0 +1,13 @@
+﻿.leftColumn 
+{
+	float: left;
+    font-size: 11px;
+}
+.rightColumn 
+{
+	float: right;   
+}
+
+.hero-unit  li {
+  line-height: 20px !important;
+}

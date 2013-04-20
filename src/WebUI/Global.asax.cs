@@ -4,8 +4,9 @@ using AutofacContrib.SolrNet;
 using Framework;
 using Framework.Controllers;
 using Framework.Filters;
+using Framework.Solr.ViewModels;
+using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
-using Model.Solr;
 using SolrNet;
 using log4net;
 using log4net.Config;
@@ -48,6 +49,8 @@ namespace WebUI
         // http://www.codeproject.com/Articles/25380/Dependency-Injection-with-Autofac
         private static void SetupContainer()
         {
+            ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
+
             var builder = new ContainerBuilder();
 
             // INFO: Solo se utiliza si se necesita crear un tipo de configuración de logging distinto por clase (Class).

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Framework.Helpers
+@using Framework.Solr.ViewModels
+@model ProductView
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutBootstrap.cshtml";
 }
@@ -9,7 +12,36 @@
 <div class="hero-unit">
     <h2>Solr Sample</h2>
     <p>List of Products</p>
-
+    
+    <div class="leftColumn">
+        @foreach (var f in Model.Search.Facets) {
+            <ul>
+                <li>
+                @(Html.SolrFieldPropName<Product>(f.Key))
+                    <ul>
+                        <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
+                    </ul>
+                </li>
+            </ul>
+        } 
+    
+    
+        <ul>            
+            @foreach (var f in Model.Facets) 
+            { 
+                <li>
+                    @(Html.SolrFieldPropName<Product>(f.Key))
+                    <ul>
+                        @foreach (var fv in f.Value) { 
+                            <li><a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                        }
+                    </ul>
+                </li>
+            } 
+        </ul>
+    </div>
+    
+    <div class="rightColumn">
     <table>
         <thead>
             <tr>
@@ -35,8 +67,9 @@
     <br />
     <button class="btn btn-primary btn-large" data-bind="click: addProduct">Add Product</button>
 
-    <h3 data-bind="visible: totalPrice() > 0">Total price: $<span data-bind="text: totalPrice().toFixed(2)"></span>
-    </h3>
+        <h3 data-bind="visible: totalPrice() > 0">Total price: $<span data-bind="text: totalPrice().toFixed(2)"></span>
+        </h3>
+        </div>
 </div>
 
 

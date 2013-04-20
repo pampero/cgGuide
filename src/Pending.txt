@@ -1,9 +1,9 @@
--. Agregar al framework algun mecanismo que permita filtrar borrados lógicos por default. Posiblemente mediante alguna interface. Entidad: IEntity, ICreateFields, IDeleteFields
 -. Definir los controles para backoffice. Grillas. Esto no me gusta nada -> jQueryDataTableParamModel.
 -. Probar seguridad en RouteController con Windows Auth y con Anonymous, con y sin roles.
 -. Hacer demo de Automapper.
 -. Ver Modernizer.
 
+OK -. Agregar al framework algun mecanismo que permita filtrar borrados lógicos por default. Posiblemente mediante alguna interface. Entidad: IEntity, ICreateFields, IDeleteFields
 OK -. Probar que funcione el mecanismo de bundle.
 OK -. Se decide usar automapper. -. Ver como mapea los ViewModels con Injecter el ProDinner.
 OK -. Cambiar el nombre Framework en el proyecto de Sitio por algo mas representativo.

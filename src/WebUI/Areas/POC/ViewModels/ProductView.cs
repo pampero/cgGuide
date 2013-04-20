@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Model.Solr;
 
 namespace Framework.Solr.ViewModels
 {
