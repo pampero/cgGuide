@@ -49,3 +49,6 @@ Solr POC
 -. Navegar a la dirección
 
 	http://localhost:1586/POC/Solr/
+
+----
+
