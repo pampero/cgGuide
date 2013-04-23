@@ -17,11 +17,12 @@ namespace WebUI.Areas.Solr.Controllers
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<Product> solr;
-        private static readonly string[] AllFacetFields = new[] { "cat", "manu" };
+        private static readonly string[] AllFacetFields = new[] { "cat", "manu_exact" };
 
         public SolrController(ISolrOperations<Product> solr)
         {
             this.solr = solr;
+            
         }
 
          public ActionResult AddProduct()
@@ -134,7 +135,7 @@ namespace WebUI.Areas.Solr.Controllers
                                                                               .ToList(),
                     },
                 });
-                var view = new ProductView
+                var view = new SolrViewModel
                 {
                     Products = matchingProducts,
                     Search = parameters,
@@ -146,7 +147,7 @@ namespace WebUI.Areas.Solr.Controllers
             }
             catch (InvalidFieldException)
             {
-                return View(new ProductView
+                return View(new SolrViewModel
                 {
                     QueryError = true,
                 });

@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Configuration;
+using Autofac;
 using Autofac.Integration.Mvc;
 using AutofacContrib.SolrNet;
 using Framework;
@@ -59,6 +60,8 @@ namespace WebUI
             builder.RegisterModule<WebModule>();
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
             builder.RegisterFilterProvider();
+
+           
 
             var container = builder.Build();
 

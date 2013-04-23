@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Framework.Solr.ViewModels
 {
-    public class SolrViewModel
+    public class ProductsViewModel
     {
-        public SolrViewModel()
+        public ProductsViewModel()
         {
             Products = new List<Product>();
         }

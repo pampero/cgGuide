@@ -16,6 +16,9 @@ Anonymous Authentication: Enabled
 
 -. Correr el script de base de datos que cargará los maestros desde le proyecto Model.SQL -> script PostDeployment.Masters.
 
+-. Ejecutar Redis en 
+		\tools\bin\redis-2.4.5\64bit\redis.exe
+
 -. Correr la app.
 
 usuario: admin
@@ -35,6 +38,14 @@ http://localhost:1586/BackOffice/routes/Edit/1
 
 Solr POC
 
--. Ejecutar \pilots\SolrNet.Source\solr-4.2.1\example\solrstart.bat
+-. Ejecutar Solr en
+	
+	\tools\bin\solr-1.4.0\runsolr.bat
 
-http://localhost:1586/POC/Solr/
+	Para ver la consola:
+
+	http://localhost:8983/Solr
+
+-. Navegar a la dirección
+
+	http://localhost:1586/POC/Solr/

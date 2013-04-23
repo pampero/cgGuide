@@ -1,9 +1,11 @@
-﻿using Autofac;
+﻿using System.Configuration;
+using Autofac;
 using Common.Base;
 using Frontend.Notifications;
 using Model;
 using Model.Repositories;
 using Model.Repositories.interfaces;
+using ServiceStack.Redis;
 using Services.Routes.impl;
 using Services.Routes.interfaces;
 using System;
@@ -23,6 +25,10 @@ namespace Framework
             // Esto lo hago para poder inyectar Log4net sin que afecte al diseño de la clase (evitar la necesidad de agregar un parametro mas en el constructor para el log).
             // El resto de las inyecciones deberían hacerse por constructor.
             builder.Register<ILog>((c, p) => LogManager.GetLogger("LogFile"));
+
+            var redisHosts = new[] { ConfigurationManager.AppSettings["RedisHostAddress"] };
+            builder.Register<IRedisClientsManager>(c =>
+                new BasicRedisClientManager(redisHosts, redisHosts, 0)).PropertiesAutowired();
 
             builder.RegisterType<BaseController>().PropertiesAutowired();
             builder.RegisterType<BaseService>().PropertiesAutowired();

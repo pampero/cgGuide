@@ -8,7 +8,11 @@ namespace Framework.Solr.ViewModels
         [SolrUniqueKey("id")]
         public string Id { get; set; }
 
-        [SolrField("manu")]
+        [SolrField("name")]
+        public string Name { get; set; }
+
+
+        [SolrField("manu_exact")]
         public string Manufacturer { get; set; }
 
         [SolrField("cat")] // cat is a multiValued field

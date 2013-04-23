@@ -1,7 +1,8 @@
 ﻿// Class to represent a row in the seat reservations grid
-function ProductReservation(id, manufacturer, price) {
+function ProductReservation(id, name, manufacturer, price) {
     var self = this;
     self.id = id;
+    self.name = name;
     self.manufacturer = manufacturer;
     self.price = price;
     
@@ -17,7 +18,7 @@ function ProductsViewModel() {
     $.getJSON("http://localhost:1586/POC/Solr/GetAllProducts", { }, function (result) {
         
          $.map(result.products, function (product) {
-             var newProduct = new ProductReservation(product.Id, product.Manufacturer, product.Price);
+             var newProduct = new ProductReservation(product.Id, product.Name, product.Manufacturer, product.Price);
             
             self.products.push(newProduct);
         });
@@ -43,7 +44,7 @@ function ProductsViewModel() {
             traditional: true,
             data: JSON.stringify({}),
             success: function (result) {
-                self.products.push(new ProductReservation(result.product.Id, result.product.Manufacturer, result.product.Price));
+                self.products.push(new ProductReservation(result.product.Id, result.product.Name, result.product.Manufacturer, result.product.Price));
                 alert("Producto agregado con éxito");
             },
             error: function (xhr, ajaxOptions, error) {
