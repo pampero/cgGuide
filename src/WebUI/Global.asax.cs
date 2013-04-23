@@ -39,7 +39,7 @@ namespace WebUI
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);           
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
@@ -52,22 +52,22 @@ namespace WebUI
         {
             ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
 
-            var builder = new ContainerBuilder();
+            //var builder = new ContainerBuilder();
 
             // INFO: Solo se utiliza si se necesita crear un tipo de configuración de logging distinto por clase (Class).
             // builder.RegisterModule<LogInjectionModule>();
-            builder.RegisterModule(new SolrNetModule("http://localhost:8983/solr"));
-            builder.RegisterModule<WebModule>();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
-            builder.RegisterFilterProvider();
+            //builder.RegisterModule(new SolrNetModule("http://localhost:8983/solr"));
+            //builder.RegisterModule<WebModule>();
+        //    builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
+           // builder.RegisterFilterProvider();
 
            
 
-            var container = builder.Build();
+        //    var container = builder.Build();
 
             Startup.Init<Product>("http://localhost:8983/solr");
 
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+       //     DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
 
         /// <summary>

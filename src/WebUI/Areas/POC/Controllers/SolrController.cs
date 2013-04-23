@@ -7,6 +7,7 @@ using Autofac;
 using Autofac.Core;
 using Common.Base;
 using Framework.Solr.ViewModels;
+using Services.Routes.interfaces;
 using SolrNet;
 using SolrNet.Commands.Parameters;
 using SolrNet.DSL;
@@ -14,17 +15,32 @@ using SolrNet.Exceptions;
 
 namespace WebUI.Areas.Solr.Controllers
 {
+    public interface ITest
+    {
+        void GetData();
+    }
+
+    public class Test :ITest
+    {
+        public void GetData()
+        {}
+
+    }
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<Product> solr;
         private static readonly string[] AllFacetFields = new[] { "cat", "manu_exact" };
 
-        public SolrController(ISolrOperations<Product> solr)
+        //public SolrController(ISolrOperations<Product> solr)
+        //{
+        //    this.solr = solr;
+        //}
+
+        public SolrController(ITest test)
         {
             this.solr = solr;
-            
         }
-
+        
          public ActionResult AddProduct()
          {
              var product = new Product

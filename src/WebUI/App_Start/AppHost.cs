@@ -3,15 +3,22 @@ using System.Linq;
 using System.Configuration;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using AutofacContrib.SolrNet;
+using Common.Base;
+using Framework;
 using ServiceStack.Configuration;
 using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
 using ServiceStack.Mvc;
 using ServiceStack.OrmLite;
+using ServiceStack.Redis;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.WebHost.Endpoints;
+using Services.Routes.impl;
+using Services.Routes.interfaces;
+using WebUI.Areas.Solr.Controllers;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebUI.App_Start.AppHost), "Start")]
 
@@ -58,9 +65,37 @@ namespace WebUI.App_Start
 			//ConfigureAuth(container);
 
 			//Register all your dependencies
-			container.Register(new TodoRepository());			
+			container.Register(new TodoRepository());
 
-			//Set MVC to use the same Funq IOC as ServiceStack
+
+            //builder.Register<ILog>((c, p) => LogManager.GetLogger("LogFile"));
+
+            //var redisHosts = new[] { ConfigurationManager.AppSettings["RedisHostAddress"] };
+            //container.Register<IRedisClientsManager>(c =>
+            //    new BasicRedisClientManager(redisHosts, redisHosts, 0));
+
+
+            container.Register<IRedisClientsManager>(c => new PooledRedisClientManager(ConfigurationManager.AppSettings["RedisHostAddress"]));
+		    container.Register<ICacheClient>(c => (ICacheClient)c.Resolve<IRedisClientsManager>().GetClient());
+
+            //builder.RegisterType<BaseController>().PropertiesAutowired();
+            //builder.RegisterType<BaseService>().PropertiesAutowired();
+            //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().PropertiesAutowired();
+            //builder.RegisterType<NotificationHub>().PropertiesAutowired();
+
+            //container.RegisterAutoWired<IBaseService<BaseService>>();
+            //container.RegisterAutoWired<DefaultRoutesService>();
+
+
+             container.RegisterAutoWiredAs<Test, ITest>();
+          //   container.Register(new SolrNetModule("http://localhost:8983/solr"));
+           
+            
+       //    container.Register(new WebModule());
+
+        //    container.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
+           // container.RegisterFilterProvider();
+            //Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
