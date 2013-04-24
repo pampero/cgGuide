@@ -1,24 +1,24 @@
-using System;
-using System.Linq;
 using System.Configuration;
-using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
-using AutofacContrib.SolrNet;
-using Common.Base;
-using Framework;
-using ServiceStack.Configuration;
+using Frontend.Notifications;
+using Model;
+using Model.Model.entities;
+using Model.Repositories.interfaces;
 using ServiceStack.CacheAccess;
-using ServiceStack.CacheAccess.Providers;
+using ServiceStack.Configuration;
+using ServiceStack.Logging;
+using ServiceStack.Logging.Log4Net;
 using ServiceStack.Mvc;
 using ServiceStack.OrmLite;
 using ServiceStack.Redis;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.WebHost.Endpoints;
 using Services.Routes.impl;
 using Services.Routes.interfaces;
 using WebUI.Areas.Solr.Controllers;
+using log4net.Config;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebUI.App_Start.AppHost), "Start")]
 
@@ -34,13 +34,7 @@ using WebUI.Areas.Solr.Controllers;
 
 namespace WebUI.App_Start
 {
-	//A customizeable typed UserSession that can be extended with your own properties
-	//To access ServiceStack's Session, Cache, etc from MVC Controllers inherit from ControllerBase<CustomUserSession>
-	public class CustomUserSession : AuthUserSession
-	{
-		public string CustomProperty { get; set; }
-	}
-
+    
 	public class AppHost
 		: AppHostBase
 	{		
@@ -62,44 +56,30 @@ namespace WebUI.App_Start
 			//});
 
 			//Enable Authentication
-			//ConfigureAuth(container);
+			ConfigureAuth(container);
 
 			//Register all your dependencies
 			container.Register(new TodoRepository());
 
-
-            //builder.Register<ILog>((c, p) => LogManager.GetLogger("LogFile"));
-
-            //var redisHosts = new[] { ConfigurationManager.AppSettings["RedisHostAddress"] };
-            //container.Register<IRedisClientsManager>(c =>
-            //    new BasicRedisClientManager(redisHosts, redisHosts, 0));
-
-
+          
+            container.Register<ILog>(c => LogManager.GetLogger("LogFile"));
             container.Register<IRedisClientsManager>(c => new PooledRedisClientManager(ConfigurationManager.AppSettings["RedisHostAddress"]));
 		    container.Register<ICacheClient>(c => (ICacheClient)c.Resolve<IRedisClientsManager>().GetClient());
 
-            //builder.RegisterType<BaseController>().PropertiesAutowired();
-            //builder.RegisterType<BaseService>().PropertiesAutowired();
-            //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().PropertiesAutowired();
-            //builder.RegisterType<NotificationHub>().PropertiesAutowired();
+		    container.RegisterAutoWiredAs<DefaultRoutesService, IRoutesService>();
 
-            //container.RegisterAutoWired<IBaseService<BaseService>>();
-            //container.RegisterAutoWired<DefaultRoutesService>();
-
+            container.RegisterAutoWiredAs<UnitOfWork, IUnitOfWork>();
+            container.RegisterAutoWired<NotificationHub>();
 
              container.RegisterAutoWiredAs<Test, ITest>();
-          //   container.Register(new SolrNetModule("http://localhost:8983/solr"));
+           //  container.Register(new SolrNetModule("http://localhost:8983/solr"));
            
-            
-       //    container.Register(new WebModule());
-
-        //    container.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
            // container.RegisterFilterProvider();
             //Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
-		/* Uncomment to enable ServiceStack Authentication and CustomUserSession
+		// Uncomment to enable ServiceStack Authentication and CustomUserSession
 		private void ConfigureAuth(Funq.Container container)
 		{
 			var appSettings = new AppSettings();
@@ -117,7 +97,7 @@ namespace WebUI.App_Start
 			Plugins.Add(new RegistrationFeature()); 
 
 			//Requires ConnectionString configured in Web.Config
-			var connectionString = ConfigurationManager.ConnectionStrings["AppDb"].ConnectionString;
+            var connectionString = ConfigurationManager.ConnectionStrings["AppDbContext"].ConnectionString;
 			container.Register<IDbConnectionFactory>(c =>
 				new OrmLiteConnectionFactory(connectionString, SqlServerDialect.Provider));
 
@@ -127,7 +107,7 @@ namespace WebUI.App_Start
 			var authRepo = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
 			authRepo.CreateMissingTables();
 		}
-		*/
+		
 
 		public static void Start()
 		{

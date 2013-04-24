@@ -111,6 +111,7 @@ namespace Framework.Areas.BackOffice.Controllers
 
         public ActionResult Bootstrap()
         {
+            Logger.Error("MENSAJE");
             return View();
         }
 

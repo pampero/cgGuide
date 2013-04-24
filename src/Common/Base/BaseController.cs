@@ -1,14 +1,11 @@
-﻿using System.Threading;
-using System.Web.Mvc;
+﻿using Model.Model.entities;
+using ServiceStack.Logging;
 using ServiceStack.Mvc;
-using ServiceStack.Redis;
-using log4net;
 
 namespace Common.Base
 {
-    public class BaseController : ServiceStackController //Controller
+    public class BaseController : ServiceStackController<CustomUserSession>
     {
         public ILog Logger { get; set; }
-   //        public IRedisClientsManager Cache { get; set; }
     }
 }

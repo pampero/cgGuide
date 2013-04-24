@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Common.Base;
 using Framework.Filters;
-using log4net.Core;
-using log4net;
 
 namespace Framework.Controllers
 {

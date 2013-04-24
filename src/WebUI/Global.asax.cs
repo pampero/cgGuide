@@ -1,17 +1,13 @@
 ﻿using System.Configuration;
-using Autofac;
-using Autofac.Integration.Mvc;
-using AutofacContrib.SolrNet;
 using Framework;
 using Framework.Controllers;
 using Framework.Filters;
 using Framework.Solr.ViewModels;
 using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
+using ServiceStack.Logging;
+using ServiceStack.Logging.Log4Net;
 using SolrNet;
-using log4net;
-using log4net.Config;
-using log4net.Core;
 using Model;
 using Services.Routes.impl;
 using Services.Routes.interfaces;
@@ -24,6 +20,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using log4net.Config;
 
 namespace WebUI
 {
@@ -35,40 +32,20 @@ namespace WebUI
         {
             AreaRegistration.RegisterAllAreas();
 
-            SetupContainer();
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);           
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            XmlConfigurator.Configure(new System.IO.FileInfo(Server.MapPath(@"\_config\log4net\log4net.xml")));
-        }
+            LogManager.LogFactory = new Log4NetFactory(HttpContext.Current.Server.MapPath(@"\_config\log4net\log4net.xml"));
+ 
 
-        // INFO: Para mas información sobre autofac
-        // http://www.codeproject.com/Articles/25380/Dependency-Injection-with-Autofac
-        private static void SetupContainer()
-        {
             ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
+//            Startup.Init<Product>("http://localhost:8983/solr");
 
-            //var builder = new ContainerBuilder();
-
-            // INFO: Solo se utiliza si se necesita crear un tipo de configuración de logging distinto por clase (Class).
-            // builder.RegisterModule<LogInjectionModule>();
-            //builder.RegisterModule(new SolrNetModule("http://localhost:8983/solr"));
-            //builder.RegisterModule<WebModule>();
-        //    builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
-           // builder.RegisterFilterProvider();
-
-           
-
-        //    var container = builder.Build();
-
-            Startup.Init<Product>("http://localhost:8983/solr");
-
-       //     DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
+
 
         /// <summary>
         /// INFO: Punto de salida para cualquier error no capturado en la aplicación.
@@ -124,7 +101,7 @@ namespace WebUI
             routeData.Values["controller"] = "Error";
             routeData.Values["action"] = action;
             
-            ILog logger = DependencyResolver.Current.GetService<ILog>();
+            ILog logger = LogManager.GetLogger("LogFile");
             logger.Error(ex.Message, ex);
 
             controller.ViewData.Model = new HandleErrorInfo(ex, currentController, currentAction);

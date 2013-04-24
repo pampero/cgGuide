@@ -2,7 +2,7 @@
 using System.Data.Common;
 using Model.Repositories.impl;
 using Model.Repositories.interfaces;
-using log4net;
+using ServiceStack.Logging;
 
 namespace Model
 {

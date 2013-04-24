@@ -1,7 +1,4 @@
-﻿using System.Web;
-using System.Web.Mvc;
-using Framework.Filters;
-using log4net;
+﻿using System.Web.Mvc;
 
 namespace Framework
 {

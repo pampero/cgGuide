@@ -1,6 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using Common.Logging;
+using ServiceStack.Logging;
 
 namespace Framework.Filters
 {
