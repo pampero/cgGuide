@@ -1,4 +1,5 @@
 ﻿@using ServiceStack.Html
+@using ServiceStack.Mvc
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,9 +43,14 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript">
+            window.BASE_URL = '@Url.Content("~")';
+        </script>
 
         @Scripts.Render("~/bundles/jquery")
                
         @RenderSection("scripts", required: false)
+        
+        @ServiceStack.MiniProfiler.Profiler.RenderIncludes().AsRaw() 
     </body>
 </html>

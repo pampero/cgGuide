@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using ServiceStack.Html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -118,20 +119,22 @@
 
 
 
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    jQuery(function () {
-        var chat = jQuery.connection.notification;
+        jQuery(function () {
+            var chat = jQuery.connection.notification;
 
-        chat.newNotification = function (message) {
-            //jQuery.jGrowl(message, { sticky: true });
-            jQuery.jGrowl(message, { header: 'Importante!' });
-        };
+            chat.newNotification = function (message) {
+                //jQuery.jGrowl(message, { sticky: true });
+                jQuery.jGrowl(message, { header: 'Importante!' });
+            };
 
-        jQuery.connection.hub.start();
-    });
+            jQuery.connection.hub.start();
+        });
 
-</script>
+    </script>
+    
 
+    @ServiceStack.MiniProfiler.Profiler.RenderIncludes().AsRaw() 
 </body>
 </html>

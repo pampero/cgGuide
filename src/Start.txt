@@ -19,6 +19,14 @@ Anonymous Authentication: Enabled
 -. Ejecutar Redis en 
 		\tools\bin\redis-2.4.5\64bit\redis.exe
 
+-. Ejecutar Solr en
+	
+	\tools\bin\solr-1.4.0\runsolr.bat
+
+	Para ver la consola:
+
+	http://localhost:8983/Solr
+
 -. Correr la app.
 
 usuario: admin
@@ -36,19 +44,17 @@ Demo ABM con Aman.da
 http://localhost:1586/BackOffice/routes/
 http://localhost:1586/BackOffice/routes/Edit/1
 
+Acceso a los servicios de ejemplo en ServiceStack
+http://localhost:1586/api/metadata
+
+
 Solr POC
-
--. Ejecutar Solr en
-	
-	\tools\bin\solr-1.4.0\runsolr.bat
-
-	Para ver la consola:
-
-	http://localhost:8983/Solr
 
 -. Navegar a la dirección
 
 	http://localhost:1586/POC/Solr/
 
-----
+NOTA:
+
+Para desactivar MiniProfiler remover las línas en Global.asax
 
