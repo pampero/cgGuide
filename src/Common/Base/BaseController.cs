@@ -1,10 +1,12 @@
-﻿using Model.Model.entities;
-using ServiceStack.Logging;
+﻿using ServiceStack.Logging;
 using ServiceStack.Mvc;
+using ServiceStack.Mvc.MiniProfiler;
 
 namespace Common.Base
 {
-    public class BaseController : ServiceStackController<CustomUserSession>
+    // Mini Profiler
+    [ProfilingActionFilter]
+    public class BaseController : ServiceStackController
     {
         public ILog Logger { get; set; }
     }

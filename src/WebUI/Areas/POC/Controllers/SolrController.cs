@@ -24,6 +24,8 @@ namespace WebUI.Areas.Solr.Controllers
         {}
 
     }
+
+    [Authorize]
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<Product> solr;
@@ -31,7 +33,9 @@ namespace WebUI.Areas.Solr.Controllers
 
         public SolrController(ITest test)
         {
+          
             this.solr = solr;
+            
         }
         
          public ActionResult AddProduct()
@@ -128,6 +132,13 @@ namespace WebUI.Areas.Solr.Controllers
         {
             try
             {
+                // Subir Redis y descomentar para usar session y caché
+                //this.Session["Dato"] = 1;
+                //var sessionData = Session["Dato"];
+
+                //this.Cache.Set("Dato", 1);
+                //var dato = this.Cache.Get<int>("Dato");
+              
                 var start = (parameters.PageIndex - 1) * parameters.PageSize;
                 var matchingProducts = solr.Query(BuildQuery(parameters), new QueryOptions
                 {

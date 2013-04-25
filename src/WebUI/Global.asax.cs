@@ -7,6 +7,8 @@ using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Log4Net;
+using ServiceStack.MiniProfiler;
+using ServiceStack.Mvc.MiniProfiler;
 using SolrNet;
 using Model;
 using Services.Routes.impl;
@@ -106,8 +108,20 @@ namespace WebUI
 
             controller.ViewData.Model = new HandleErrorInfo(ex, currentController, currentAction);
             ((IController)controller).Execute(new RequestContext(new HttpContextWrapper(httpContext), routeData));
-        }     
-            
+        }
+
+        protected void Application_BeginRequest()
+        {
+            if (Request.IsLocal)
+            {
+                Profiler.Start();
+            }
+        }
+
+        protected void Application_EndRequest()
+        {
+            Profiler.Stop();
+        }
     }
 
 }

@@ -3,7 +3,6 @@ using System.Web;
 using System.Web.Mvc;
 using Frontend.Notifications;
 using Model;
-using Model.Model.entities;
 using Model.Repositories.interfaces;
 using ServiceStack.CacheAccess;
 using ServiceStack.Configuration;
@@ -56,7 +55,7 @@ namespace WebUI.App_Start
 			//});
 
 			//Enable Authentication
-			ConfigureAuth(container);
+			//ConfigureAuth(container);
 
 			//Register all your dependencies
 			container.Register(new TodoRepository());
@@ -79,7 +78,7 @@ namespace WebUI.App_Start
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
-		// Uncomment to enable ServiceStack Authentication and CustomUserSession
+		/* Uncomment to enable ServiceStack Authentication and CustomUserSession
 		private void ConfigureAuth(Funq.Container container)
 		{
 			var appSettings = new AppSettings();
@@ -106,7 +105,7 @@ namespace WebUI.App_Start
 
 			var authRepo = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
 			authRepo.CreateMissingTables();
-		}
+		}*/
 		
 
 		public static void Start()

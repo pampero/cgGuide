@@ -1,3 +1,7 @@
+-. Multidioma.
+-. MiniProfiler. Instalado pero no renderiza.
+-. Pendiente Funq sobre SolrNet.
+-. Implementar seguridad con ServiceStack. O terminar de relevar la seguridad actual con Simple Membership.
 -. Definir los controles para backoffice. Grillas. Esto no me gusta nada -> jQueryDataTableParamModel.
 -. Probar seguridad en RouteController con Windows Auth y con Anonymous, con y sin roles.
 -. Hacer demo de Automapper.
@@ -17,7 +21,7 @@ SOLR.NET
 
 OK -. Autofac.SolrNet
 OK -. ABM
--. Facetado
+OK -. Facetado
 -. FullText
 -. HighLighting
 -. Field Collapsing
