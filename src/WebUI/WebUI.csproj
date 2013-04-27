@@ -76,12 +76,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ServiceStack.Logging.Log4Net.1.0.8.0\lib\net35\ServiceStack.Logging.Log4Net.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmLite">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.43\lib\ServiceStack.OrmLite.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmLite.SqlServer">
-      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.3.9.43\lib\ServiceStack.OrmLite.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Redis, Version=3.9.43.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ServiceStack.Redis.3.9.43\lib\net35\ServiceStack.Redis.dll</HintPath>

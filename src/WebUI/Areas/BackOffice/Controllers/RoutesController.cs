@@ -6,6 +6,7 @@ using Framework.Filters;
 using Framework.ViewModels;
 using Frontend.Notifications;
 using Model;
+using ServiceStack.OrmLite;
 using Services.Routes.interfaces;
 using System.Web.Mvc;
 

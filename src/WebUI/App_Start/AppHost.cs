@@ -1,23 +1,15 @@
 using System.Configuration;
-using System.Web;
 using System.Web.Mvc;
 using Frontend.Notifications;
 using Model;
 using Model.Repositories.interfaces;
 using ServiceStack.CacheAccess;
-using ServiceStack.Configuration;
 using ServiceStack.Logging;
-using ServiceStack.Logging.Log4Net;
 using ServiceStack.Mvc;
-using ServiceStack.OrmLite;
 using ServiceStack.Redis;
-using ServiceStack.ServiceInterface;
-using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
 using Services.Routes.impl;
 using Services.Routes.interfaces;
-using WebUI.Areas.Solr.Controllers;
-using log4net.Config;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebUI.App_Start.AppHost), "Start")]
 
@@ -60,17 +52,17 @@ namespace WebUI.App_Start
 			//Register all your dependencies
 			container.Register(new TodoRepository());
 
-          
+            // --------------------------- IoC - Infrastructure Configuration -----------------------------------------------
             container.Register<ILog>(c => LogManager.GetLogger("LogFile"));
             container.Register<IRedisClientsManager>(c => new PooledRedisClientManager(ConfigurationManager.AppSettings["RedisHostAddress"]));
 		    container.Register<ICacheClient>(c => (ICacheClient)c.Resolve<IRedisClientsManager>().GetClient());
 
+		    container.RegisterAutoWiredAs<UnitOfWork, IUnitOfWork>();
+
+            // --------------------------- IoC - Business Objects Configuration -----------------------------------------------
+            container.RegisterAutoWired<NotificationHub>();
 		    container.RegisterAutoWiredAs<DefaultRoutesService, IRoutesService>();
 
-            container.RegisterAutoWiredAs<UnitOfWork, IUnitOfWork>();
-            container.RegisterAutoWired<NotificationHub>();
-
-             container.RegisterAutoWiredAs<Test, ITest>();
            //  container.Register(new SolrNetModule("http://localhost:8983/solr"));
            
            // container.RegisterFilterProvider();
@@ -78,36 +70,7 @@ namespace WebUI.App_Start
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
-		/* Uncomment to enable ServiceStack Authentication and CustomUserSession
-		private void ConfigureAuth(Funq.Container container)
-		{
-			var appSettings = new AppSettings();
-
-			//Default route: /auth/{provider}
-			Plugins.Add(new AuthFeature(() => new CustomUserSession(),
-				new IAuthProvider[] {
-					new CredentialsAuthProvider(appSettings), 
-					new FacebookAuthProvider(appSettings), 
-					new TwitterAuthProvider(appSettings), 
-					new BasicAuthProvider(appSettings), 
-				})); 
-
-			//Default route: /register
-			Plugins.Add(new RegistrationFeature()); 
-
-			//Requires ConnectionString configured in Web.Config
-            var connectionString = ConfigurationManager.ConnectionStrings["AppDbContext"].ConnectionString;
-			container.Register<IDbConnectionFactory>(c =>
-				new OrmLiteConnectionFactory(connectionString, SqlServerDialect.Provider));
-
-			container.Register<IUserAuthRepository>(c =>
-				new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
-
-			var authRepo = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
-			authRepo.CreateMissingTables();
-		}*/
 		
-
 		public static void Start()
 		{
 			new AppHost().Init();

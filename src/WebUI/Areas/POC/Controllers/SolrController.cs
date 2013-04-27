@@ -13,17 +13,6 @@ using SolrNet.Exceptions;
 
 namespace WebUI.Areas.Solr.Controllers
 {
-    public interface ITest
-    {
-        void GetData();
-    }
-
-    public class Test :ITest
-    {
-        public void GetData()
-        {}
-
-    }
 
     [Authorize]
     public class SolrController : BaseController
@@ -31,7 +20,7 @@ namespace WebUI.Areas.Solr.Controllers
         private readonly ISolrOperations<Product> solr;
         private static readonly string[] AllFacetFields = new[] { "cat", "manu_exact" };
 
-        public SolrController(ITest test)
+        public SolrController()
         {
           
             this.solr = solr;

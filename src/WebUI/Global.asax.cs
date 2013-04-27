@@ -41,7 +41,6 @@ namespace WebUI
 
             LogManager.LogFactory = new Log4NetFactory(HttpContext.Current.Server.MapPath(@"\_config\log4net\log4net.xml"));
  
-
             ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
 //            Startup.Init<Product>("http://localhost:8983/solr");
 

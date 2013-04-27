@@ -1,5 +1,4 @@
 -. Multidioma.
--. MiniProfiler. Instalado pero no renderiza.
 -. Pendiente Funq sobre SolrNet.
 -. Implementar seguridad con ServiceStack. O terminar de relevar la seguridad actual con Simple Membership.
 -. Definir los controles para backoffice. Grillas. Esto no me gusta nada -> jQueryDataTableParamModel.
@@ -7,6 +6,7 @@
 -. Hacer demo de Automapper.
 -. Ver Modernizer.
 
+OK -. Se decide no usar ORM Lite. Incompatible con los objetos POCO de NHibernate, propiedades NotMapped
 OK -. Agregar al framework algun mecanismo que permita filtrar borrados lógicos por default. Posiblemente mediante alguna interface. Entidad: IEntity, ICreateFields, IDeleteFields
 OK -. Probar que funcione el mecanismo de bundle.
 OK -. Se decide usar automapper. -. Ver como mapea los ViewModels con Injecter el ProDinner.

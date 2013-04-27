@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq.Expressions;
 using Model;
 using Model.Interfaces;
+using ServiceStack.OrmLite;
 
 namespace Model
 {
@@ -18,7 +19,7 @@ namespace Model
     {
         internal AppDbContext context;
         internal DbSet<TEntity> dbSet;
-
+        
         public GenericUpdatableRepository(AppDbContext context)
         {
             this.context = context;
