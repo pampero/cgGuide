@@ -19,6 +19,7 @@ namespace WebUI.Areas.Solr
                 "POC/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 }

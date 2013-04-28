@@ -34,6 +34,9 @@ password: Passw0rd
 
 Ir a:
 
+MultiIdioma
+http://localhost:1586/Home
+
 Layout Aman.da
 http://localhost:1586/BackOffice/routes/amanda
 

@@ -126,6 +126,35 @@ footer {
 }
 
 
+/* languages
+----------------------------------------------------------*/
+ul#languages {
+    font-size: 12px;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: right;
+}
+
+ul#languages li {
+    display: inline;
+    list-style: none;
+    padding-left: 15px;
+}
+
+ul#languages li a {
+    background: none;
+    color: #999;
+    text-decoration: none;
+}
+
+ul#languages li a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+
+
+
 /* site title
 ----------------------------------------------------------*/
 .site-title {

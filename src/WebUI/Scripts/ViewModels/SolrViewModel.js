@@ -11,6 +11,7 @@ function ProductReservation(id, name, manufacturer, price) {
     });
 }
 
+
 // Overall viewmodel for this screen, along with initial state
 function ProductsViewModel() {
     var self = this;
@@ -52,9 +53,26 @@ function ProductsViewModel() {
                 alert('Error: ' + xhr.responseText);
             }
         });
-       
     };
-    
+
+
+    self.changeLanguage = function () {
+        $.ajax({
+            type: 'POST',
+            url: "http://localhost:1586/POC/Solr/ChangeLanguage",
+            contentType: "application/json; charset=utf-8",
+            traditional: true,
+            data: JSON.stringify({}),
+            success: function (result) {
+                alert(result.Message);
+            },
+            error: function (xhr, ajaxOptions, error) {
+                alert(xhr.status);
+                alert('Error: ' + xhr.responseText);
+            }
+        });
+    };
+
     self.removeProduct = function (product) {
 
         $.ajax({

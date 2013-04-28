@@ -1,4 +1,6 @@
-﻿@using ServiceStack.Html
+﻿@using MvcGlobalisationSupport
+@using ServiceStack.Html
+@using WebUI.Resources
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +18,30 @@
             padding-top: 60px;
             padding-bottom: 40px;
         }
+
+        ul#languages {
+    font-size: 12px;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: right;
+}
+
+ul#languages li {
+    display: inline;
+    list-style: none;
+    padding-left: 15px;
+}
+
+ul#languages li a {
+    background: none;
+    color: #999;
+    text-decoration: none;
+}
+
+ul#languages li a:hover {
+    color: #333;
+    text-decoration: none;
+}
     </style>
     @Scripts.Render("~/bundles/modernizr")
 
@@ -53,6 +79,11 @@
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>
+                         <ul id="languages">
+                            <li>@Html.GlobalisedRouteLink(Global.LangEnglish, "en", ViewContext.RouteData)</li>
+                            <li>@Html.GlobalisedRouteLink(Global.LangGerman, "de", ViewContext.RouteData)</li>
+                            <li>@Html.GlobalisedRouteLink(Global.LangFrench, "fr", ViewContext.RouteData)</li>
+                        </ul>
                     </ul>
                     <form class="navbar-form pull-right">
                         <input class="span2" type="text" placeholder="Email">

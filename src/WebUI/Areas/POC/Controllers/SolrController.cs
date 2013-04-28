@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using Common.Base;
@@ -23,10 +25,24 @@ namespace WebUI.Areas.Solr.Controllers
         public SolrController()
         {
           
-            this.solr = solr;
+            //this.solr = solrOperations;
             
         }
-        
+
+
+        public ActionResult ChangeLanguage()
+        {
+            var Message = "Lenguaje cambiado!";
+
+            CultureInfo ci = new CultureInfo("es-AR");
+
+            Thread.CurrentThread.CurrentUICulture = ci;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+ 
+
+            return Json(new { Message }, JsonRequestBehavior.AllowGet);
+        }
+
          public ActionResult AddProduct()
          {
              var product = new Product
@@ -128,30 +144,32 @@ namespace WebUI.Areas.Solr.Controllers
                 //this.Cache.Set("Dato", 1);
                 //var dato = this.Cache.Get<int>("Dato");
               
-                var start = (parameters.PageIndex - 1) * parameters.PageSize;
-                var matchingProducts = solr.Query(BuildQuery(parameters), new QueryOptions
-                {
-                    FilterQueries = BuildFilterQueries(parameters),
-                    Rows = parameters.PageSize,
-                    Start = start,
-                    OrderBy = GetSelectedSort(parameters),
-                    SpellCheck = new SpellCheckingParameters(),
-                    Facet = new FacetParameters
-                    {
-                        Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                                                                              .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
-                                                                              .Cast<ISolrFacetQuery>()
-                                                                              .ToList(),
-                    },
-                });
-                var view = new SolrViewModel
-                {
-                    Products = matchingProducts,
-                    Search = parameters,
-                    TotalCount = matchingProducts.NumFound,
-                    Facets = matchingProducts.FacetFields//,
-                  //  DidYouMean = GetSpellCheckingResult(matchingProducts),
-                };
+                //var start = (parameters.PageIndex - 1) * parameters.PageSize;
+                //var matchingProducts = solr.Query(BuildQuery(parameters), new QueryOptions
+                //{
+                //    FilterQueries = BuildFilterQueries(parameters),
+                //    Rows = parameters.PageSize,
+                //    Start = start,
+                //    OrderBy = GetSelectedSort(parameters),
+                //    SpellCheck = new SpellCheckingParameters(),
+                //    Facet = new FacetParameters
+                //    {
+                //        Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
+                //                                                              .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
+                //                                                              .Cast<ISolrFacetQuery>()
+                //                                                              .ToList(),
+                //    },
+                //});
+                //var view = new SolrViewModel
+                //{
+                //    Products = matchingProducts,
+                //    Search = parameters,
+                //    TotalCount = matchingProducts.NumFound,
+                //    Facets = matchingProducts.FacetFields//,
+                //  //  DidYouMean = GetSpellCheckingResult(matchingProducts),
+                //};
+
+                var view = new SolrViewModel();
                 return View(view);
             }
             catch (InvalidFieldException)

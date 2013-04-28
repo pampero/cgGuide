@@ -1,8 +1,10 @@
-﻿@using ServiceStack.Html
+﻿@using MvcGlobalisationSupport
+@using ServiceStack.Html
 @using ServiceStack.Mvc
+@using WebUI.Resources
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head id="LanGerman">
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Nombre.Proyecto</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -17,6 +19,14 @@
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
+                     <nav>
+                        <ul id="languages">
+                            <li>@Html.GlobalisedRouteLink(Global.LangEnglish, "en", ViewContext.RouteData)</li>
+                            <li>@Html.GlobalisedRouteLink(Global.LangGerman, "de", ViewContext.RouteData)</li>
+                            <li>@Html.GlobalisedRouteLink(Global.LangFrench, "fr", ViewContext.RouteData)</li>
+                            <li>@Html.GlobalisedRouteLink(Global.LangItalian, "it", ViewContext.RouteData)</li>
+                        </ul>
+                    </nav>
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>

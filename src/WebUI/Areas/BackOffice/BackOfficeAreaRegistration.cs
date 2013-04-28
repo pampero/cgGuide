@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using System.Web.Routing;
+using MvcGlobalisationSupport;
 
 namespace Framework.Areas.BackOffice
 {
@@ -15,10 +17,23 @@ namespace Framework.Areas.BackOffice
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
+                "BackOffice_Default2",
+                "{culture}/BackOffice/{controller}/{action}/{id}",
+                new
+                {
+                    culture = "en",
+                    action = "Index",//ActionName
+                    id = UrlParameter.Optional
+                }
+             ).RouteHandler = new LocalizedMvcRouteHandler();
+
+            context.MapRoute(
                 "BackOffice_default",
                 "BackOffice/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+
+            
         }
     }
 }

@@ -237,6 +237,30 @@
     <Compile Include="Areas\POC\ViewModels\ProductView.cs" />
     <Compile Include="Areas\POC\ViewModels\SearchParameters.cs" />
     <Compile Include="Areas\POC\ViewModels\SpellChecking.cs" />
+    <Compile Include="Localization\CultureFormatChecker.cs" />
+    <Compile Include="Localization\CultureManager.cs" />
+    <Compile Include="Localization\CultureRouteConstraint.cs" />
+    <Compile Include="Localization\GlobalisationHtmlHelperExtensions.cs" />
+    <Compile Include="Localization\GlobalisationRouteHandler.cs" />
+    <Compile Include="Localization\GlobalisedRoute.cs" />
+    <Compile Include="Localization\LocalizedMvcRouteHandler.cs" />
+    <Compile Include="Localization\LocalizedViewEngine.cs" />
+    <Compile Include="Resources\Global.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.de.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Global.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Global.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="_config\LocalizedViewEngine.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -661,6 +685,8 @@
     <Content Include="Areas\BackOffice\Views\Routes\Amanda.cshtml" />
     <Content Include="Areas\POC\Views\Web.config" />
     <Content Include="Areas\POC\Views\Solr\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Routes\Bootstrap.de.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Routes\Bootstrap.fr.cshtml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -1008,6 +1034,11 @@
     <Content Include="Views\Shared\_LayoutAmanda.cshtml" />
     <Content Include="Views\Shared\_LayoutBootstrap.cshtml" />
     <Content Include="SolrNet.chm" />
+    <Content Include="Views\Home\Index.fr.cshtml" />
+    <Content Include="Views\Home\Index.de.cshtml" />
+    <Content Include="Views\Account\Login.de.cshtml" />
+    <Content Include="Views\Account\Login.fr.cshtml" />
+    <Content Include="Views\Account\Login.it.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BackOffice\Views\Shared\" />
@@ -1030,6 +1061,20 @@
       <Project>{f93d058d-8af8-4d0b-8c4a-d0c3c943efc0}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Global.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Global.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Global.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

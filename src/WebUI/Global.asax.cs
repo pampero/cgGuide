@@ -5,6 +5,7 @@ using Framework.Filters;
 using Framework.Solr.ViewModels;
 using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
+using MvcGlobalisationSupport;
 using ServiceStack.Logging;
 using ServiceStack.Logging.Log4Net;
 using ServiceStack.MiniProfiler;
@@ -22,6 +23,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebUI.Views.Config;
 using log4net.Config;
 
 namespace WebUI
@@ -30,9 +32,11 @@ namespace WebUI
     // visit http://go.microsoft.com/?LinkId=9394801
     public class MvcApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+       protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            ViewEngines.Engines.Insert(0, new LocalizedViewEngine());
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);           

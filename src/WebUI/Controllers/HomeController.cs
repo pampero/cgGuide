@@ -14,7 +14,7 @@ namespace Framework.Controllers
         // a la vista de login independientemente de si el usuario no ha sido autenticado o no ha sido autorizado.
         // En caso de que tenga autenticación pero no autorización debería ir a la vista de "acceso denegado", para ello utilizar el atributo RoleAuthorizeAttribute.
         [UserTrackerLog]
-        [RoleAuthorizeAttribute(Roles="Admin")]
+     //   [RoleAuthorizeAttribute(Roles="Admin")]
         public ActionResult Index()
         {
             Logger.Error("LOG ERROR");
