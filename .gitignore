@@ -163,3 +163,4 @@ pip-log.txt
 .DS_Store
 /tools/solr-1.4.0/solr-1.4.0/logs/*.log
 /src/WebUI/logs/*.log
+/src/WebUI/logs
