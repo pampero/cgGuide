@@ -126,4 +126,7 @@
   <data name="LangItalian" xml:space="preserve">
     <value>Italién</value>
   </data>
+  <data name="LoginHeader" xml:space="preserve">
+    <value>(French Translation) Use a local account to log in.</value>
+  </data>
 </root>

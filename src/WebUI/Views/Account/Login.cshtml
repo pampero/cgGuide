@@ -1,4 +1,5 @@
-﻿@model Framework.Models.LoginModel
+﻿@using WebUI.Resources
+@model Framework.Models.LoginModel
 
 @{
     ViewBag.Title = "Log in";
@@ -10,7 +11,7 @@
 </hgroup>
 
 <section id="loginForm">
-<h2>Use a local account to log in.</h2>
+<h2>@Global.LoginHeader</h2>
 @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)

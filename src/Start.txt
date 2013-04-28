@@ -35,7 +35,9 @@ password: Passw0rd
 Ir a:
 
 MultiIdioma
-http://localhost:1586/Home
+http://localhost:1586/Account/Login  (Se utiliza una sola vista cshtml con el texto del Header localizado)
+http://localhost:1586/Home (Se utiliza una vista cshtml por idioma)
+HomeController -> Index (Ejemplo de consumo de recursos para armar un string localizado)
 
 Layout Aman.da
 http://localhost:1586/BackOffice/routes/amanda

@@ -260,6 +260,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Global.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Global.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Global.it.resx</DependentUpon>
+    </Compile>
     <Compile Include="_config\LocalizedViewEngine.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -1036,9 +1041,7 @@
     <Content Include="SolrNet.chm" />
     <Content Include="Views\Home\Index.fr.cshtml" />
     <Content Include="Views\Home\Index.de.cshtml" />
-    <Content Include="Views\Account\Login.de.cshtml" />
-    <Content Include="Views\Account\Login.fr.cshtml" />
-    <Content Include="Views\Account\Login.it.cshtml" />
+    <Content Include="Views\Home\Index.it.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BackOffice\Views\Shared\" />
@@ -1070,6 +1073,10 @@
     <EmbeddedResource Include="Resources\Global.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Global.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Global.it.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Global.it.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Global.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

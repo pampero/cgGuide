@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Common.Base;
 using Framework.Filters;
+using WebUI.Resources;
 
 namespace Framework.Controllers
 {
@@ -17,6 +18,10 @@ namespace Framework.Controllers
      //   [RoleAuthorizeAttribute(Roles="Admin")]
         public ActionResult Index()
         {
+
+            // STRING LOCALIZADO
+            var localizedString = Global.ResourceManager.GetString("LoginHeader");
+
             Logger.Error("LOG ERROR");
             Logger.Info("LOG INFO");
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";

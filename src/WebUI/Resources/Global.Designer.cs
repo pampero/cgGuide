@@ -95,5 +95,14 @@ namespace WebUI.Resources {
                 return ResourceManager.GetString("LangItalian", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Deafult Translation) Use a local account to log in..
+        /// </summary>
+        public static string LoginHeader {
+            get {
+                return ResourceManager.GetString("LoginHeader", resourceCulture);
+            }
+        }
     }
 }
