@@ -35,11 +35,9 @@ namespace Framework
                 }
             ).RouteHandler = new LocalizedMvcRouteHandler();
 
-
-            //routes.MapRoute("CatchAll", "{*url}",
-            //    new { controller = "Home", action = "Index" }
-            //);
-
+            routes.MapRoute("CatchAll", "{*url}",
+                new { controller = "Home", action = "Index" }
+            );
         }
     }
 }
