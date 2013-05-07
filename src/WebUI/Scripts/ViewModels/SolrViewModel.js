@@ -19,7 +19,7 @@ function ProductsViewModel() {
     $.getJSON("http://localhost:1586/POC/Solr/GetAllProducts", { }, function (result) {
         
          $.map(result.products, function (product) {
-             var newProduct = new ProductReservation(product.Id, product.Name, product.Manufacturer, product.Price);
+             var newProduct = new ProductReservation(product.id, product.name, product.manufacturer, product.price);
             
             self.products.push(newProduct);
         });
@@ -45,7 +45,7 @@ function ProductsViewModel() {
             traditional: true,
             data: JSON.stringify({}),
             success: function (result) {
-                self.products.push(new ProductReservation(result.product.Id, result.product.Name, result.product.Manufacturer, result.product.Price));
+                self.products.push(new ProductReservation(result.product.id, result.product.name, result.product.manufacturer, result.product.price));
                 alert("Producto agregado con éxito");
             },
             error: function (xhr, ajaxOptions, error) {

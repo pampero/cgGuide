@@ -10,6 +10,9 @@ using ServiceStack.Redis;
 using ServiceStack.WebHost.Endpoints;
 using Services.Routes.impl;
 using Services.Routes.interfaces;
+using SolrNet;
+using SolrNet.Impl;
+using Framework.Solr.ViewModels;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebUI.App_Start.AppHost), "Start")]
 
@@ -63,8 +66,6 @@ namespace WebUI.App_Start
             container.RegisterAutoWired<NotificationHub>();
 		    container.RegisterAutoWiredAs<DefaultRoutesService, IRoutesService>();
 
-           //  container.Register(new SolrNetModule("http://localhost:8983/solr"));
-           
            // container.RegisterFilterProvider();
             //Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
