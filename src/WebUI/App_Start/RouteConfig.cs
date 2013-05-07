@@ -19,6 +19,10 @@ namespace Framework
             routes.IgnoreRoute("api/{*pathInfo}");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute("RenderImage", "Images/{file}", new { controller = "Images", action = "Render", file = "" });
+            //routes.MapRoute("RenderImageWithResizeAndWatermark", "Images/{width}/{height}/w/{file}", new { controller = "Images", action = "RenderWithResizeAndWatermark", width = "", height = "", file = "" });
+            //routes.MapRoute("RenderImageWithResize", "Images/{width}/{height}/{file}", new { controller = "Images", action = "RenderWithResize", width = "", height = "", file = "" });
+
             routes.Add("DefaultGlobalized", new GlobalisedRoute(defautlRouteUrl, defaultRouteValueDictionary));
             routes.Add("Default", new System.Web.Routing.Route(defautlRouteUrl, defaultRouteValueDictionary, new MvcRouteHandler()));
 

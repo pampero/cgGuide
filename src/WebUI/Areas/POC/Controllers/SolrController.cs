@@ -12,6 +12,7 @@ using SolrNet;
 using SolrNet.Commands.Parameters;
 using SolrNet.DSL;
 using SolrNet.Exceptions;
+using Microsoft.Practices.ServiceLocation;
 
 namespace WebUI.Areas.Solr.Controllers
 {
@@ -24,9 +25,7 @@ namespace WebUI.Areas.Solr.Controllers
 
         public SolrController()
         {
-          
-            //this.solr = solrOperations;
-            
+            this.solr = ServiceLocator.Current.GetInstance<ISolrOperations<Product>>();;
         }
 
 
@@ -143,33 +142,33 @@ namespace WebUI.Areas.Solr.Controllers
 
                 //this.Cache.Set("Dato", 1);
                 //var dato = this.Cache.Get<int>("Dato");
-              
-                //var start = (parameters.PageIndex - 1) * parameters.PageSize;
-                //var matchingProducts = solr.Query(BuildQuery(parameters), new QueryOptions
-                //{
-                //    FilterQueries = BuildFilterQueries(parameters),
-                //    Rows = parameters.PageSize,
-                //    Start = start,
-                //    OrderBy = GetSelectedSort(parameters),
-                //    SpellCheck = new SpellCheckingParameters(),
-                //    Facet = new FacetParameters
-                //    {
-                //        Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                //                                                              .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
-                //                                                              .Cast<ISolrFacetQuery>()
-                //                                                              .ToList(),
-                //    },
-                //});
-                //var view = new SolrViewModel
-                //{
-                //    Products = matchingProducts,
-                //    Search = parameters,
-                //    TotalCount = matchingProducts.NumFound,
-                //    Facets = matchingProducts.FacetFields//,
-                //  //  DidYouMean = GetSpellCheckingResult(matchingProducts),
-                //};
 
-                var view = new SolrViewModel();
+                var start = (parameters.PageIndex - 1) * parameters.PageSize;
+                var matchingProducts = solr.Query(BuildQuery(parameters), new QueryOptions
+                {
+                    FilterQueries = BuildFilterQueries(parameters),
+                    Rows = parameters.PageSize,
+                    Start = start,
+                    OrderBy = GetSelectedSort(parameters),
+                    SpellCheck = new SpellCheckingParameters(),
+                    Facet = new FacetParameters
+                    {
+                        Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
+                                                                              .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
+                                                                              .Cast<ISolrFacetQuery>()
+                                                                              .ToList(),
+                    },
+                });
+                var view = new SolrViewModel
+                {
+                    Products = matchingProducts,
+                    Search = parameters,
+                    TotalCount = matchingProducts.NumFound,
+                    Facets = matchingProducts.FacetFields
+                    //,
+                    //DidYouMean = GetSpellCheckingResult(matchingProducts),
+                };
+
                 return View(view);
             }
             catch (InvalidFieldException)

@@ -27,6 +27,20 @@ Anonymous Authentication: Enabled
 
 	http://localhost:8983/Solr
 
+-. Configuración de SQLExpress para que el DataImportHandler consuma los datos de la base (opcional)
+
+		. Verificar que el firewall no bloquee al servidor de SQL (UDP traffic to port 1434/1433)
+
+		. Crear la carpeta lib dentro del core utilizado y dentro copiar los archivos 
+
+			solr-dataimporthandler-4.2.1.jar (ubicado en la carpeta Dist de Solr)
+			solr-dataimporthandler-extras-4.2.1.jar (ubicado en la carpeta Dist de Solr)
+			sqljdbc4.jar (bajarlo del sitio de Microsoft)
+
+		. Verificar que esté corriendo el servicio SQL Server Browser Service
+
+		. En Sql Server Configuration Manager habilitar la conección TCP
+
 -. Correr la app.
 
 usuario: admin

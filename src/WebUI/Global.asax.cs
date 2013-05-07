@@ -25,6 +25,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using WebUI.Views.Config;
 using log4net.Config;
+using Microsoft.Practices.ServiceLocation;
+using SolrNet.Impl;
 
 namespace WebUI
 {
@@ -46,7 +48,9 @@ namespace WebUI
             LogManager.LogFactory = new Log4NetFactory(HttpContext.Current.Server.MapPath(@"\_config\log4net\log4net.xml"));
  
             ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
-//            Startup.Init<Product>("http://localhost:8983/solr");
+            Startup.Init<Product>("http://localhost:8983/solr");
+
+            var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Product>>();
 
         }
 

@@ -45,6 +45,9 @@
     <Reference Include="HttpWebAdapters">
       <HintPath>..\packages\SolrNet.0.4.0.2002\HttpWebAdapters.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\packages\ImageResizer.3.3.3\lib\ImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.1.2.11\log4net.dll</HintPath>
@@ -237,6 +240,11 @@
     <Compile Include="Areas\POC\ViewModels\ProductView.cs" />
     <Compile Include="Areas\POC\ViewModels\SearchParameters.cs" />
     <Compile Include="Areas\POC\ViewModels\SpellChecking.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Helpers\DynamicImageResult.cs" />
+    <Compile Include="Helpers\FileSystemExtensions.cs" />
+    <Compile Include="Helpers\HttpResponseExtensions.cs" />
+    <Compile Include="Helpers\ImageFileResult.cs" />
     <Compile Include="Localization\CultureFormatChecker.cs" />
     <Compile Include="Localization\CultureManager.cs" />
     <Compile Include="Localization\CultureRouteConstraint.cs" />
@@ -269,6 +277,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Content Include="Content\images\Felipe.JPG" />
+    <Content Include="Content\images\watermark.png" />
     <Content Include="Content\js\ss-validation.js" />
     <Content Include="css\solr.css" />
     <Compile Include="Filters\HandleAndLogErrorAttribute.cs" />
