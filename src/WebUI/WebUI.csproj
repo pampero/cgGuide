@@ -233,13 +233,6 @@
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\jQueryDataTableParamModel.cs" />
     <Compile Include="Areas\BackOffice\Controllers\RoutesController.cs" />
-    <Compile Include="Areas\POC\Controllers\SolrController.cs" />
-    <Compile Include="Areas\POC\Models\Product.cs" />
-    <Compile Include="Areas\POC\SolrAreaRegistration.cs" />
-    <Compile Include="Areas\POC\ViewModels\Binders\SearchParametersBinder.cs" />
-    <Compile Include="Areas\POC\ViewModels\ProductView.cs" />
-    <Compile Include="Areas\POC\ViewModels\SearchParameters.cs" />
-    <Compile Include="Areas\POC\ViewModels\SpellChecking.cs" />
     <Compile Include="Helpers\HtmlHelperStaticContentExtensions.cs" />
     <Compile Include="Helpers\HttpResponseExtensions.cs" />
     <Compile Include="Localization\CultureFormatChecker.cs" />
@@ -695,8 +688,6 @@
     <Content Include="_config\log4net\log4net.xml" />
     <Content Include="Areas\BackOffice\Views\Routes\Bootstrap.cshtml" />
     <Content Include="Areas\BackOffice\Views\Routes\Amanda.cshtml" />
-    <Content Include="Areas\POC\Views\Web.config" />
-    <Content Include="Areas\POC\Views\Solr\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Routes\Bootstrap.de.cshtml" />
     <Content Include="Areas\BackOffice\Views\Routes\Bootstrap.fr.cshtml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -1052,7 +1043,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\BackOffice\Views\Shared\" />
-    <Folder Include="Areas\POC\Views\Shared\" />
     <Folder Include="Content\themes\amanda\images\preview\" />
   </ItemGroup>
   <ItemGroup>

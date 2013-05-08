@@ -87,6 +87,7 @@
     <Compile Include="Model\entities\AbstractReadOnlyClass.cs" />
     <Compile Include="Model\entities\AbstractUpdatableClass.cs" />
     <Compile Include="Model\entities\Customer.cs" />
+    <Compile Include="Model\entities\Dealer.cs" />
     <Compile Include="Model\entities\Route.cs" />
     <Compile Include="Model\enums\ActiveEnum.cs" />
     <Compile Include="Model\enums\ContractTypeEnum.cs" />
