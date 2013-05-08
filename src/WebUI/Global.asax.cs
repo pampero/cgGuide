@@ -2,8 +2,6 @@
 using Framework;
 using Framework.Controllers;
 using Framework.Filters;
-using Framework.Solr.ViewModels;
-using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
 using MvcGlobalisationSupport;
 using ServiceStack.Logging;
@@ -46,11 +44,6 @@ namespace WebUI
             AuthConfig.RegisterAuth();
 
             LogManager.LogFactory = new Log4NetFactory(HttpContext.Current.Server.MapPath(@"\_config\log4net\log4net.xml"));
- 
-            ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
-            Startup.Init<Product>("http://localhost:8983/solr");
-
-            var solr = ServiceLocator.Current.GetInstance<ISolrOperations<Product>>();
 
         }
 

@@ -12,7 +12,6 @@ using Services.Routes.impl;
 using Services.Routes.interfaces;
 using SolrNet;
 using SolrNet.Impl;
-using Framework.Solr.ViewModels;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebUI.App_Start.AppHost), "Start")]
 
