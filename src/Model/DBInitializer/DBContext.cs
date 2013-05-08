@@ -18,6 +18,7 @@ namespace Model
         }
 
         public DbSet<Route> Routes { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

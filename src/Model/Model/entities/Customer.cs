@@ -6,21 +6,7 @@ namespace Model
 {
     public class Customer : AbstractUpdatableClass
     {
-        public string Name
-        {
-            get;
-            set;
-        }
-
-        public ContractTypeEnum DefaultContractType
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

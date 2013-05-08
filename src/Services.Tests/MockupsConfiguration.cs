@@ -11,9 +11,9 @@ namespace Services.Tests
 {
     public class MockupsConfiguration
     {
-         public static IRoutesRepository MockRoutesRepository()
+         public static IGenericRepository<Route> MockRoutesRepository()
         {
-            var mockRoutesRepository = new Mock<IRoutesRepository>();
+            var mockRoutesRepository = new Mock<IGenericRepository<Route>>();
 
             Customer customer = new Customer();
             List<Route> routes = new List<Route>();

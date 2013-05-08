@@ -19,14 +19,14 @@ namespace Model.Mappings
                 .IsRequired()
                 .HasMaxLength(50);
 
-            this.Property(t => t.DefaultContractType)
-                .IsRequired();
+            //this.Property(t => t.DefaultContractType)
+            //    .IsRequired();
             
             // Table & Column Mappings
             this.ToTable("Customer");
             this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.Name).HasColumnName("Name");
-            this.Property(t => t.DefaultContractType).HasColumnName("DefaultContractType");
+            //this.Property(t => t.DefaultContractType).HasColumnName("DefaultContractType");
 
             //Map(m => m.Requires("IsDeleted").HasValue(true));
         }

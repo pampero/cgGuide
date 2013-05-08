@@ -9,7 +9,8 @@ namespace Model
     public class UnitOfWork : IDisposable, IUnitOfWork
     {
         private AppDbContext context = new AppDbContext();
-        private IRoutesRepository _routesRepository;
+        private IGenericRepository<Route> _routesRepository;
+        private IGenericRepository<Seller> _sellersRepository;
         
         public ILog Logger { get; set; }
 
@@ -18,13 +19,25 @@ namespace Model
             return context.Database.Connection;
         }
 
-        public IRoutesRepository RoutesRepository
+        public IGenericRepository<Route> RoutesRepository
         {
             get {  if (this._routesRepository == null)
                 {
                     this._routesRepository = new RoutesRepository(context);
                 }
                 return _routesRepository; }
+        }
+
+        public IGenericRepository<Seller> SellersRepository
+        {
+            get
+            {
+                if (this._sellersRepository == null)
+                {
+                    this._sellersRepository = new SellersRepository(context);
+                }
+                return _sellersRepository;
+            }
         }
 
         public void Save()

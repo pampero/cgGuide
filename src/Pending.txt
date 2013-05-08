@@ -1,3 +1,4 @@
+-. Como customizo el usuario. Nombre, apellido, sexo, fecha nacimiento, 
 -. Verificar como se puede configurar ImageResizer para que funcione en un Static Content Server.
 -. Implementar seguridad con ServiceStack. O terminar de relevar la seguridad actual con Simple Membership.
 -. Definir los controles para backoffice. Grillas. Esto no me gusta nada -> jQueryDataTableParamModel.
