@@ -240,11 +240,8 @@
     <Compile Include="Areas\POC\ViewModels\ProductView.cs" />
     <Compile Include="Areas\POC\ViewModels\SearchParameters.cs" />
     <Compile Include="Areas\POC\ViewModels\SpellChecking.cs" />
-    <Compile Include="Controllers\ImagesController.cs" />
-    <Compile Include="Helpers\DynamicImageResult.cs" />
-    <Compile Include="Helpers\FileSystemExtensions.cs" />
+    <Compile Include="Helpers\HtmlHelperStaticContentExtensions.cs" />
     <Compile Include="Helpers\HttpResponseExtensions.cs" />
-    <Compile Include="Helpers\ImageFileResult.cs" />
     <Compile Include="Localization\CultureFormatChecker.cs" />
     <Compile Include="Localization\CultureManager.cs" />
     <Compile Include="Localization\CultureRouteConstraint.cs" />

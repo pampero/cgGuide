@@ -1,11 +1,12 @@
--. Multidioma.
--. Pendiente Funq sobre SolrNet.
+-. Verificar como se puede configurar ImageResizer para que funcione en un Static Content Server.
 -. Implementar seguridad con ServiceStack. O terminar de relevar la seguridad actual con Simple Membership.
 -. Definir los controles para backoffice. Grillas. Esto no me gusta nada -> jQueryDataTableParamModel.
 -. Probar seguridad en RouteController con Windows Auth y con Anonymous, con y sin roles.
 -. Hacer demo de Automapper.
 -. Ver Modernizer.
 
+OK -. Multidioma.
+OK -. Pendiente Funq sobre SolrNet.
 OK -. Se decide no usar ORM Lite. Incompatible con los objetos POCO de NHibernate, propiedades NotMapped
 OK -. Agregar al framework algun mecanismo que permita filtrar borrados lógicos por default. Posiblemente mediante alguna interface. Entidad: IEntity, ICreateFields, IDeleteFields
 OK -. Probar que funcione el mecanismo de bundle.

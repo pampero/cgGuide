@@ -1,6 +1,7 @@
 ﻿@using MvcGlobalisationSupport
 @using ServiceStack.Html
 @using ServiceStack.Mvc
+@using WebUI.Helpers
 @using WebUI.Resources
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +15,13 @@
     </head>
     <body>
         <header>
+            <link href="@Url.GetStaticContent("/default.css")" rel="stylesheet" type="text/css" />
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
-                     <nav>
+                    <nav>
                         <ul id="languages">
                             <li>@Html.GlobalisedRouteLink(Global.LangEnglish, "en", ViewContext.RouteData)</li>
                             <li>@Html.GlobalisedRouteLink(Global.LangGerman, "de", ViewContext.RouteData)</li>
