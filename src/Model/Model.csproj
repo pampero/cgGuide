@@ -98,6 +98,7 @@
     <Compile Include="Model\entities\faceting\SubCategory.cs" />
     <Compile Include="Model\entities\Customer.cs" />
     <Compile Include="Model\entities\Seller.cs" />
+    <Compile Include="Model\entities\Dealer.cs" />
     <Compile Include="Model\entities\Route.cs" />
     <Compile Include="DBInitializer\DBContext.cs" />
     <Compile Include="DBInitializer\DBContextlInitializer.cs" />
