@@ -16,7 +16,7 @@ function ProductReservation(id, name, manufacturer, price) {
 function ProductsViewModel() {
     var self = this;
 
-    $.getJSON("http://localhost:1586/POC/Solr/GetAllProducts", { }, function (result) {
+    $.getJSON("http://localhost:1586/Search/GetAllProducts", { }, function (result) {
         
          $.map(result.products, function (product) {
              var newProduct = new ProductReservation(product.id, product.name, product.manufacturer, product.price);

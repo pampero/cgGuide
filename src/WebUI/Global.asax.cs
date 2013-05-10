@@ -2,6 +2,7 @@
 using Framework;
 using Framework.Controllers;
 using Framework.Filters;
+using Framework.Solr.ViewModels;
 using Frontend.Notifications;
 using MvcGlobalisationSupport;
 using ServiceStack.Logging;
@@ -49,6 +50,8 @@ namespace WebUI
             
            Database.SetInitializer<AppDbContext>(null);
            WebSecurity.InitializeDatabaseConnection("AppDbContext", "UserProfile", "UserId", "UserName", autoCreateTables: false);
+
+           Startup.Init<Product>("http://localhost:8983/solr");
         }
 
 

@@ -1,0 +1,18 @@
+<dataConfig>  
+    <dataSource type="JdbcDataSource"
+            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            url="jdbc:sqlserver://localhost\SQLEXPRESS;databaseName=Guide;user=sa;password=pgsql;" 	/> 
+             
+    <document>  
+	  <entity name="TestEntity" query="SELECT Id, Term, Name, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng FROM tag">
+            <field column="Id" name="id" />
+            <field column="Term" name="term" />  
+            <field column="Name" name="name" />  
+			<field column="LatLng" name="latlng" />  
+		<!--	<field column="Latitude" name="latlng_0_coordinate" />  
+			<field column="Longitude" name="latlng_1_coordinate" /> 
+, Latitude, Longitude 			-->
+      </entity>  
+    </document>  
+</dataConfig> 
+

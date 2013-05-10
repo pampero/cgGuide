@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true">
+  <cores defaultCoreName="collection1" adminPath="/admin/cores" zkClientTimeout="${zkClientTimeout:15000}" hostPort="8983" hostContext="solr">
+    <core schema="schema.xml" loadOnStartup="true" instanceDir="cguide\" transient="false" name="cguide" config="solrconfig.xml" dataDir="data"/>
+  </cores>
+</solr>

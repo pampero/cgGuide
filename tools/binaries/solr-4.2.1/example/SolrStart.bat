@@ -1,0 +1,1 @@
+C:\Windows\System32\java -Djava.util.logging.config.file=etc/logging.properties -jar start.jar

@@ -1,0 +1,107 @@
+﻿@using Framework.Helpers
+@using Framework.Solr.ViewModels
+@model SolrViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Search/Views/Shared/_LayoutSolr.cshtml";
+}
+
+<div class="">
+    <h2>Solr Sample</h2>
+    
+    <form method="get" action=@Url.Action("Index")>
+        
+        @Html.TextBox("q", Model.Search.FreeSearch)
+        
+        <input type="submit" value="Search" />
+        
+        @if (!string.IsNullOrEmpty(Model.DidYouMean)) 
+        {
+            <span>Did you mean <strong><em><a href=@Url.ForQuery(Model.DidYouMean)>@Model.DidYouMean</a></em></strong></span>
+        }
+        @if (Model.QueryError) 
+        { 
+            <span class="error">Invalid query</span>
+        }
+    
+    </form>
+
+    <div class="leftColumn">
+        @foreach (var f in Model.Search.Facets) {
+            <ul>
+                <li>
+                @(Html.SolrFieldPropName<Product>(f.Key))
+                    <ul>
+                        <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
+                    </ul>
+                </li>
+            </ul>
+        } 
+    
+    
+        <ul>            
+            @foreach (var f in Model.Facets) 
+            { 
+                <li>
+                    @(Html.SolrFieldPropName<Product>(f.Key))
+                    <ul>
+                        @foreach (var fv in f.Value) { 
+                            <li><a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                        }
+                    </ul>
+                </li>
+            } 
+        </ul>
+    </div>
+    
+    <div class="rightColumn">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter name" data-bind="value: id" />
+                </td>
+                 <td>
+                    <input type="text" placeholder="Enter name" data-bind="value: name" />
+                </td>
+                <td data-bind="text: formattedPrice"></td>
+                <td><a href="#" data-bind="click: $root.removeProduct">Remove</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <button class="btn btn-primary btn-large" data-bind="click: addProduct">Add Product</button>
+        
+        
+        <button class="btn btn-primary btn-large" data-bind="click: changeLanguage">Change Language</button>
+        
+
+        <h3 data-bind="visible: totalPrice() > 0">Total price: $<span data-bind="text: totalPrice().toFixed(2)"></span>
+        </h3>
+        </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+
+    
+        
+        
+    });
+
+</script>
+
+<script src="~/Areas/BackOffice/Views/../../../Scripts/ViewModels/SolrViewModel.js"></script>
+        
+
+     
