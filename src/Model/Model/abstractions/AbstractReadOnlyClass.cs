@@ -3,13 +3,15 @@ using System.Web;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Model.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
     public abstract class AbstractReadOnlyClass: ICreateFields
     {
         private bool _isDeleted;
-
+       
+        [Key]
         public int ID
         {
             get; set;

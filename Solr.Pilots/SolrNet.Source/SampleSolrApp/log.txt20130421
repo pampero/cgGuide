@@ -1,0 +1,1 @@
+2013-04-21 01:21:48,009 [12] DEBUG SampleSolrApp.LoggingConnection [(null)] - GETting 'q=*:*, start=0, rows=5, facet=true, facet.field=cat, f.cat.facet.mincount=1, facet.field=manu_exact, f.manu_exact.facet.mincount=1, spellcheck=true' from '/select'

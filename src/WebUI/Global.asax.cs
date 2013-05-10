@@ -25,6 +25,8 @@ using WebUI.Views.Config;
 using log4net.Config;
 using Microsoft.Practices.ServiceLocation;
 using SolrNet.Impl;
+using WebMatrix.WebData;
+using System.Data.Entity;
 
 namespace WebUI
 {
@@ -44,7 +46,9 @@ namespace WebUI
             AuthConfig.RegisterAuth();
 
             LogManager.LogFactory = new Log4NetFactory(HttpContext.Current.Server.MapPath(@"\_config\log4net\log4net.xml"));
-
+            
+           Database.SetInitializer<AppDbContext>(null);
+           WebSecurity.InitializeDatabaseConnection("AppDbContext", "UserProfile", "UserId", "UserName", autoCreateTables: false);
         }
 
 

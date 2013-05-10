@@ -8,10 +8,10 @@ namespace Model
 {
     public class Picture : AbstractUpdatableClass
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string Label { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
-        public ImageSettings Size { get; set; }
+        public PictureSettings PictureSettings { get; set; }
     }
 }

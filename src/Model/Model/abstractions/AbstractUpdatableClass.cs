@@ -3,6 +3,7 @@ using System.Web;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Model.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
@@ -12,6 +13,7 @@ namespace Model
         private List<BusinessRule> _businessRules = new List<BusinessRule>();
         private List<string> _validationErrors = new List<string>();
 
+        [Key]
         public int ID
         {
             get; set;

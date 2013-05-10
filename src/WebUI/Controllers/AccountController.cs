@@ -9,12 +9,12 @@ using DotNetOpenAuth.AspNet;
 using Framework.Filters;
 using Framework.Models;
 using Microsoft.Web.WebPages.OAuth;
+using Model;
 using WebMatrix.WebData;
 
 namespace Framework.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -28,7 +28,6 @@ namespace Framework.Controllers
 
         //
         // POST: /Account/Login
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -37,9 +36,9 @@ namespace Framework.Controllers
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 // INFO: Ejemplo de obtención de roles del usuario
-                // Con el RoleProvider se pueden crear nuevos roles.
-                //var simpleRoleProvider = (SimpleRoleProvider) Roles.Provider;
-                //string[] roles = simpleRoleProvider.GetRolesForUser(model.UserName);
+                // Por ejemplo de agregado de roles remitirse a la clase Configuration.
+                var simpleRoleProvider = (SimpleRoleProvider) Roles.Provider;
+                string[] roles = simpleRoleProvider.GetRolesForUser(model.UserName);
 
                 return RedirectToLocal(returnUrl);
             }
@@ -80,13 +79,13 @@ namespace Framework.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
                 try
                 {
                     // INFO: Se puede crear un usuario con los campos deseados (edad, sexo, dni, etc)
                     // WebSecurity.CreateUserAndAccount(username, password, new {FirstName = fname, LastName = lname, Email = email, StartDate = DateTime.Now, Bio = bio});
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { FirstName = "Carlos", LastName = "Daniel", Email = "carlos.vazquez@outlook.com" }); 
                     WebSecurity.Login(model.UserName, model.Password);
+
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
@@ -269,7 +268,7 @@ namespace Framework.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (var db = new AppDbContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

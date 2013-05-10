@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docs", "_Docs", "{24A07A0A-506B-4DA6-A165-EAE4F1E39030}"
 	ProjectSection(SolutionItems) = preProject
 		DevGuide.txt = DevGuide.txt
+		Links.txt = Links.txt
 		Pending.txt = Pending.txt
 		Start.txt = Start.txt
 	EndProjectSection

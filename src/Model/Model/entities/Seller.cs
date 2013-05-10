@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Model.Enums;
 
@@ -7,7 +8,8 @@ namespace Model
 {
     public class Seller: AbstractUpdatableClass
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
+
         public string Name { get; set; }
         public string Description { get; set; }
         public string Comments { get; set; }
@@ -26,24 +28,24 @@ namespace Model
 
         public List<Attribute> Attributes { get; set; }
 
-        [ForeignKey("HeadLocation")]
+        //[ForeignKey("HeadLocation")]
         public int HeadLocationId { get; set; }
         public Location HeadLocation { get; set; }
         
         public List<Location> BranchLocations { get; set; }
         public List<PaymentMethod> PaymentMethods { get; set; }
 
-        [ForeignKey("DefaultPicture")]
-        public Picture DefaultPictureId { get; set; }
+        //[ForeignKey("DefaultPicture")]
+        public int DefaultPictureId { get; set; }
         public Picture DefaultPicture { get; set; }
 
         public List<Picture> Pictures { get; set; }
 
-        [ForeignKey("Category")]
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        //[ForeignKey("Category")]
+        //public int CategoryId { get; set; }
+        //public Category Category { get; set; }
 
-        [ForeignKey("SubCategory")]
+        //[ForeignKey("SubCategory")]
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
     }

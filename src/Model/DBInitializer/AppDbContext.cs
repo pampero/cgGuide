@@ -1,17 +1,12 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Model.Mappings;
 
 namespace Model
 {
     public class AppDbContext: DbContext
     {
-        static AppDbContext()
-        {
-          //  Database.SetInitializer<AppDbContext>(new DBContextInitializer());
-          //  Deprecado. En vez de utilizar este comando para crear la base se utiliza el comando update-database desde el Package Manager Console, seleccionado el proyecto Model.
-        }
-
         public AppDbContext()
             : base("Name=AppDbContext")
         {
@@ -19,9 +14,12 @@ namespace Model
 
         public DbSet<Route> Routes { get; set; }
         public DbSet<Seller> Sellers { get; set; }
+        public DbSet<UserProfile> UserProfiles{ get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             modelBuilder.Configurations.Add(new CustomerMap());
             modelBuilder.Configurations.Add(new RouteMap());
         }

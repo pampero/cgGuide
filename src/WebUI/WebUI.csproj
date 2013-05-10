@@ -272,7 +272,6 @@
     <Content Include="Content\js\ss-validation.js" />
     <Content Include="css\solr.css" />
     <Compile Include="Filters\HandleAndLogErrorAttribute.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Filters\RoleAuthorizeAttribute.cs" />
     <Compile Include="Filters\UserTrackerLogAttribute.cs" />
     <Compile Include="Global.asax.cs">

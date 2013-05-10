@@ -8,8 +8,9 @@ namespace Model
 {
     public class State : AbstractReadOnlyClass
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string Name { get; set; }
+
         public int CountryId { get; set; }
         public Country Country { get; set; }
     }

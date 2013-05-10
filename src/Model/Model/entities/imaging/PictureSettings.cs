@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class ImageSettings
+    public class PictureSettings : AbstractReadOnlyClass
     {
         public int Width { get; set; }
         public int Heigth { get; set; }
         public string WatermarkPath { get; set; }
+        public List<Picture> Pictures { get; set; }
     }
 }

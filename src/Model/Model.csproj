@@ -62,11 +62,20 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessRules\BusinessRule.cs" />
@@ -79,29 +88,25 @@
     <Compile Include="BusinessRules\ValidateRequired.cs" />
     <Compile Include="BusinessRules\ValidationDataType.cs" />
     <Compile Include="BusinessRules\ValidationOperator.cs" />
+    <Compile Include="DBInitializer\AppDbContext.cs" />
     <Compile Include="Mappings\BaseClassMap.cs" />
     <Compile Include="Mappings\CustomerMap.cs" />
     <Compile Include="Mappings\RouteMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\abstractions\AbstractReadOnlyClass.cs" />
     <Compile Include="Model\abstractions\AbstractUpdatableClass.cs" />
-    <Compile Include="Model\entities\Account.cs" />
     <Compile Include="Model\entities\Attribute.cs" />
     <Compile Include="Model\entities\faceting\Category.cs" />
-    <Compile Include="Model\entities\imaging\ImageSize.cs" />
+    <Compile Include="Model\entities\imaging\PictureSettings.cs" />
     <Compile Include="Model\entities\location\City.cs" />
     <Compile Include="Model\entities\location\Country.cs" />
     <Compile Include="Model\entities\location\Location.cs" />
-    <Compile Include="Model\entities\location\Region.cs" />
     <Compile Include="Model\entities\location\State.cs" />
     <Compile Include="Model\entities\imaging\Picture.cs" />
     <Compile Include="Model\entities\faceting\SubCategory.cs" />
     <Compile Include="Model\entities\Customer.cs" />
     <Compile Include="Model\entities\Seller.cs" />
-    <Compile Include="Model\entities\Dealer.cs" />
     <Compile Include="Model\entities\Route.cs" />
-    <Compile Include="DBInitializer\DBContext.cs" />
-    <Compile Include="DBInitializer\DBContextlInitializer.cs" />
     <Compile Include="Model\enums\RatingRange.cs" />
     <Compile Include="Model\enums\PriceRange.cs" />
     <Compile Include="Model\enums\PaymentMethod.cs" />
@@ -110,6 +115,8 @@
     <Compile Include="Model\interfaces\IDeleteFields.cs" />
     <Compile Include="Model\interfaces\IEntity.cs" />
     <Compile Include="Model\interfaces\ILastUpdateFields.cs" />
+    <Compile Include="Model\security\Account.cs" />
+    <Compile Include="Model\security\UserProfile.cs" />
     <Compile Include="Repositories\impl\GenericReadOnlyRepository.cs" />
     <Compile Include="Repositories\impl\GenericUpdatableRepository.cs" />
     <Compile Include="Repositories\impl\RoutesRepository.cs" />
