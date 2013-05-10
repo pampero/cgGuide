@@ -10,6 +10,8 @@ Server: .
 Windows Authentication: Disabled
 Anonymous Authentication: Enabled
 
+-. IMPORTANTE: Seleccionar WebUI como Start Up Project.
+
 -. En VS2012 abrir View -> Other Windows -> Manage Nuget Package, seleccionar en el combo el proyecto Model.
 
 -. Ejecutar en la línea de comando update-database -force. Esto actualizará el modelo con la base de datos.
