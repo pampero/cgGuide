@@ -36,7 +36,7 @@ namespace Model
         public List<PaymentMethod> PaymentMethods { get; set; }
 
         //[ForeignKey("DefaultPicture")]
-        public int DefaultPictureId { get; set; }
+        public int? DefaultPictureId { get; set; }
         public Picture DefaultPicture { get; set; }
 
         public List<Picture> Pictures { get; set; }
@@ -46,7 +46,7 @@ namespace Model
         //public Category Category { get; set; }
 
         //[ForeignKey("SubCategory")]
-        public int SubCategoryId { get; set; }
+        public int? SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
     }
 

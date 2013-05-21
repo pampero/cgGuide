@@ -766,7 +766,7 @@
 	
    <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler"> 
       <lst name="defaults"> 
-            <str name="config">C:\Desarrollo\Solr.Pilots\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml</str> 
+            <str name="config">C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml</str> 
       </lst> 
   </requestHandler>
   

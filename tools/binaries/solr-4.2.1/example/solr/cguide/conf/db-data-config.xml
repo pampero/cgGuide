@@ -1,14 +1,28 @@
 <dataConfig>  
     <dataSource type="JdbcDataSource"
             driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-            url="jdbc:sqlserver://localhost\SQLEXPRESS;databaseName=Guide;user=sa;password=pgsql;" 	/> 
+            url="jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;" 	/> 
              
     <document>  
-	  <entity name="TestEntity" query="SELECT Id, Term, Name, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng FROM tag">
+    
+    
+
+	  <entity name="TestEntity" query="SELECT S.Id, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
+								FROM Seller S 
+								INNER JOIN Location L on S.ID = L.ID AND L.Deleted is null
+								INNER JOIN City C on C.ID = L.CityId
+								WHERE S.Deleted is null">
+            <field column="Id" name="id" />
+            <field column="Seller" name="seller" />  
+            <field column="City" name="city" />  
+	    <field column="LatLng" name="latlng" />  
+
+			
+	<!--  <entity name="TestEntity" query="SELECT Id, Term, Name, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng FROM tag">
             <field column="Id" name="id" />
             <field column="Term" name="term" />  
             <field column="Name" name="name" />  
-			<field column="LatLng" name="latlng" />  
+			<field column="LatLng" name="latlng" />  -->
 		<!--	<field column="Latitude" name="latlng_0_coordinate" />  
 			<field column="Longitude" name="latlng_1_coordinate" /> 
 , Latitude, Longitude 			-->

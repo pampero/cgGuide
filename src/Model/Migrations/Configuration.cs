@@ -30,6 +30,41 @@ namespace Model.Migrations
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name2", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 13 });
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name3", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 14 });
 
+            var country = new Country { Created = DateTime.Now, Name = "USA", CreatedBy = "CVazquez" };
+
+            var state = new State { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", Country = country};
+
+            var city1 = new City { Created = DateTime.Now, Name = "Buffalo", CreatedBy = "CVazquez", State = state };
+
+            var city2 = new City { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", State = state };
+
+            var location1 = new Location {Description = "Main Address", Latitude = 45.1761F, Longitude = -93.8734F, City = city1, Created = DateTime.Now, CreatedBy = "cvazquez"};
+
+            var location2 = new Location { Description = "Main Address", Latitude = 40.7143F, Longitude = -74.006F, City = city2, Created = DateTime.Now, CreatedBy = "cvazquez" };
+          
+            var seller1 = new Seller
+                             {
+                                 Comments = "Comment 1",
+                                 Name = "Seller 1",
+                                 Created = DateTime.Now,
+                                 CreatedBy = "CVazquez",
+                                 HeadLocation = location1,
+                                 CompleteAddress = "435 West 5th Street Buffalo NY - 10101"
+                             };
+
+            var seller2 = new Seller
+            {
+                Comments = "Comment 2",
+                Name = "Seller 2",
+                Created = DateTime.Now,
+                CreatedBy = "CVazquez",
+                HeadLocation = location2,
+                CompleteAddress = "19 West 31st Street New York NY - 10001"
+            };
+
+            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);
+            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller2);
+
             appDbContext.SaveChanges();
         }
 
