@@ -7,14 +7,17 @@
     
     
 
-	  <entity name="TestEntity" query="SELECT S.Id, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
-								FROM Seller S 
-								INNER JOIN Location L on S.ID = L.ID AND L.Deleted is null
-								INNER JOIN City C on C.ID = L.CityId
-								WHERE S.Deleted is null">
+	  <entity name="TestEntity" query="SELECT DISTINCT S.Id, S.Name as Seller, C.Name as City, Cat.Name as Category, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
+FROM Seller S 
+INNER JOIN SubCategory SC on SC.id =S.SubCategoryId
+INNER JOIN Category Cat on Cat.ID = SC.CategoryId
+INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
+INNER JOIN City C on C.ID = L.CityId
+WHERE S.Deleted is null">
             <field column="Id" name="id" />
             <field column="Seller" name="seller" />  
             <field column="City" name="city" />  
+            <field column="Category" name="category" /> 
 	    <field column="LatLng" name="latlng" />  
 
 			

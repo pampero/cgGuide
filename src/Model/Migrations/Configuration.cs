@@ -30,6 +30,43 @@ namespace Model.Migrations
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name2", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 13 });
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name3", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 14 });
 
+            var category1 = new Category {Name = "Categoría 1", Created = DateTime.Now, CreatedBy = "cvazquez"};
+            var category2 = new Category { Name = "Categoría 2", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category3 = new Category { Name = "Categoría 3", Created = DateTime.Now, CreatedBy = "cvazquez" };
+
+            var subcategory1 = new SubCategory
+                                   {
+                                       Category = category1,
+                                       Created = DateTime.Now,
+                                       CreatedBy = "cvazquez",
+                                       Name = "Sub Categoría 1"
+                                   };
+
+            var subcategory2 = new SubCategory
+            {
+                Category = category1,
+                Created = DateTime.Now,
+                CreatedBy = "cvazquez",
+                Name = "Sub Categoría 2"
+            };
+
+            var subcategory3 = new SubCategory
+            {
+                Category = category2,
+                Created = DateTime.Now,
+                CreatedBy = "cvazquez",
+                Name = "Sub Categoría 3"
+            };
+
+            var subcategory4 = new SubCategory
+            {
+                Category = category3,
+                Created = DateTime.Now,
+                CreatedBy = "cvazquez",
+                Name = "Sub Categoría 4"
+            };
+
+            
             var country = new Country { Created = DateTime.Now, Name = "USA", CreatedBy = "CVazquez" };
 
             var state = new State { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", Country = country};
@@ -49,7 +86,8 @@ namespace Model.Migrations
                                  Created = DateTime.Now,
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
-                                 CompleteAddress = "435 West 5th Street Buffalo NY - 10101"
+                                 CompleteAddress = "435 West 5th Street Buffalo NY - 10101", 
+                                 SubCategory = subcategory1
                              };
 
             var seller2 = new Seller
@@ -59,11 +97,36 @@ namespace Model.Migrations
                 Created = DateTime.Now,
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
-                CompleteAddress = "19 West 31st Street New York NY - 10001"
+                CompleteAddress = "19 West 31st Street New York NY - 10001",
+                SubCategory = subcategory3
+            };
+
+            var seller3 = new Seller
+            {
+                Comments = "Comment 3",
+                Name = "Seller 3",
+                Created = DateTime.Now,
+                CreatedBy = "CVazquez",
+                HeadLocation = location2,
+                CompleteAddress = "20 West 31st Street New York NY - 10001",
+                SubCategory = subcategory2
+            };
+
+            var seller4 = new Seller
+            {
+                Comments = "Comment 4",
+                Name = "Seller 4",
+                Created = DateTime.Now,
+                CreatedBy = "CVazquez",
+                HeadLocation = location2,
+                CompleteAddress = "21 West 31st Street New York NY - 10001",
+                SubCategory = subcategory4
             };
 
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller2);
+            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller3);
+            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller4);
 
             appDbContext.SaveChanges();
         }
