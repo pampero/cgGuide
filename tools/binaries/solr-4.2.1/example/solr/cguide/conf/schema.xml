@@ -68,17 +68,21 @@
 		<field name="seller" type="string" indexed="true" stored="true"/>
 		<field name="city" type="string" indexed="true" stored="true"/>
     <field name="subcategories" type="string" indexed="true" stored="true" multiValued="true"/>
-		<field name="latlng" type="location" indexed="true" stored="true" />
+		<field name="categories" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="attributes" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="latlng" type="location" indexed="true" stored="true" />
 		<field name="_version_" type="long" indexed="true" stored="true"/> 
 		<dynamicField name="*_coordinate" type="double" indexed="true" stored="false" multiValued="false" />
 		<field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
 	</fields>
 
-
 	<uniqueKey>id</uniqueKey>
+
 	<copyField source="seller" dest="text"/>
 	<copyField source="city" dest="text"/>
   <copyField source="subcategories" dest="text"/>
+  <copyField source="categories" dest="text"/>
+  <copyField source="attributes" dest="text"/>
 
   <types>
     <!-- field type definitions. The "name" attribute is

@@ -30,6 +30,12 @@ namespace Model.Migrations
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name2", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 13 });
             appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name3", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 14 });
 
+            var attributeAirConditioner = new Model.Attribute { Name = "Aire Acondicionado", Created = DateTime.Now, CreatedBy = "cvazquez"};
+            var attributeParking = new Model.Attribute { Name = "Estacionamiento", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var attributeCashOnly = new Model.Attribute { Name = "No Acepta Tarjetas", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var attributeTakesReservation = new Model.Attribute { Name = "Toma Reservas", Created = DateTime.Now, CreatedBy = "cvazquez" };
+
+           
             var category1 = new Category {Name = "Categoría 1", Created = DateTime.Now, CreatedBy = "cvazquez"};
             var category2 = new Category { Name = "Categoría 2", Created = DateTime.Now, CreatedBy = "cvazquez" };
             var category3 = new Category { Name = "Categoría 3", Created = DateTime.Now, CreatedBy = "cvazquez" };
@@ -39,7 +45,7 @@ namespace Model.Migrations
                                        Category = category1,
                                        Created = DateTime.Now,
                                        CreatedBy = "cvazquez",
-                                       Name = "Sub Categoría 1"
+                                       Name = "Sub-Categoría 1"
                                    };
 
             var subcategory2 = new SubCategory
@@ -47,7 +53,7 @@ namespace Model.Migrations
                 Category = category1,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub Categoría 2"
+                Name = "Sub-Categoría 2"
             };
 
             var subcategory3 = new SubCategory
@@ -55,7 +61,7 @@ namespace Model.Migrations
                 Category = category2,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub Categoría 3"
+                Name = "Sub-Categoría 3"
             };
 
             var subcategory4 = new SubCategory
@@ -63,7 +69,7 @@ namespace Model.Migrations
                 Category = category3,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub Categoría 4"
+                Name = "Sub-Categoría 4"
             };
 
             
@@ -87,7 +93,8 @@ namespace Model.Migrations
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
                                  CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
-                                 SubCategories = new List<SubCategory> { subcategory1, subcategory2 }
+                                 SubCategories = new List<SubCategory> { subcategory1, subcategory2, subcategory3 },
+                                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation }
                              };
 
             var seller2 = new Seller
@@ -98,7 +105,8 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "19 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory3 }
+                SubCategories = new List<SubCategory> { subcategory3 },
+                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly }
             };
 
             var seller3 = new Seller
@@ -109,7 +117,8 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "20 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory2 }
+                SubCategories = new List<SubCategory> { subcategory2, subcategory1 },
+                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation }
             };
 
             var seller4 = new Seller
@@ -120,7 +129,8 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "21 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory4 }
+                SubCategories = new List<SubCategory> { subcategory4 },
+                Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly }
             };
 
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);

@@ -1,381 +1,416 @@
-may 22, 2013 12:09:25 AM org.apache.solr.servlet.SolrDispatchFilter init
+may 22, 2013 1:10:05 AM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init()
-may 22, 2013 12:09:25 AM org.apache.solr.core.SolrResourceLoader locateSolrHome
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader locateSolrHome
 INFO: JNDI not configured for solr (NoInitialContextEx)
-may 22, 2013 12:09:25 AM org.apache.solr.core.SolrResourceLoader locateSolrHome
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader locateSolrHome
 INFO: solr home defaulted to 'solr/' (could not find system property or JNDI)
-may 22, 2013 12:09:25 AM org.apache.solr.core.CoreContainer$Initializer initialize
+may 22, 2013 1:10:05 AM org.apache.solr.core.CoreContainer$Initializer initialize
 INFO: looking for solr.xml: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\solr.xml
-may 22, 2013 12:09:25 AM org.apache.solr.core.CoreContainer <init>
-INFO: New CoreContainer 23338819
-may 22, 2013 12:09:25 AM org.apache.solr.core.CoreContainer load
+may 22, 2013 1:10:05 AM org.apache.solr.core.CoreContainer <init>
+INFO: New CoreContainer 29453104
+may 22, 2013 1:10:05 AM org.apache.solr.core.CoreContainer load
 INFO: Loading CoreContainer using Solr Home: 'solr/'
-may 22, 2013 12:09:25 AM org.apache.solr.core.SolrResourceLoader <init>
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader <init>
 INFO: new SolrResourceLoader for directory: 'solr/'
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting socketTimeout to: 0
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting urlScheme to: http://
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting connTimeout to: 0
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxConnectionsPerHost to: 20
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting corePoolSize to: 0
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maximumPoolSize to: 2147483647
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxThreadIdleTime to: 5
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting sizeOfQueue to: -1
-may 22, 2013 12:09:25 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 22, 2013 1:10:05 AM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting fairnessPolicy to: false
-may 22, 2013 12:09:25 AM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
+may 22, 2013 1:10:05 AM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
 INFO: Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
-may 22, 2013 12:09:26 AM org.apache.solr.core.CoreContainer load
+may 22, 2013 1:10:05 AM org.apache.solr.core.CoreContainer load
 INFO: Registering Log Listener
-may 22, 2013 12:09:26 AM org.apache.solr.core.CoreContainer create
+may 22, 2013 1:10:05 AM org.apache.solr.core.CoreContainer create
 INFO: Creating SolrCore 'cguide' using instanceDir: solr\cguide
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader <init>
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader <init>
 INFO: new SolrResourceLoader for directory: 'solr\cguide\'
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/solr-dataimporthandler-4.2.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/solr-dataimporthandler-extras-4.2.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:05 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/sqljdbc4.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrConfig initLibs
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrConfig initLibs
 INFO: Adding specified lib dirs to ClassLoader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/fontbox-1.7.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/icu4j-49.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/jdom-1.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/jempbox-1.7.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/pdfbox-1.7.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-3.8.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-ooxml-3.8.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-ooxml-schemas-3.8.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-scratchpad-3.8.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/rome-0.9.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tika-core-1.3.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tika-parsers-1.3.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xz-1.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/attributes-binder-1.0.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/carrot2-mini-3.6.2.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/hppc-0.4.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/simple-xml-2.6.4.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/velocity-1.7.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrConfig <init>
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrConfig <init>
 INFO: Using Lucene MatchVersion: LUCENE_42
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrConfig <init>
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrConfig <init>
 INFO: Loaded SolrConfig: solrconfig.xml
-may 22, 2013 12:09:26 AM org.apache.solr.schema.IndexSchema readSchema
+may 22, 2013 1:10:06 AM org.apache.solr.schema.IndexSchema readSchema
 INFO: Reading Solr Schema
-may 22, 2013 12:09:26 AM org.apache.solr.schema.IndexSchema readSchema
+may 22, 2013 1:10:06 AM org.apache.solr.schema.IndexSchema readSchema
 INFO: Schema name=example
-may 22, 2013 12:09:26 AM org.apache.solr.schema.IndexSchema readSchema
+may 22, 2013 1:10:06 AM org.apache.solr.schema.IndexSchema readSchema
 INFO: unique key field: id
-may 22, 2013 12:09:26 AM org.apache.solr.schema.FileExchangeRateProvider reload
+may 22, 2013 1:10:06 AM org.apache.solr.schema.FileExchangeRateProvider reload
 INFO: Reloading exchange rates from file currency.xml
-may 22, 2013 12:09:26 AM org.apache.solr.schema.FileExchangeRateProvider reload
+may 22, 2013 1:10:06 AM org.apache.solr.schema.FileExchangeRateProvider reload
 INFO: Reloading exchange rates from file currency.xml
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrCore initDirectoryFactory
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-may 22, 2013 12:09:26 AM org.apache.solr.core.SolrCore <init>
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore <init>
 INFO: [cguide] Opening new SolrCore at solr\cguide\, dataDir=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\
-may 22, 2013 12:09:26 AM org.apache.solr.core.JmxMonitoredMap <init>
-INFO: JMX monitoring is enabled. Adding Solr mbeans to JMX Server: com.sun.jmx.mbeanserver.JmxMBeanServer@1e97a73
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initListeners
+may 22, 2013 1:10:06 AM org.apache.solr.core.JmxMonitoredMap <init>
+INFO: JMX monitoring is enabled. Adding Solr mbeans to JMX Server: com.sun.jmx.mbeanserver.JmxMBeanServer@1bf724e
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initListeners
 INFO: [cguide] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initListeners
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initListeners
 INFO: [cguide] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initDirectoryFactory
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-may 22, 2013 12:09:27 AM org.apache.solr.core.CachingDirectoryFactory get
+may 22, 2013 1:10:06 AM org.apache.solr.core.CachingDirectoryFactory get
 INFO: return new directory for C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data forceNew: false
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore getNewIndexDir
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore getNewIndexDir
 INFO: New index directory detected: old=null new=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index/
-may 22, 2013 12:09:27 AM org.apache.solr.core.CachingDirectoryFactory get
+may 22, 2013 1:10:06 AM org.apache.solr.core.CachingDirectoryFactory get
 INFO: return new directory for C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index forceNew: false
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initWriters
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initWriters
 INFO: created json: solr.JSONResponseWriter
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initWriters
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initWriters
 INFO: adding lazy queryResponseWriter: solr.VelocityResponseWriter
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initWriters
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initWriters
 INFO: created velocity: solr.VelocityResponseWriter
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore initWriters
+may 22, 2013 1:10:06 AM org.apache.solr.core.SolrCore initWriters
 INFO: created xslt: solr.XSLTResponseWriter
-may 22, 2013 12:09:27 AM org.apache.solr.response.XSLTResponseWriter init
+may 22, 2013 1:10:06 AM org.apache.solr.response.XSLTResponseWriter init
 INFO: xsltCacheLifetimeSeconds=5
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /dataimport: org.apache.solr.handler.dataimport.DataImportHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /select: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /query: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /get: solr.RealTimeGetHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /browse: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update: solr.UpdateRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/json: solr.JsonUpdateRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/csv: solr.CSVRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/: solr.admin.AdminHandlers
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/ping: solr.PingRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /debug/dump: solr.DumpRequestHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /replication: solr.ReplicationHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /spell: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /tvrh: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /terms: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 22, 2013 1:10:06 AM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /elevate: solr.SearchHandler
-may 22, 2013 12:09:27 AM org.apache.solr.handler.loader.XMLLoader init
+may 22, 2013 1:10:07 AM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 22, 2013 12:09:27 AM org.apache.solr.handler.loader.XMLLoader init
+may 22, 2013 1:10:07 AM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 22, 2013 12:09:27 AM org.apache.solr.handler.loader.XMLLoader init
+may 22, 2013 1:10:07 AM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 22, 2013 12:09:27 AM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@66a7f5 main
-may 22, 2013 12:09:27 AM org.apache.solr.update.CommitTracker <init>
+may 22, 2013 1:10:07 AM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@f45a93 main
+may 22, 2013 1:10:07 AM org.apache.solr.update.CommitTracker <init>
 INFO: Hard AutoCommit: if uncommited for 15000ms; 
-may 22, 2013 12:09:27 AM org.apache.solr.update.CommitTracker <init>
+may 22, 2013 1:10:07 AM org.apache.solr.update.CommitTracker <init>
 INFO: Soft AutoCommit: disabled
-may 22, 2013 12:09:27 AM org.apache.solr.handler.component.SpellCheckComponent inform
+may 22, 2013 1:10:07 AM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: Initializing spell checkers
-may 22, 2013 12:09:27 AM org.apache.solr.spelling.DirectSolrSpellChecker init
+may 22, 2013 1:10:07 AM org.apache.solr.spelling.DirectSolrSpellChecker init
 INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-may 22, 2013 12:09:27 AM org.apache.solr.handler.component.SpellCheckComponent inform
+may 22, 2013 1:10:07 AM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: No queryConverter defined, using default converter
-may 22, 2013 12:09:27 AM org.apache.solr.handler.component.QueryElevationComponent inform
+may 22, 2013 1:10:07 AM org.apache.solr.handler.component.QueryElevationComponent inform
 INFO: Loading QueryElevation from: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\elevate.xml
-may 22, 2013 12:09:27 AM org.apache.solr.handler.ReplicationHandler inform
+may 22, 2013 1:10:07 AM org.apache.solr.handler.ReplicationHandler inform
 INFO: Commits will be reserved for  10000
-may 22, 2013 12:09:27 AM org.apache.solr.core.QuerySenderListener newSearcher
-INFO: QuerySenderListener sending requests to Searcher@66a7f5 main{StandardDirectoryReader(segments_1l:193 _1e(4.2.1):C4)}
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=50 
-may 22, 2013 12:09:27 AM org.apache.solr.core.QuerySenderListener newSearcher
+may 22, 2013 1:10:07 AM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener sending requests to Searcher@f45a93 main{StandardDirectoryReader(segments_1q:215 _1k(4.2.1):C4)}
+may 22, 2013 1:10:07 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=69 
+may 22, 2013 1:10:07 AM org.apache.solr.core.QuerySenderListener newSearcher
 INFO: QuerySenderListener done.
-may 22, 2013 12:09:27 AM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
+may 22, 2013 1:10:07 AM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
 INFO: Loading spell index for spellchecker: default
-may 22, 2013 12:09:27 AM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
+may 22, 2013 1:10:07 AM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
 INFO: Loading spell index for spellchecker: wordbreak
-may 22, 2013 12:09:27 AM org.apache.solr.core.SolrCore registerSearcher
-INFO: [cguide] Registered new searcher Searcher@66a7f5 main{StandardDirectoryReader(segments_1l:193 _1e(4.2.1):C4)}
-may 22, 2013 12:09:27 AM org.apache.solr.core.CoreContainer registerCore
+may 22, 2013 1:10:07 AM org.apache.solr.core.SolrCore registerSearcher
+INFO: [cguide] Registered new searcher Searcher@f45a93 main{StandardDirectoryReader(segments_1q:215 _1k(4.2.1):C4)}
+may 22, 2013 1:10:07 AM org.apache.solr.core.CoreContainer registerCore
 INFO: registering core: cguide
-may 22, 2013 12:09:27 AM org.apache.solr.servlet.SolrDispatchFilter init
+may 22, 2013 1:10:07 AM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: user.dir=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example
-may 22, 2013 12:09:27 AM org.apache.solr.servlet.SolrDispatchFilter init
+may 22, 2013 1:10:07 AM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init() done
-may 22, 2013 12:09:28 AM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
-INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369192168049&wt=json} status=0 QTime=1 
-may 22, 2013 12:09:28 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/system params={_=1369192168074&wt=json} status=0 QTime=2 
-may 22, 2013 12:09:29 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369192169980&wt=json} status=0 QTime=3 
-may 22, 2013 12:09:30 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369192170028&wt=json} status=0 QTime=1 
-may 22, 2013 12:09:30 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369192170031&wt=json} status=0 QTime=1 
-may 22, 2013 12:09:30 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369192170029} status=0 QTime=3 
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
+may 22, 2013 1:10:16 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369195816596&wt=json} status=0 QTime=2 
+may 22, 2013 1:10:16 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369195816735&wt=json} status=0 QTime=1 
+may 22, 2013 1:10:16 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369195816741&wt=json} status=0 QTime=5 
+may 22, 2013 1:10:16 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369195816737} status=0 QTime=3 
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
 INFO: Loading DIH Configuration: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
 INFO: Data Configuration loaded successfully
-may 22, 2013 12:09:31 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&clean=false&indent=true&commit=false&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=23 
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.DataImporter doFullImport
+may 22, 2013 1:10:20 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=21 
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.DataImporter doFullImport
 INFO: Starting Full Import
-may 22, 2013 12:09:31 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369192171563&wt=json} status=0 QTime=0 
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+may 22, 2013 1:10:20 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369195820535&wt=json} status=0 QTime=0 
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
 INFO: Read dataimport.properties
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Creating a connection for entity TestEntity with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 153
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Creating a connection for entity subcategories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 9
-may 22, 2013 12:09:31 AM org.apache.solr.core.SolrDeletionPolicy onInit
+may 22, 2013 1:10:20 AM org.apache.solr.core.SolrDeletionPolicy onInit
 INFO: SolrDeletionPolicy.onInit: commits:num=1
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@d2b7d8; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1l,generation=57,filenames=[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1l, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
-may 22, 2013 12:09:31 AM org.apache.solr.core.SolrDeletionPolicy updateCommits
-INFO: newest commit = 57[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1l, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.DocBuilder finish
-INFO: Import completed successfully
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
-INFO: Read dataimport.properties
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
-INFO: Wrote last indexed time to dataimport.properties
-may 22, 2013 12:09:31 AM org.apache.solr.handler.dataimport.DocBuilder execute
-INFO: Time taken = 0:0:0.343
-may 22, 2013 12:09:31 AM org.apache.solr.update.processor.LogUpdateProcessor finish
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&clean=false&indent=true&commit=false&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=23 {add=[1 (1435702050788737024), 2 (1435702050852700160), 3 (1435702050857943040), 4 (1435702050861088768)]} 0 23
-may 22, 2013 12:09:34 AM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
-INFO: Loading DIH Configuration: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml
-may 22, 2013 12:09:34 AM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
-INFO: Data Configuration loaded successfully
-may 22, 2013 12:09:34 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=15 
-may 22, 2013 12:09:34 AM org.apache.solr.handler.dataimport.DataImporter doFullImport
-INFO: Starting Full Import
-may 22, 2013 12:09:34 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
-INFO: Read dataimport.properties
-may 22, 2013 12:09:34 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369192174987&wt=json} status=0 QTime=0 
-may 22, 2013 12:09:35 AM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@112a02e realtime
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@445214; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1q,generation=62,filenames=[segments_1q, _1k.fnm, _1k_Lucene41_0.pos, _1k.si, _1k.nvm, _1k.fdx, _1k.nvd, _1k_Lucene41_0.tim, _1k_Lucene41_0.tip, _1k_Lucene41_0.doc, _1k.fdt]
+may 22, 2013 1:10:20 AM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 62[segments_1q, _1k.fnm, _1k_Lucene41_0.pos, _1k.si, _1k.nvm, _1k.fdx, _1k.nvd, _1k_Lucene41_0.tim, _1k_Lucene41_0.tip, _1k_Lucene41_0.doc, _1k.fdt]
+may 22, 2013 1:10:20 AM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@be1b0d realtime
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity TestEntity with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 10
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 209
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity attributes with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 22, 2013 1:10:20 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 9
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity subcategories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 10
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.DocBuilder finish
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 9
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity categories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 11
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.DocBuilder finish
 INFO: Import completed successfully
-may 22, 2013 12:09:35 AM org.apache.solr.update.DirectUpdateHandler2 commit
+may 22, 2013 1:10:21 AM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
-may 22, 2013 12:09:35 AM org.apache.solr.core.SolrDeletionPolicy onCommit
+may 22, 2013 1:10:21 AM org.apache.solr.core.SolrDeletionPolicy onCommit
 INFO: SolrDeletionPolicy.onCommit: commits:num=2
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@d2b7d8; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1l,generation=57,filenames=[_1e.nvd, _1e_Lucene41_0.tip, _1e_Lucene41_0.pos, _1e.fdx, segments_1l, _1e.fdt, _1e.si, _1e.nvm, _1e_Lucene41_0.doc, _1e.fnm, _1e_Lucene41_0.tim]
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@d2b7d8; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1m,generation=58,filenames=[_1g.fdx, _1g.fdt, _1g.nvd, segments_1m, _1g.si, _1g.fnm, _1g_Lucene41_0.pos, _1g.nvm, _1g_Lucene41_0.tip, _1g_Lucene41_0.doc, _1g_Lucene41_0.tim]
-may 22, 2013 12:09:35 AM org.apache.solr.core.SolrDeletionPolicy updateCommits
-INFO: newest commit = 58[_1g.fdx, _1g.fdt, _1g.nvd, segments_1m, _1g.si, _1g.fnm, _1g_Lucene41_0.pos, _1g.nvm, _1g_Lucene41_0.tip, _1g_Lucene41_0.doc, _1g_Lucene41_0.tim]
-may 22, 2013 12:09:35 AM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@86f04 main
-may 22, 2013 12:09:35 AM org.apache.solr.update.DirectUpdateHandler2 commit
-INFO: end_commit_flush
-may 22, 2013 12:09:35 AM org.apache.solr.core.QuerySenderListener newSearcher
-INFO: QuerySenderListener sending requests to Searcher@86f04 main{StandardDirectoryReader(segments_1m:199:nrt _1g(4.2.1):C4)}
-may 22, 2013 12:09:35 AM org.apache.solr.core.QuerySenderListener newSearcher
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@445214; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1q,generation=62,filenames=[segments_1q, _1k.fnm, _1k_Lucene41_0.pos, _1k.si, _1k.nvm, _1k.fdx, _1k.nvd, _1k_Lucene41_0.tim, _1k_Lucene41_0.tip, _1k_Lucene41_0.doc, _1k.fdt]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@445214; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1r,generation=63,filenames=[_1l.fdt, _1l_Lucene41_0.tim, _1l.nvm, _1l.fnm, _1l.fdx, _1l_Lucene41_0.doc, _1l.si, _1l.nvd, _1l_Lucene41_0.pos, _1l_Lucene41_0.tip, segments_1r]
+may 22, 2013 1:10:21 AM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 63[_1l.fdt, _1l_Lucene41_0.tim, _1l.nvm, _1l.fnm, _1l.fdx, _1l_Lucene41_0.doc, _1l.si, _1l.nvd, _1l_Lucene41_0.pos, _1l_Lucene41_0.tip, segments_1r]
+may 22, 2013 1:10:21 AM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@756ab3 main
+may 22, 2013 1:10:21 AM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener sending requests to Searcher@756ab3 main{StandardDirectoryReader(segments_1r:219:nrt _1l(4.2.1):C4)}
+may 22, 2013 1:10:21 AM org.apache.solr.core.QuerySenderListener newSearcher
 INFO: QuerySenderListener done.
-may 22, 2013 12:09:35 AM org.apache.solr.core.SolrCore registerSearcher
-INFO: [cguide] Registered new searcher Searcher@86f04 main{StandardDirectoryReader(segments_1m:199:nrt _1g(4.2.1):C4)}
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+may 22, 2013 1:10:21 AM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+may 22, 2013 1:10:21 AM org.apache.solr.core.SolrCore registerSearcher
+INFO: [cguide] Registered new searcher Searcher@756ab3 main{StandardDirectoryReader(segments_1r:219:nrt _1l(4.2.1):C4)}
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
 INFO: Read dataimport.properties
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
 INFO: Wrote last indexed time to dataimport.properties
-may 22, 2013 12:09:35 AM org.apache.solr.handler.dataimport.DocBuilder execute
-INFO: Time taken = 0:0:0.167
-may 22, 2013 12:09:35 AM org.apache.solr.update.processor.LogUpdateProcessor finish
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=15 {deleteByQuery=*:* (-1435702054102237184),add=[1 (1435702054190317568), 2 (1435702054193463296), 3 (1435702054195560448), 4 (1435702054197657600)],commit=} 0 15
-may 22, 2013 12:09:37 AM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
-INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369192177189&wt=json} status=0 QTime=0 
-may 22, 2013 12:09:37 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/system params={_=1369192177206&wt=json} status=0 QTime=3 
-may 22, 2013 12:09:37 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369192177234&wt=json} status=0 QTime=1 
-may 22, 2013 12:09:37 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369192177235} status=0 QTime=1 
-may 22, 2013 12:09:37 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369192177237&wt=json} status=0 QTime=1 
-may 22, 2013 12:09:42 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369192182959&wt=xml} hits=4 status=0 QTime=1 
-may 22, 2013 12:10:15 AM org.apache.solr.request.UnInvertedField <init>
-INFO: UnInverted multi-valued field {field=subcategories,memSize=4360,tindexSize=56,time=2,phase1=2,nTerms=4,bigTerms=0,termInstances=5,uses=0}
-may 22, 2013 12:10:15 AM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/select params={facet=true&indent=true&q=*:*&_=1369192215490&facet.field=subcategories&wt=xml} hits=4 status=0 QTime=32 
+may 22, 2013 1:10:21 AM org.apache.solr.handler.dataimport.DocBuilder execute
+INFO: Time taken = 0:0:0.612
+may 22, 2013 1:10:21 AM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=21 {deleteByQuery=*:* (-1435705876743716864),add=[1 (1435705877242839040), 2 (1435705877268004864), 3 (1435705877278490624), 4 (1435705877288976384)],commit=} 0 21
+may 22, 2013 1:10:23 AM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
+INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369195823474&wt=json} status=0 QTime=1 
+may 22, 2013 1:10:23 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/system params={_=1369195823491&wt=json} status=0 QTime=2 
+may 22, 2013 1:10:23 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369195823519&wt=json} status=0 QTime=1 
+may 22, 2013 1:10:23 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369195823520} status=0 QTime=0 
+may 22, 2013 1:10:23 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369195823523&wt=json} status=0 QTime=0 
+may 22, 2013 1:10:28 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369195828501&wt=xml} hits=4 status=0 QTime=1 
+may 22, 2013 1:11:09 AM org.apache.solr.common.SolrException log
+SEVERE: org.apache.solr.common.SolrException: undefined field name
+	at org.apache.solr.schema.IndexSchema.getDynamicFieldType(IndexSchema.java:1080)
+	at org.apache.solr.schema.IndexSchema$SolrQueryAnalyzer.getWrappedAnalyzer(IndexSchema.java:341)
+	at org.apache.lucene.analysis.AnalyzerWrapper.initReader(AnalyzerWrapper.java:81)
+	at org.apache.lucene.analysis.Analyzer.tokenStream(Analyzer.java:132)
+	at org.apache.solr.parser.SolrQueryParserBase.newFieldQuery(SolrQueryParserBase.java:408)
+	at org.apache.solr.parser.SolrQueryParserBase.getFieldQuery(SolrQueryParserBase.java:966)
+	at org.apache.solr.parser.SolrQueryParserBase.handleBareTokenQuery(SolrQueryParserBase.java:765)
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:300)
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:186)
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:108)
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:97)
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:160)
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParserPlugin.java:72)
+	at org.apache.solr.search.QParser.getQuery(QParser.java:142)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:117)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:187)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1817)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:639)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:141)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+may 22, 2013 1:11:09 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=name:Seller+1&_=1369195869558&wt=xml} status=400 QTime=4 
+may 22, 2013 1:11:25 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369195885709&wt=json} status=0 QTime=1 
+may 22, 2013 1:11:25 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369195885710} status=0 QTime=0 
+may 22, 2013 1:11:25 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369195885716&wt=json} status=0 QTime=0 
+may 22, 2013 1:11:30 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369195890972&wt=xml} hits=4 status=0 QTime=1 
+may 22, 2013 1:11:45 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=seller:Seller+1&_=1369195905166&wt=xml} hits=2 status=0 QTime=3 
+may 22, 2013 1:12:23 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=seller:Seller&_=1369195943250&wt=xml} hits=0 status=0 QTime=1 
+may 22, 2013 1:12:36 AM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369195956476&wt=xml} hits=4 status=0 QTime=1 
