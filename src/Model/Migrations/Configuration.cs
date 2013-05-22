@@ -26,26 +26,22 @@ namespace Model.Migrations
 
         private static void SeedBuisness(Model.AppDbContext appDbContext)
         {
-            appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name1", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 12 });
-            appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name2", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 13 });
-            appDbContext.Routes.AddOrUpdate(c => c.Name, new Route { Name = "Name3", Created = DateTime.Now, CreatedBy = "cvazquez", Distance = 14 });
-
             var attributeAirConditioner = new Model.Attribute { Name = "Aire Acondicionado", Created = DateTime.Now, CreatedBy = "cvazquez"};
             var attributeParking = new Model.Attribute { Name = "Estacionamiento", Created = DateTime.Now, CreatedBy = "cvazquez" };
             var attributeCashOnly = new Model.Attribute { Name = "No Acepta Tarjetas", Created = DateTime.Now, CreatedBy = "cvazquez" };
             var attributeTakesReservation = new Model.Attribute { Name = "Toma Reservas", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
            
-            var category1 = new Category {Name = "Categoría 1", Created = DateTime.Now, CreatedBy = "cvazquez"};
-            var category2 = new Category { Name = "Categoría 2", Created = DateTime.Now, CreatedBy = "cvazquez" };
-            var category3 = new Category { Name = "Categoría 3", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category1 = new Category {Name = "Categoria 1", Created = DateTime.Now, CreatedBy = "cvazquez"};
+            var category2 = new Category { Name = "Categoria 2", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category3 = new Category { Name = "Categoria 3", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
             var subcategory1 = new SubCategory
                                    {
                                        Category = category1,
                                        Created = DateTime.Now,
                                        CreatedBy = "cvazquez",
-                                       Name = "Sub-Categoría 1"
+                                       Name = "Sub-Categoria 1"
                                    };
 
             var subcategory2 = new SubCategory
@@ -53,7 +49,7 @@ namespace Model.Migrations
                 Category = category1,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoría 2"
+                Name = "Sub-Categoria 2"
             };
 
             var subcategory3 = new SubCategory
@@ -61,7 +57,7 @@ namespace Model.Migrations
                 Category = category2,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoría 3"
+                Name = "Sub-Categoria 3"
             };
 
             var subcategory4 = new SubCategory
@@ -69,7 +65,7 @@ namespace Model.Migrations
                 Category = category3,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoría 4"
+                Name = "Sub-Categoria 4"
             };
 
             

@@ -5,7 +5,7 @@ namespace Framework.Solr.ViewModels
     public class SolrViewModel
     {
         public SearchParameters Search { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<SolrSeller> Sellers { get; set; }
         public int TotalCount { get; set; }
         public IDictionary<string, ICollection<KeyValuePair<string, int>>> Facets { get; set; }
         public string DidYouMean { get; set; }
@@ -15,7 +15,7 @@ namespace Framework.Solr.ViewModels
         {
             Search = new SearchParameters();
             Facets = new Dictionary<string, ICollection<KeyValuePair<string, int>>>();
-            Products = new List<Product>();
+            Sellers = new List<SolrSeller>();
         }
     }
 }

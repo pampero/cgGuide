@@ -3,6 +3,7 @@ using Framework;
 using Framework.Controllers;
 using Framework.Filters;
 using Framework.Solr.ViewModels;
+using Framework.Solr.ViewModels.Binders;
 using Frontend.Notifications;
 using MvcGlobalisationSupport;
 using ServiceStack.Logging;
@@ -51,7 +52,9 @@ namespace WebUI
            Database.SetInitializer<AppDbContext>(null);
            WebSecurity.InitializeDatabaseConnection("AppDbContext", "UserProfile", "UserId", "UserName", autoCreateTables: false);
 
-           Startup.Init<Product>("http://localhost:8983/solr");
+           Startup.Init<SolrSeller>(ConfigurationManager.AppSettings["SolrServer"]);
+
+           ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
         }
 
 
@@ -111,7 +114,7 @@ namespace WebUI
             
             ILog logger = LogManager.GetLogger("LogFile");
             logger.Error(ex.Message, ex);
-
+            
             controller.ViewData.Model = new HandleErrorInfo(ex, currentController, currentAction);
             ((IController)controller).Execute(new RequestContext(new HttpContextWrapper(httpContext), routeData));
         }
