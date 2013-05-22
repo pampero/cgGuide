@@ -86,8 +86,8 @@ namespace Model.Migrations
                                  Created = DateTime.Now,
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
-                                 CompleteAddress = "435 West 5th Street Buffalo NY - 10101", 
-                                 SubCategory = subcategory1
+                                 CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
+                                 SubCategories = new List<SubCategory> { subcategory1, subcategory2 }
                              };
 
             var seller2 = new Seller
@@ -98,7 +98,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "19 West 31st Street New York NY - 10001",
-                SubCategory = subcategory3
+                SubCategories = new List<SubCategory> { subcategory3 }
             };
 
             var seller3 = new Seller
@@ -109,7 +109,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "20 West 31st Street New York NY - 10001",
-                SubCategory = subcategory2
+                SubCategories = new List<SubCategory> { subcategory2 }
             };
 
             var seller4 = new Seller
@@ -120,7 +120,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "21 West 31st Street New York NY - 10001",
-                SubCategory = subcategory4
+                SubCategories = new List<SubCategory> { subcategory4 }
             };
 
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);

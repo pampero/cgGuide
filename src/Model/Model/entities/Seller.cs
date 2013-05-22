@@ -46,8 +46,8 @@ namespace Model
         //public Category Category { get; set; }
 
         //[ForeignKey("SubCategory")]
-        public int? SubCategoryId { get; set; }
-        public SubCategory SubCategory { get; set; }
+      //  public int? SubCategoryId { get; set; }
+        public List<SubCategory> SubCategories { get; set; }
     }
 
 }

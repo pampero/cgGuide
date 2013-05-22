@@ -7,28 +7,25 @@
     
     
 
-	  <entity name="TestEntity" query="SELECT DISTINCT S.Id, S.Name as Seller, C.Name as City, Cat.Name as Category, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
+	  <entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
 FROM Seller S 
-INNER JOIN SubCategory SC on SC.id =S.SubCategoryId
-INNER JOIN Category Cat on Cat.ID = SC.CategoryId
+INNER JOIN SubCategorySeller SCS on  S.ID = SCS.Seller_ID
+INNER JOIN SubCategory SC on  SC.ID = SCS.SubCategory_ID
 INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
 INNER JOIN City C on C.ID = L.CityId
 WHERE S.Deleted is null">
-            <field column="Id" name="id" />
-            <field column="Seller" name="seller" />  
-            <field column="City" name="city" />  
-            <field column="Category" name="category" /> 
+
+        <entity name="subcategories" query="select name AS SubCategories
+from SubCategory SC
+inner join SubCategorySeller SCS on SC.ID = SCS.SubCategory_ID
+where SCS.Seller_ID ='${TestEntity.ID}'">
+        </entity>
+
+        <field column="Id" name="id" />
+        <field column="Seller" name="seller" />  
+        <field column="City" name="city" />  
 	    <field column="LatLng" name="latlng" />  
 
-			
-	<!--  <entity name="TestEntity" query="SELECT Id, Term, Name, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng FROM tag">
-            <field column="Id" name="id" />
-            <field column="Term" name="term" />  
-            <field column="Name" name="name" />  
-			<field column="LatLng" name="latlng" />  -->
-		<!--	<field column="Latitude" name="latlng_0_coordinate" />  
-			<field column="Longitude" name="latlng_1_coordinate" /> 
-, Latitude, Longitude 			-->
       </entity>  
     </document>  
 </dataConfig> 
