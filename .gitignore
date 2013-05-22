@@ -164,3 +164,5 @@ pip-log.txt
 /tools/solr-1.4.0/solr-1.4.0/logs/*.log
 /src/WebUI/logs/*.log
 /src/WebUI/logs
+/tools/binaries/solr-4.2.1/example/logs
+/tools/binaries/solr-4.2.1/example/solr/cguide/data
