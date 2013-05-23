@@ -9,6 +9,7 @@ namespace Framework.Solr.ViewModels
         public SearchParameters()
         {
             Facets = new Dictionary<string, string>();
+            Parallels = new List<KeyValuePair<string, string>>();
             PageSize = DefaultPageSize;
             PageIndex = 1;
         }
@@ -18,6 +19,7 @@ namespace Framework.Solr.ViewModels
         public int PageSize { get; set; }
         public IDictionary<string, string> Facets { get; set; }
         public string Sort { get; set; }
+        public List<KeyValuePair<string, string>> Parallels { get; set; }
 
         public int FirstItemIndex
         {

@@ -46,12 +46,13 @@
                     @(Html.SolrFieldPropName<SolrSeller>(f.Key))
                     <ul>
                         @foreach (var fv in f.Value) { 
-                            <li><a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                            <li><input type="checkbox" id="@fv.Key" value="" />&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
                         }
                     </ul>
                 </li>
             } 
         </ul>
+        
     </div>
     
     <div class="rightColumn">

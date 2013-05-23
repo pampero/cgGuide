@@ -23,7 +23,7 @@ namespace WebUI.Areas.Solr.Controllers
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<SolrSeller> solr;
-        private static readonly string[] AllFacetFields = new[] { "categories", "subcategories", "attributes", "rating" };
+        private static readonly string[] AllFacetFields = new[] { "categories", "attributes", "rating" }; //"subcategories",
 
         public SolrController()
         {
@@ -130,7 +130,23 @@ namespace WebUI.Areas.Solr.Controllers
 
         public ICollection<ISolrQuery> BuildFilterQueries(SearchParameters parameters)
         {
+            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "3"));
+            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "4"));
+
             var queriesFromFacets = parameters.Facets.Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
+
+            var queriesFromParallels = parameters.Parallels.Select(p => (ISolrQuery)Query.Field(p.Key).In(new int[] { 3, 4 }));
+           
+            return queriesFromParallels.ToList();
+
+            //var fq = new List<ISolrQuery>();
+
+            //var field1 = (ISolrQuery)Query.Field("rating").In(new int[] { 3, 4 });
+
+            //fq.Add(field1);
+
+            //return fq.ToList();
+
             return queriesFromFacets.ToList();
         }
 
