@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model.Enums
 {
-    public enum RatingRange
+    public enum Rating
     {
         OneStar,
-        TwoStar,
-        ThreeStar,
-        FourStar,
-        FiveStar
+        TwoStars,
+        ThreeStars,
+        FourStars,
+        FiveStars
     }
 }

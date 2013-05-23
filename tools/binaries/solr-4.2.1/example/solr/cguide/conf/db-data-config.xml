@@ -5,7 +5,7 @@
              
     <document>  
     
-	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng 
+	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Rating 
         FROM Seller S 
         INNER JOIN SubCategorySeller SCS on  S.ID = SCS.Seller_ID
         INNER JOIN SubCategory SC on  SC.ID = SCS.SubCategory_ID
@@ -36,7 +36,7 @@
         <field column="Seller" name="seller" />  
         <field column="City" name="city" />  
 	    <field column="LatLng" name="latlng" />  
-
+		<field column="Rating" name="rating" />  
       </entity>  
     </document>  
 </dataConfig> 

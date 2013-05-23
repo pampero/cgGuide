@@ -23,7 +23,7 @@ namespace WebUI.Areas.Solr.Controllers
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<SolrSeller> solr;
-        private static readonly string[] AllFacetFields = new[] { "categories", "subcategories", "attributes" };
+        private static readonly string[] AllFacetFields = new[] { "categories", "subcategories", "attributes", "rating" };
 
         public SolrController()
         {
@@ -128,9 +128,9 @@ namespace WebUI.Areas.Solr.Controllers
         //                                .ToArray());
         //}
 
-        public ICollection<ISolrQuery> BuildFilterQueries(IDictionary<string, string> facets)
+        public ICollection<ISolrQuery> BuildFilterQueries(SearchParameters parameters)
         {
-            var queriesFromFacets = facets.Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
+            var queriesFromFacets = parameters.Facets.Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
             return queriesFromFacets.ToList();
         }
 
@@ -150,7 +150,7 @@ namespace WebUI.Areas.Solr.Controllers
                 var facetParameters = new FacetParameters
                                           {
                                               Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                                                  .Select(f => new SolrFacetFieldQuery(f) {MinCount = 1})
+                                                  .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1})
                                                   .Cast<ISolrFacetQuery>()
                                                   .ToList(),
                                           };
@@ -158,7 +158,7 @@ namespace WebUI.Areas.Solr.Controllers
                 var matchingSellers = solr.Query(BuildQuery(parameters), new QueryOptions
                 {
                     // Facetas ya seleccionadas -Drill Down-
-                    FilterQueries = BuildFilterQueries(parameters.Facets),
+                    FilterQueries = BuildFilterQueries(parameters),
                     Rows = parameters.PageSize,
                     Start = start,
                     OrderBy = GetSelectedSort(parameters),
@@ -166,7 +166,7 @@ namespace WebUI.Areas.Solr.Controllers
                     Facet = facetParameters
                 });
 
-                var view = new SolrViewModel
+                var view = new SolrSellerViewModel
                 {
                     Sellers = matchingSellers,
                     Search = parameters,
@@ -179,7 +179,7 @@ namespace WebUI.Areas.Solr.Controllers
             }
             catch (InvalidFieldException)
             {
-                return View(new SolrViewModel
+                return View(new SolrSellerViewModel
                 {
                     QueryError = true,
                 });

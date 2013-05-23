@@ -74,16 +74,17 @@
 		<field name="_version_" type="long" indexed="true" stored="true"/> 
 		<dynamicField name="*_coordinate" type="double" indexed="true" stored="false" multiValued="false" />
 		<field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
+		<field name="rating" type="int" indexed="true" stored="true"/>
 	</fields>
 
 	<uniqueKey>id</uniqueKey>
 
 	<copyField source="seller" dest="text"/>
 	<copyField source="city" dest="text"/>
-  <copyField source="subcategories" dest="text"/>
-  <copyField source="categories" dest="text"/>
-  <copyField source="attributes" dest="text"/>
-
+	<copyField source="subcategories" dest="text"/>
+	<copyField source="categories" dest="text"/>
+	<copyField source="attributes" dest="text"/>
+	<copyField source="rating" dest="text"/>
   <types>
     <!-- field type definitions. The "name" attribute is
        just a label to be used by field definitions.  The "class"

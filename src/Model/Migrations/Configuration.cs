@@ -1,3 +1,5 @@
+using Model.Enums;
+
 namespace Model.Migrations
 {
     using System;
@@ -90,7 +92,8 @@ namespace Model.Migrations
                                  HeadLocation = location1,
                                  CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
                                  SubCategories = new List<SubCategory> { subcategory1, subcategory2, subcategory3 },
-                                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation }
+                                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
+                                 Rating = Rating.FiveStars
                              };
 
             var seller2 = new Seller
@@ -102,7 +105,8 @@ namespace Model.Migrations
                 HeadLocation = location2,
                 CompleteAddress = "19 West 31st Street New York NY - 10001",
                 SubCategories = new List<SubCategory> { subcategory3 },
-                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly }
+                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly },
+                Rating = Rating.OneStar
             };
 
             var seller3 = new Seller
@@ -114,7 +118,8 @@ namespace Model.Migrations
                 HeadLocation = location2,
                 CompleteAddress = "20 West 31st Street New York NY - 10001",
                 SubCategories = new List<SubCategory> { subcategory2, subcategory1 },
-                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation }
+                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
+                Rating = Rating.FiveStars
             };
 
             var seller4 = new Seller
@@ -126,7 +131,8 @@ namespace Model.Migrations
                 HeadLocation = location2,
                 CompleteAddress = "21 West 31st Street New York NY - 10001",
                 SubCategories = new List<SubCategory> { subcategory4 },
-                Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly }
+                Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
+                Rating = Rating.FourStars
             };
 
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);

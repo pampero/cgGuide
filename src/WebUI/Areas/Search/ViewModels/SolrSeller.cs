@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Model.Enums;
 using SolrNet.Attributes;
 
 namespace Framework.Solr.ViewModels
@@ -22,6 +23,9 @@ namespace Framework.Solr.ViewModels
 
         [SolrField("categories")]
         public ICollection<string> Categories { get; set; }
+
+        [SolrField("rating")]
+        public Rating Rating { get; set; }
 
         [SolrField("latlng")]
         public string LatLng { get; set; }

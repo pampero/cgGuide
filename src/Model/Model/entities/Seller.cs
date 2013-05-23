@@ -24,7 +24,7 @@ namespace Model
         public string PhoneNumber2 { get; set; }
 
         public PriceRange PriceRange { get; set; }
-        public RatingRange Rating { get; set; }
+        public Rating Rating { get; set; }
 
         public List<Attribute> Attributes { get; set; }
 

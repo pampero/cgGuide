@@ -28,3 +28,13 @@ OK -. Facetado
 -. HighLighting
 -. Field Collapsing
 -. More Like This
+
+
+PENDIENTES
+
+Hacer Drill-Down sobre Categoría
+Hacer búsqueda paralela sobre rating
+Hacer DidYouMean y spellchecking
+Mostrar toda la info en la grilla para poder corroborar si funciona correctamente el facetado.
+Investigar mas a fondo QueryOptions, SortOrder, etc.
+Hacer Delta-Import

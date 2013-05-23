@@ -236,9 +236,8 @@
     <Compile Include="Areas\Search\Controllers\SolrController.cs" />
     <Compile Include="Areas\Search\SolrAreaRegistration.cs" />
     <Compile Include="Areas\Search\ViewModels\Binders\SearchParametersBinder.cs" />
-    <Compile Include="Areas\Search\ViewModels\SolrSeller.cs" />
     <Compile Include="Areas\Search\ViewModels\SolrSellerViewModel.cs" />
-    <Compile Include="Areas\Search\ViewModels\SolrSellerView.cs" />
+    <Compile Include="Areas\Search\ViewModels\SolrSeller.cs" />
     <Compile Include="Areas\Search\ViewModels\SearchParameters.cs" />
     <Compile Include="Areas\Search\ViewModels\SpellChecking.cs" />
     <Compile Include="Helpers\HtmlHelperStaticContentExtensions.cs" />
