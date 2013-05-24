@@ -913,3 +913,55 @@ may 24, 2013 1:54:43 PM org.apache.solr.core.SolrCore execute
 INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
 may 24, 2013 1:54:43 PM org.apache.solr.core.SolrCore execute
 INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 2:07:53 PM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
+INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369415273933&wt=json} status=0 QTime=0 
+may 24, 2013 2:07:53 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/system params={_=1369415273949&wt=json} status=0 QTime=1 
+may 24, 2013 2:08:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 2:08:12 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 2:08:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 2:08:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 2:08:16 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 2:08:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 2:08:21 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 2:08:21 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 2:08:22 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 2:08:22 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 2:08:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+york&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=0 
+may 24, 2013 2:08:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+york&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 2:08:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 2:08:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=0 
+may 24, 2013 2:08:41 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Ne&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 2:08:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Ne&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 2:08:45 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 2:08:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 2:08:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffal&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 2:08:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffal&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=0 
+may 24, 2013 2:08:51 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffal*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=4 
+may 24, 2013 2:08:51 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=buffal*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 2:08:59 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+york&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=0 
+may 24, 2013 2:08:59 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+york&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=1 
