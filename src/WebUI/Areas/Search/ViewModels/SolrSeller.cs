@@ -25,7 +25,7 @@ namespace Framework.Solr.ViewModels
         public ICollection<string> Categories { get; set; }
 
         [SolrField("rating")]
-        public Rating Rating { get; set; }
+        public string Rating { get; set; }
 
         [SolrField("latlng")]
         public string LatLng { get; set; }

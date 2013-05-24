@@ -5,13 +5,19 @@
              
     <document>  
     
-	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Rating 
+	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Case Rating when 0 then '*'
+when 1 then '**' 
+when 2 then '***' 
+when 3 then '****' 
+when 4 then '*****' 
+End as Rating
         FROM Seller S 
         INNER JOIN SubCategorySeller SCS on  S.ID = SCS.Seller_ID
         INNER JOIN SubCategory SC on  SC.ID = SCS.SubCategory_ID
         INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
         INNER JOIN City C on C.ID = L.CityId
-        WHERE S.Deleted is null">
+        WHERE S.Deleted is null
+        ORDER BY Rating">
 
         <entity name="attributes" query="select name AS Attributes
             from Attribute A

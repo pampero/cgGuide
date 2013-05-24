@@ -1,347 +1,915 @@
-may 23, 2013 4:14:45 PM org.apache.solr.servlet.SolrDispatchFilter init
+may 24, 2013 1:05:22 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init()
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
+may 24, 2013 1:05:22 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
 INFO: JNDI not configured for solr (NoInitialContextEx)
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
+may 24, 2013 1:05:22 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
 INFO: solr home defaulted to 'solr/' (could not find system property or JNDI)
-may 23, 2013 4:14:45 PM org.apache.solr.core.CoreContainer$Initializer initialize
+may 24, 2013 1:05:22 PM org.apache.solr.core.CoreContainer$Initializer initialize
 INFO: looking for solr.xml: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\solr.xml
-may 23, 2013 4:14:45 PM org.apache.solr.core.CoreContainer <init>
-INFO: New CoreContainer 3627316
-may 23, 2013 4:14:45 PM org.apache.solr.core.CoreContainer load
+may 24, 2013 1:05:22 PM org.apache.solr.core.CoreContainer <init>
+INFO: New CoreContainer 23338819
+may 24, 2013 1:05:22 PM org.apache.solr.core.CoreContainer load
 INFO: Loading CoreContainer using Solr Home: 'solr/'
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader <init>
+may 24, 2013 1:05:22 PM org.apache.solr.core.SolrResourceLoader <init>
 INFO: new SolrResourceLoader for directory: 'solr/'
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting socketTimeout to: 0
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting urlScheme to: http://
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting connTimeout to: 0
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxConnectionsPerHost to: 20
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting corePoolSize to: 0
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maximumPoolSize to: 2147483647
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxThreadIdleTime to: 5
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting sizeOfQueue to: -1
-may 23, 2013 4:14:45 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+may 24, 2013 1:05:23 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting fairnessPolicy to: false
-may 23, 2013 4:14:45 PM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
+may 24, 2013 1:05:23 PM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
 INFO: Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
-may 23, 2013 4:14:45 PM org.apache.solr.core.CoreContainer load
+may 24, 2013 1:05:23 PM org.apache.solr.core.CoreContainer load
 INFO: Registering Log Listener
-may 23, 2013 4:14:45 PM org.apache.solr.core.CoreContainer create
+may 24, 2013 1:05:23 PM org.apache.solr.core.CoreContainer create
 INFO: Creating SolrCore 'cguide' using instanceDir: solr\cguide
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader <init>
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader <init>
 INFO: new SolrResourceLoader for directory: 'solr\cguide\'
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/solr-dataimporthandler-4.2.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/solr-dataimporthandler-extras-4.2.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/example/solr/cguide/lib/sqljdbc4.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrConfig initLibs
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrConfig initLibs
 INFO: Adding specified lib dirs to ClassLoader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/fontbox-1.7.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/icu4j-49.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/jdom-1.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/jempbox-1.7.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/pdfbox-1.7.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-3.8.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-ooxml-3.8.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-ooxml-schemas-3.8.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/poi-scratchpad-3.8.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/rome-0.9.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tika-core-1.3.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/tika-parsers-1.3.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/extraction/lib/xz-1.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/attributes-binder-1.0.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/carrot2-mini-3.6.2.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/hppc-0.4.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/clustering/lib/simple-xml-2.6.4.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/velocity-1.7.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrResourceLoader replaceClassLoader
 INFO: Adding 'file:/C:/Users/Carlos/Documents/GitHub/cgGuide/tools/binaries/solr-4.2.1/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
-may 23, 2013 4:14:45 PM org.apache.solr.core.SolrConfig <init>
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrConfig <init>
 INFO: Using Lucene MatchVersion: LUCENE_42
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrConfig <init>
+may 24, 2013 1:05:23 PM org.apache.solr.core.SolrConfig <init>
 INFO: Loaded SolrConfig: solrconfig.xml
-may 23, 2013 4:14:46 PM org.apache.solr.schema.IndexSchema readSchema
+may 24, 2013 1:05:23 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Reading Solr Schema
-may 23, 2013 4:14:46 PM org.apache.solr.schema.IndexSchema readSchema
+may 24, 2013 1:05:23 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Schema name=example
-may 23, 2013 4:14:46 PM org.apache.solr.schema.IndexSchema readSchema
+may 24, 2013 1:05:23 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: unique key field: id
-may 23, 2013 4:14:46 PM org.apache.solr.schema.FileExchangeRateProvider reload
+may 24, 2013 1:05:23 PM org.apache.solr.schema.FileExchangeRateProvider reload
 INFO: Reloading exchange rates from file currency.xml
-may 23, 2013 4:14:46 PM org.apache.solr.schema.FileExchangeRateProvider reload
+may 24, 2013 1:05:23 PM org.apache.solr.schema.FileExchangeRateProvider reload
 INFO: Reloading exchange rates from file currency.xml
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initDirectoryFactory
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore <init>
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore <init>
 INFO: [cguide] Opening new SolrCore at solr\cguide\, dataDir=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\
-may 23, 2013 4:14:46 PM org.apache.solr.core.JmxMonitoredMap <init>
-INFO: JMX monitoring is enabled. Adding Solr mbeans to JMX Server: com.sun.jmx.mbeanserver.JmxMBeanServer@5c358b
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initListeners
+may 24, 2013 1:05:24 PM org.apache.solr.core.JmxMonitoredMap <init>
+INFO: JMX monitoring is enabled. Adding Solr mbeans to JMX Server: com.sun.jmx.mbeanserver.JmxMBeanServer@1662a8a
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initListeners
 INFO: [cguide] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initListeners
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initListeners
 INFO: [cguide] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initDirectoryFactory
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-may 23, 2013 4:14:46 PM org.apache.solr.core.CachingDirectoryFactory get
+may 24, 2013 1:05:24 PM org.apache.solr.core.CachingDirectoryFactory get
 INFO: return new directory for C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data forceNew: false
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore getNewIndexDir
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore getNewIndexDir
 INFO: New index directory detected: old=null new=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index/
-may 23, 2013 4:14:46 PM org.apache.solr.core.CachingDirectoryFactory get
+may 24, 2013 1:05:24 PM org.apache.solr.core.CachingDirectoryFactory get
 INFO: return new directory for C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index forceNew: false
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initWriters
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initWriters
 INFO: created json: solr.JSONResponseWriter
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initWriters
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initWriters
 INFO: adding lazy queryResponseWriter: solr.VelocityResponseWriter
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initWriters
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initWriters
 INFO: created velocity: solr.VelocityResponseWriter
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore initWriters
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore initWriters
 INFO: created xslt: solr.XSLTResponseWriter
-may 23, 2013 4:14:46 PM org.apache.solr.response.XSLTResponseWriter init
+may 24, 2013 1:05:24 PM org.apache.solr.response.XSLTResponseWriter init
 INFO: xsltCacheLifetimeSeconds=5
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /dataimport: org.apache.solr.handler.dataimport.DataImportHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /select: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /query: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /get: solr.RealTimeGetHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /browse: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update: solr.UpdateRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/json: solr.JsonUpdateRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/csv: solr.CSVRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/: solr.admin.AdminHandlers
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/ping: solr.PingRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /debug/dump: solr.DumpRequestHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /replication: solr.ReplicationHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /spell: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /tvrh: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /terms: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+may 24, 2013 1:05:24 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /elevate: solr.SearchHandler
-may 23, 2013 4:14:46 PM org.apache.solr.handler.loader.XMLLoader init
+may 24, 2013 1:05:24 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 23, 2013 4:14:46 PM org.apache.solr.handler.loader.XMLLoader init
+may 24, 2013 1:05:24 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 23, 2013 4:14:46 PM org.apache.solr.handler.loader.XMLLoader init
+may 24, 2013 1:05:24 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-may 23, 2013 4:14:46 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@f45a93 main
-may 23, 2013 4:14:46 PM org.apache.solr.update.CommitTracker <init>
+may 24, 2013 1:05:24 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@f410f8 main
+may 24, 2013 1:05:24 PM org.apache.solr.update.CommitTracker <init>
 INFO: Hard AutoCommit: if uncommited for 15000ms; 
-may 23, 2013 4:14:46 PM org.apache.solr.update.CommitTracker <init>
+may 24, 2013 1:05:24 PM org.apache.solr.update.CommitTracker <init>
 INFO: Soft AutoCommit: disabled
-may 23, 2013 4:14:46 PM org.apache.solr.handler.component.SpellCheckComponent inform
+may 24, 2013 1:05:24 PM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: Initializing spell checkers
-may 23, 2013 4:14:46 PM org.apache.solr.spelling.DirectSolrSpellChecker init
+may 24, 2013 1:05:24 PM org.apache.solr.spelling.DirectSolrSpellChecker init
 INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-may 23, 2013 4:14:46 PM org.apache.solr.handler.component.SpellCheckComponent inform
+may 24, 2013 1:05:24 PM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: No queryConverter defined, using default converter
-may 23, 2013 4:14:46 PM org.apache.solr.handler.component.QueryElevationComponent inform
+may 24, 2013 1:05:24 PM org.apache.solr.handler.component.QueryElevationComponent inform
 INFO: Loading QueryElevation from: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\elevate.xml
-may 23, 2013 4:14:46 PM org.apache.solr.handler.ReplicationHandler inform
+may 24, 2013 1:05:24 PM org.apache.solr.handler.ReplicationHandler inform
 INFO: Commits will be reserved for  10000
-may 23, 2013 4:14:46 PM org.apache.solr.core.QuerySenderListener newSearcher
-INFO: QuerySenderListener sending requests to Searcher@f45a93 main{StandardDirectoryReader(segments_2:3 _0(4.2.1):C4)}
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore execute
+may 24, 2013 1:05:24 PM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener sending requests to Searcher@f410f8 main{StandardDirectoryReader(segments_4:9)}
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore execute
 INFO: [cguide] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=33 
-may 23, 2013 4:14:46 PM org.apache.solr.core.QuerySenderListener newSearcher
+may 24, 2013 1:05:24 PM org.apache.solr.core.QuerySenderListener newSearcher
 INFO: QuerySenderListener done.
-may 23, 2013 4:14:46 PM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
+may 24, 2013 1:05:24 PM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
 INFO: Loading spell index for spellchecker: default
-may 23, 2013 4:14:46 PM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
+may 24, 2013 1:05:24 PM org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener newSearcher
 INFO: Loading spell index for spellchecker: wordbreak
-may 23, 2013 4:14:46 PM org.apache.solr.core.SolrCore registerSearcher
-INFO: [cguide] Registered new searcher Searcher@f45a93 main{StandardDirectoryReader(segments_2:3 _0(4.2.1):C4)}
-may 23, 2013 4:14:46 PM org.apache.solr.core.CoreContainer registerCore
+may 24, 2013 1:05:24 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [cguide] Registered new searcher Searcher@f410f8 main{StandardDirectoryReader(segments_4:9)}
+may 24, 2013 1:05:24 PM org.apache.solr.core.CoreContainer registerCore
 INFO: registering core: cguide
-may 23, 2013 4:14:46 PM org.apache.solr.servlet.SolrDispatchFilter init
+may 24, 2013 1:05:24 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: user.dir=C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example
-may 23, 2013 4:14:46 PM org.apache.solr.servlet.SolrDispatchFilter init
+may 24, 2013 1:05:24 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init() done
-may 23, 2013 4:14:58 PM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
-INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369336498631&wt=json} status=0 QTime=1 
-may 23, 2013 4:14:58 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/system params={_=1369336498654&wt=json} status=0 QTime=2 
-may 23, 2013 4:14:59 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369336499753&wt=json} status=0 QTime=2 
-may 23, 2013 4:14:59 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369336499797} status=0 QTime=2 
-may 23, 2013 4:14:59 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369336499797&wt=json} status=0 QTime=2 
-may 23, 2013 4:14:59 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369336499800&wt=json} status=0 QTime=1 
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
+may 24, 2013 1:05:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369411525408&wt=xml} hits=0 status=0 QTime=2 
+may 24, 2013 1:05:27 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369411527557&wt=json} status=0 QTime=2 
+may 24, 2013 1:05:27 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369411527613&wt=json} status=0 QTime=1 
+may 24, 2013 1:05:27 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369411527618&wt=json} status=0 QTime=3 
+may 24, 2013 1:05:27 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369411527614} status=0 QTime=4 
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
 INFO: Loading DIH Configuration: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
 INFO: Data Configuration loaded successfully
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=19 
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.DataImporter doFullImport
+may 24, 2013 1:05:30 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=25 
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.DataImporter doFullImport
 INFO: Starting Full Import
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369336503193&wt=json} status=0 QTime=0 
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+may 24, 2013 1:05:30 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369411530700&wt=json} status=0 QTime=0 
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
 INFO: Read dataimport.properties
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrDeletionPolicy onInit
+may 24, 2013 1:05:30 PM org.apache.solr.core.SolrDeletionPolicy onInit
 INFO: SolrDeletionPolicy.onInit: commits:num=1
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@16b4de4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2,generation=2,filenames=[_0.fnm, _0_Lucene41_0.doc, _0_Lucene41_0.pos, _0.nvd, segments_2, _0.fdx, _0.nvm, _0.si, _0_Lucene41_0.tim, _0_Lucene41_0.tip, _0.fdt]
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
-INFO: newest commit = 2[_0.fnm, _0_Lucene41_0.doc, _0_Lucene41_0.pos, _0.nvd, segments_2, _0.fdx, _0.nvm, _0.si, _0_Lucene41_0.tim, _0_Lucene41_0.tip, _0.fdt]
-may 23, 2013 4:15:03 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@196ea30 realtime
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1736dd4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_4,generation=4,filenames=[segments_4]
+may 24, 2013 1:05:30 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 4[segments_4]
+may 24, 2013 1:05:30 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@66cc91 realtime
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity TestEntity with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 167
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 24, 2013 1:05:30 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 155
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity attributes with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Time taken for getConnection(): 8
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity subcategories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Time taken for getConnection(): 8
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
 INFO: Creating a connection for entity categories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
-INFO: Time taken for getConnection(): 8
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.DocBuilder finish
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 9
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.DocBuilder finish
 INFO: Import completed successfully
-may 23, 2013 4:15:03 PM org.apache.solr.update.DirectUpdateHandler2 commit
+may 24, 2013 1:05:31 PM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+may 24, 2013 1:05:31 PM org.apache.solr.core.SolrDeletionPolicy onCommit
 INFO: SolrDeletionPolicy.onCommit: commits:num=2
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@16b4de4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2,generation=2,filenames=[_0.fnm, _0_Lucene41_0.doc, _0_Lucene41_0.pos, _0.nvd, segments_2, _0.fdx, _0.nvm, _0.si, _0_Lucene41_0.tim, _0_Lucene41_0.tip, _0.fdt]
-	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@16b4de4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3,filenames=[_1.fdx, _1_Lucene41_0.pos, _1.nvm, _1_Lucene41_0.doc, _1.fdt, _1.si, _1_Lucene41_0.tim, _1.nvd, _1_Lucene41_0.tip, _1.fnm, segments_3]
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
-INFO: newest commit = 3[_1.fdx, _1_Lucene41_0.pos, _1.nvm, _1_Lucene41_0.doc, _1.fdt, _1.si, _1_Lucene41_0.tim, _1.nvd, _1_Lucene41_0.tip, _1.fnm, segments_3]
-may 23, 2013 4:15:03 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@1c6b3d1 main
-may 23, 2013 4:15:03 PM org.apache.solr.update.DirectUpdateHandler2 commit
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1736dd4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_4,generation=4,filenames=[segments_4]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1736dd4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5,generation=5,filenames=[_2.si, _2_Lucene41_0.pos, _2_Lucene41_0.tim, _2.nvm, _2.nvd, _2.fdt, _2_Lucene41_0.doc, _2_Lucene41_0.tip, segments_5, _2.fdx, _2.fnm]
+may 24, 2013 1:05:31 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 5[_2.si, _2_Lucene41_0.pos, _2_Lucene41_0.tim, _2.nvm, _2.nvd, _2.fdt, _2_Lucene41_0.doc, _2_Lucene41_0.tip, segments_5, _2.fdx, _2.fnm]
+may 24, 2013 1:05:31 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1072974 main
+may 24, 2013 1:05:31 PM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: end_commit_flush
-may 23, 2013 4:15:03 PM org.apache.solr.core.QuerySenderListener newSearcher
-INFO: QuerySenderListener sending requests to Searcher@1c6b3d1 main{StandardDirectoryReader(segments_3:7:nrt _1(4.2.1):C4)}
-may 23, 2013 4:15:03 PM org.apache.solr.core.QuerySenderListener newSearcher
+may 24, 2013 1:05:31 PM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener sending requests to Searcher@1072974 main{StandardDirectoryReader(segments_5:11:nrt _2(4.2.1):C4)}
+may 24, 2013 1:05:31 PM org.apache.solr.core.QuerySenderListener newSearcher
 INFO: QuerySenderListener done.
-may 23, 2013 4:15:03 PM org.apache.solr.core.SolrCore registerSearcher
-INFO: [cguide] Registered new searcher Searcher@1c6b3d1 main{StandardDirectoryReader(segments_3:7:nrt _1(4.2.1):C4)}
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+may 24, 2013 1:05:31 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [cguide] Registered new searcher Searcher@1072974 main{StandardDirectoryReader(segments_5:11:nrt _2(4.2.1):C4)}
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
 INFO: Read dataimport.properties
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
 INFO: Wrote last indexed time to dataimport.properties
-may 23, 2013 4:15:03 PM org.apache.solr.handler.dataimport.DocBuilder execute
-INFO: Time taken = 0:0:0.520
-may 23, 2013 4:15:03 PM org.apache.solr.update.processor.LogUpdateProcessor finish
-INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=19 {deleteByQuery=*:* (-1435853393201463296),add=[1 (1435853393602019328), 2 (1435853393631379456), 3 (1435853393642913792), 4 (1435853393653399552)],commit=} 0 19
-may 23, 2013 4:15:04 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369336504824&wt=json} status=0 QTime=0 
-may 23, 2013 4:15:08 PM org.apache.solr.core.SolrCore execute
-INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369336508983&wt=xml} hits=4 status=0 QTime=1 
+may 24, 2013 1:05:31 PM org.apache.solr.handler.dataimport.DocBuilder execute
+INFO: Time taken = 0:0:0.439
+may 24, 2013 1:05:31 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=25 {deleteByQuery=*:* (-1435932065237303296),add=[1 (1435932065568653312), 2 (1435932065588576256), 3 (1435932065591721984), 4 (1435932065594867712)],commit=} 0 25
+may 24, 2013 1:05:32 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369411532255&wt=json} status=0 QTime=1 
+may 24, 2013 1:05:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369411538482&wt=xml} hits=4 status=0 QTime=7 
+may 24, 2013 1:05:55 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=23 
+may 24, 2013 1:07:01 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:07:06 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=categories,memSize=4355,tindexSize=51,time=1,phase1=1,nTerms=3,bigTerms=0,termInstances=5,uses=0}
+may 24, 2013 1:07:06 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=attributes,memSize=4472,tindexSize=58,time=1,phase1=1,nTerms=4,bigTerms=1,termInstances=5,uses=0}
+may 24, 2013 1:07:06 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=6 
+may 24, 2013 1:07:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:08:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:11:21 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:11:41 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:12:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:15:08 PM org.apache.solr.common.SolrException log
+SEVERE: org.apache.solr.common.SolrException: sort param field can't be found: value
+	at org.apache.solr.search.QueryParsing.parseSort(QueryParsing.java:347)
+	at org.apache.solr.search.QParser.getSort(QParser.java:281)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:123)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:187)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1817)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:639)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:141)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+may 24, 2013 1:15:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=value+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} status=400 QTime=2 
+may 24, 2013 1:19:53 PM org.apache.solr.common.SolrException log
+SEVERE: org.apache.solr.common.SolrException: sort param field can't be found: value
+	at org.apache.solr.search.QueryParsing.parseSort(QueryParsing.java:347)
+	at org.apache.solr.search.QParser.getSort(QParser.java:281)
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:123)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:187)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:1817)
+	at org.apache.solr.servlet.SolrDispatchFilter.execute(SolrDispatchFilter.java:639)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:345)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:141)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handleRequest(BlockingHttpConnection.java:53)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.BlockingHttpConnection.handle(BlockingHttpConnection.java:72)
+	at org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run(SocketConnector.java:264)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Unknown Source)
+
+may 24, 2013 1:19:53 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=value+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} status=400 QTime=1 
+may 24, 2013 1:21:07 PM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
+INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369412467643&wt=json} status=0 QTime=2 
+may 24, 2013 1:21:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/system params={_=1369412467660&wt=json} status=0 QTime=2 
+may 24, 2013 1:21:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=rating+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=14 
+may 24, 2013 1:21:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:21:52 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=rating+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:21:55 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:23:30 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=rating+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:23:33 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:24:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=rating+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:24:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:25:01 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369412701661&wt=json} status=0 QTime=0 
+may 24, 2013 1:25:01 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/mbeans params={cat=QUERYHANDLER&_=1369412701702&wt=json} status=0 QTime=1 
+may 24, 2013 1:25:01 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=show-config&_=1369412701704} status=0 QTime=1 
+may 24, 2013 1:25:01 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369412701708&wt=json} status=0 QTime=0 
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.DataImporter maybeReloadConfiguration
+INFO: Loading DIH Configuration: C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\conf\db-data-config.xml
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.DataImporter loadDataConfig
+INFO: Data Configuration loaded successfully
+may 24, 2013 1:25:05 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=7 
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.DataImporter doFullImport
+INFO: Starting Full Import
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+INFO: Read dataimport.properties
+may 24, 2013 1:25:05 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369412705753&wt=json} status=0 QTime=0 
+may 24, 2013 1:25:05 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1600762 realtime
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity TestEntity with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 14
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity attributes with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 10
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity subcategories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 7
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Creating a connection for entity categories with URL: jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.JdbcDataSource$1 call
+INFO: Time taken for getConnection(): 9
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.DocBuilder finish
+INFO: Import completed successfully
+may 24, 2013 1:25:05 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+may 24, 2013 1:25:05 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1736dd4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_5,generation=5,filenames=[_2.si, _2_Lucene41_0.pos, _2_Lucene41_0.tim, _2.nvm, _2.nvd, _2.fdt, _2_Lucene41_0.doc, _2_Lucene41_0.tip, segments_5, _2.fdx, _2.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.SimpleFSDirectory@C:\Users\Carlos\Documents\GitHub\cgGuide\tools\binaries\solr-4.2.1\example\solr\cguide\data\index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1736dd4; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_6,generation=6,filenames=[_3.fdx, _3.nvd, _3_Lucene41_0.doc, _3_Lucene41_0.pos, _3_Lucene41_0.tip, _3.si, _3.fdt, _3_Lucene41_0.tim, _3.nvm, _3.fnm, segments_6]
+may 24, 2013 1:25:05 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 6[_3.fdx, _3.nvd, _3_Lucene41_0.doc, _3_Lucene41_0.pos, _3_Lucene41_0.tip, _3.si, _3.fdt, _3_Lucene41_0.tim, _3.nvm, _3.fnm, segments_6]
+may 24, 2013 1:25:05 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@365ab4 main
+may 24, 2013 1:25:05 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+may 24, 2013 1:25:05 PM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener sending requests to Searcher@365ab4 main{StandardDirectoryReader(segments_6:15:nrt _3(4.2.1):C4)}
+may 24, 2013 1:25:05 PM org.apache.solr.core.QuerySenderListener newSearcher
+INFO: QuerySenderListener done.
+may 24, 2013 1:25:05 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [cguide] Registered new searcher Searcher@365ab4 main{StandardDirectoryReader(segments_6:15:nrt _3(4.2.1):C4)}
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter readIndexerProperties
+INFO: Read dataimport.properties
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.SimplePropertiesWriter persist
+INFO: Wrote last indexed time to dataimport.properties
+may 24, 2013 1:25:05 PM org.apache.solr.handler.dataimport.DocBuilder execute
+INFO: Time taken = 0:0:0.170
+may 24, 2013 1:25:05 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [cguide] webapp=/solr path=/dataimport params={optimize=false&indent=true&clean=true&commit=true&verbose=false&command=full-import&debug=false&wt=json} status=0 QTime=7 {deleteByQuery=*:* (-1435933297353949184),add=[2 (1435933297443078144), 4 (1435933297446223872), 1 (1435933297450418176), 3 (1435933297453563904)],commit=} 0 7
+may 24, 2013 1:25:06 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/dataimport params={indent=true&command=status&_=1369412706743&wt=json} status=0 QTime=1 
+may 24, 2013 1:25:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={indent=true&q=*:*&_=1369412710494&wt=xml} hits=4 status=0 QTime=1 
+may 24, 2013 1:25:17 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=categories,memSize=4355,tindexSize=51,time=0,phase1=0,nTerms=3,bigTerms=0,termInstances=5,uses=0}
+may 24, 2013 1:25:17 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=attributes,memSize=4472,tindexSize=58,time=0,phase1=0,nTerms=4,bigTerms=1,termInstances=5,uses=0}
+may 24, 2013 1:25:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&sort=rating+asc&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=5 
+may 24, 2013 1:25:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:28:22 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:30:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:30:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:31:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:31:37 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:32:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:32:39 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:33:04 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:33:04 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:33:05 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:33:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:33:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:33:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:36:05 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=2 status=0 QTime=2 
+may 24, 2013 1:36:05 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:36:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:36:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:36:12 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:36:13 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:37:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:37:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:37:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:37:19 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:37:19 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:37:20 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:37:20 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:40:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:40:45 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:40:47 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:41:03 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=4 
+may 24, 2013 1:41:11 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:41:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=3 
+may 24, 2013 1:41:26 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 1:41:28 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 1:41:30 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 1:42:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=1 
+may 24, 2013 1:42:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffa&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=0 status=0 QTime=0 
+may 24, 2013 1:42:52 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:42:52 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:43:24 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:43:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:44:16 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:44:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:44:23 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:44:23 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:44:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:44:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=4 
+may 24, 2013 1:44:56 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:44:57 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:45:03 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:45:03 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:45:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:45:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:45:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:45:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:45:29 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:45:30 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:46:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:46:18 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:46:23 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:46:23 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:46:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 1:46:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 1:46:34 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:46:34 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:47:41 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:47:44 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:47:44 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:47:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:47:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:47:59 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:48:00 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:48:08 PM org.apache.solr.servlet.SolrDispatchFilter handleAdminRequest
+INFO: [admin] webapp=null path=/admin/cores params={indexInfo=false&_=1369414088165&wt=json} status=0 QTime=0 
+may 24, 2013 1:48:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/admin/system params={_=1369414088183&wt=json} status=0 QTime=2 
+may 24, 2013 1:48:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={d=5&fl=seller,city,id,latlng&indent=true&q=*:*&pt=45.15,-93.85&wt=json&fq={!geofilt+sfield%3Dlatlng}} hits=1 status=0 QTime=4 
+may 24, 2013 1:48:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:48:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:48:12 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:48:13 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:48:15 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:48:15 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:48:18 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:48:18 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:48:58 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:49:00 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:04 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:04 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:11 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:11 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:20 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:49:20 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:22 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:49:22 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:49:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=3 
+may 24, 2013 1:49:25 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("No+Acepta+Tarjetas")&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:29 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:29 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:32 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:33 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:49:37 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=3 status=0 QTime=0 
+may 24, 2013 1:49:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&version=2.2&rows=5} hits=3 status=0 QTime=0 
+may 24, 2013 1:49:44 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:49:44 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:("Aire+Acondicionado")&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:49:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:49:49 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:49 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:52 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&fq=attributes:(Estacionamiento)&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:49:53 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&fq=attributes:(Estacionamiento)&fq=rating:(\*\*\*\*)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:49:58 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:49:58 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:02 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:02 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:03 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:03 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+3")&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:07 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:50:08 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:09 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:10 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:14 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:50:15 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:50:15 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:50:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:50:17 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:50:23 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:28 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:28 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:50:51 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:52 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:54 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:55 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:50:56 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:56 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=attributes:(Estacionamiento)&fq=categories:("Categoria+3")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:50:59 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:50:59 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:52:32 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:52:33 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:19 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:53:20 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:37 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:53:38 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:43 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=2 
+may 24, 2013 1:53:44 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:53:46 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:53:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:48 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:54 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:53:54 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:53:55 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:53:55 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:54:02 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:02 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=Buffalo&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:06 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:54:06 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:54:13 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 1:54:13 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=3 status=0 QTime=1 
+may 24, 2013 1:54:24 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=2 
+may 24, 2013 1:54:24 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:31 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:32 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=New+York&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:35 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:54:35 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:54:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:54:36 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:54:37 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=1 
+may 24, 2013 1:54:37 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+2")&fq=attributes:("No+Acepta+Tarjetas")&version=2.2&rows=5} hits=1 status=0 QTime=0 
+may 24, 2013 1:54:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=1 
+may 24, 2013 1:54:40 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&f.categories.facet.mincount=1&facet.field=categories&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&version=2.2&rows=5} hits=4 status=0 QTime=0 
+may 24, 2013 1:54:41 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=1 
+may 24, 2013 1:54:42 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&f.attributes.facet.mincount=1&start=0&q=*:*&facet.field=attributes&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:54:43 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
+may 24, 2013 1:54:43 PM org.apache.solr.core.SolrCore execute
+INFO: [cguide] webapp=/solr path=/select params={spellcheck=true&facet=true&start=0&q=*:*&facet.field=rating&f.rating.facet.mincount=1&fq=categories:("Categoria+1")&fq=attributes:("Toma+Reservas")&version=2.2&rows=5} hits=2 status=0 QTime=0 
