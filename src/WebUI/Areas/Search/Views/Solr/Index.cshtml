@@ -12,9 +12,10 @@
     <form method="get" action=@Url.Action("Index")>
         <div>
             
-        @Html.TextBox("q", Model.Search.FreeSearch)
-    
-            </div>
+            @Html.TextBox("q", Model.Search.FreeSearch)
+    <hr>
+        </div>
+        
      @*  
         @if (!string.IsNullOrEmpty(Model.DidYouMean)) 
         {
