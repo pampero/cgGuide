@@ -24,7 +24,7 @@ namespace WebUI.Areas.Solr.Controllers
     public class SolrController : BaseController
     {
         private readonly ISolrOperations<SolrSeller> solr;
-        private static readonly string[] AllFacetFields = new[] { "categories", "attributes", "rating" }; //"subcategories",
+        private readonly string[] AllFacetFields = new[] { "categories", "attributes", "rating" }; //"subcategories",
 
         public SolrController()
         {
@@ -37,14 +37,20 @@ namespace WebUI.Areas.Solr.Controllers
             //this.Cache.Set("Dato", 1);
             //var dato = this.Cache.Get<int>("Dato");
         }
-       
+
         public class SearchParametersDto
         {
             public string FreeSearch { get; set; }
             public List<Facet> Facets { get; set; }
-            public List<Parallel> Parallels { get; set; } 
-          //  public List<FacetCollection> Facets { get; set; }
-        //    public List<ParallelCollection> Parallels { get; set; }
+            public List<Parallel> Parallels { get; set; }
+            //  public List<FacetCollection> Facets { get; set; }
+            //    public List<ParallelCollection> Parallels { get; set; }
+
+            public SearchParametersDto()
+            {
+                Facets = new List<Facet>();
+                Parallels = new List<Parallel>();
+            }
 
         }
 
@@ -72,10 +78,59 @@ namespace WebUI.Areas.Solr.Controllers
             public string Value { get; set; }
         }
 
+        public ICollection<ISolrQuery> BuildParallelFilterQueries(SearchParameters parameters)
+        {
+            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "3"));
+            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "4"));
+
+            var queriesFromParallels = parameters.Parallels.Select(p => (ISolrQuery)Query.Field(p.Key).In(new int[] { 3, 4 }));
+
+            return queriesFromParallels.ToList();
+        }
+
         // Debería enviar el SearchParameters con el estado actual, posiblemente con un fq sobre Parallels
-        public ActionResult GetAllSellers(SearchParametersDto searchParametersDto)
+        //public ActionResult GetAllSellers(SearchParametersDto searchParametersDto)
+        public ActionResult GetAllSellers(List<Parallel> parallelsDto)
         {
             var parameters = (SearchParameters)Session["Parameters"];
+
+
+            if ((parallelsDto != null) && (parallelsDto.Count > 0))
+            {
+                var firstPass = true;
+                var currentKey = "";
+
+                foreach (var parallel in parallelsDto.OrderBy(x=>x.Key))
+                {
+                    var facet = parameters.Facets.FirstOrDefault(x => x.Key == parallel.Key.ToLower());
+
+                    if (facet.Key == null)
+                    {
+                        parameters.Facets.Add(new KeyValuePair<string, string>(parallel.Key.ToLower(), parallel.Value));
+                    }
+                    else
+                    {
+                        if (currentKey != parallel.Key.ToLower())
+                        {
+                            currentKey = parallel.Key.ToLower();
+                            firstPass = true;
+                        }
+                    
+                        if (firstPass)
+                        {
+                            firstPass = false;
+                            parameters.Facets[facet.Key] = parallel.Value;
+                        }
+                        else
+                        {
+                            if (!parameters.Facets[facet.Key].Contains(parallel.Value))
+                                parameters.Facets[facet.Key] = parameters.Facets[facet.Key] + "|" + parallel.Value;
+                        }
+                    }
+                }
+            }
+
+            Session["Parameters"] = parameters;
 
             var facetParameters = new FacetParameters
                                           {
@@ -96,7 +151,7 @@ namespace WebUI.Areas.Solr.Controllers
                                                                              Facet = facetParameters
                                                                          });
 
-           
+
             return Json(new { sellers }, JsonRequestBehavior.AllowGet);
         }
 
@@ -109,7 +164,7 @@ namespace WebUI.Areas.Solr.Controllers
             return SolrQuery.All;
         }
 
-       
+
         public SortOrder[] GetSelectedSort(SearchParameters parameters)
         {
             return new[] { SortOrder.Parse(parameters.Sort) }.Where(o => o != null).ToArray();
@@ -124,22 +179,21 @@ namespace WebUI.Areas.Solr.Controllers
         //}
 
 
-        public ICollection<ISolrQuery> BuildParallelFilterQueries(SearchParameters parameters)
-        {
-            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "3"));
-            parameters.Parallels.Add(new KeyValuePair<string, string>("rating", "4"));
 
-            var queriesFromParallels = parameters.Parallels.Select(p => (ISolrQuery)Query.Field(p.Key).In(new int[] { 3, 4 }));
-
-            return queriesFromParallels.ToList();
-        }
 
 
         public ICollection<ISolrQuery> BuildFilterQueries(SearchParameters parameters)
         {
-            var queriesFromFacets = parameters.Facets.Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
+            var queriesFromParallels = parameters.Facets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|')));
 
-            return queriesFromFacets.ToList();
+            var queriesFromFacets = parameters.Facets.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
+
+            List<ISolrQuery> listFromFacet = queriesFromFacets.ToList();
+            List<ISolrQuery> listFromParallel = queriesFromParallels.ToList();
+
+            listFromFacet.AddRange(listFromParallel);
+
+            return listFromFacet;
         }
 
 
@@ -151,17 +205,25 @@ namespace WebUI.Areas.Solr.Controllers
         // El argumento parameters almacena los parametros de búsqueda en la vista, tanto el freesearch como las facetas seleccionadas
         public ActionResult Index(SearchParameters parameters)
         {
+            var facet = parameters.Facets.FirstOrDefault(x => x.Key == "categories");
+
+            if (facet.Key != null)
+                AllFacetFields[0] = "subcategories";
+            else
+                AllFacetFields[0] = "categories";
+
+
             Session["Parameters"] = parameters;
 
             try
             {
                 var start = (parameters.PageIndex - 1) * parameters.PageSize;
-           
+
                 // Saca de AllFacetFields las facetas seleccionadas desde la vista, luego crea un campo SolrFacetField por cada faceta y lo convierte a lista.
                 var facetParameters = new FacetParameters
                                           {
                                               Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                                                  .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1})
+                                                  .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
                                                   .Cast<ISolrFacetQuery>()
                                                   .ToList(),
                                           };
@@ -185,7 +247,7 @@ namespace WebUI.Areas.Solr.Controllers
                     Facets = matchingSellers.FacetFields//,
                     //  DidYouMean = GetSpellCheckingResult(matchingSellers),
                 };
-                
+
                 return View(view);
             }
             catch (InvalidFieldException)
