@@ -11,9 +11,8 @@
     
     <form method="get" action=@Url.Action("Index")>
         <div>
-            
             @Html.TextBox("q", Model.Search.FreeSearch)
-    <hr>
+            <hr>
         </div>
         
      @*  
@@ -28,7 +27,8 @@
     *@
     
     <div class="leftColumn">
-        @foreach (var f in Model.Search.Facets) {
+        @foreach (var f in Model.Search.Facets)
+        {
             <ul>
                 <li>
                     @(Html.SolrFieldPropName<SolrSeller>(f.Key))
@@ -41,20 +41,35 @@
     
     
         <ul>            
-            @foreach (var f in Model.Facets) 
+            @foreach (var f in Model.Facets)
             { 
+                if ((Html.SolrFieldPropName<SolrSeller>(f.Key) == "Attributes") || (Html.SolrFieldPropName<SolrSeller>(f.Key) == "Rating"))
+                { 
                 <li>
                     @(Html.SolrFieldPropName<SolrSeller>(f.Key))
                     <ul>
                         @foreach (var fv in f.Value.OrderBy(x => x.Key))
                         { 
-                            <li><input type="checkbox" id="@fv.Key" value="" onclick="alert();" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                            <li><input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key</span></li>
                         }
                     </ul>
                 </li>
-            } 
+                }
+                else
+                {
+                <li>
+                    @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                    <ul>
+                        @foreach (var fv in f.Value.OrderBy(x => x.Key))
+                        { 
+                            <li><input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                        }
+                    </ul>
+                </li>
+                } 
+            }
         </ul>
-        
+            
     </div>
     
     <div class="rightColumn" style="width: 77%">
