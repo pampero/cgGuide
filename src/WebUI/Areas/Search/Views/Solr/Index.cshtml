@@ -8,14 +8,14 @@
 
 <div class="">
     <h2>Solr Sample</h2>
-    
+
     <form method="get" action=@Url.Action("Index")>
         <div>
             @Html.TextBox("q", Model.Search.FreeSearch)
             <hr>
         </div>
-        
-     @*  
+
+        @*  
         @if (!string.IsNullOrEmpty(Model.DidYouMean)) 
         {
             <span>Did you mean <strong><em><a href=@Url.ForQuery(Model.DidYouMean)>@Model.DidYouMean</a></em></strong></span>
@@ -25,119 +25,114 @@
             <span class="error">Invalid query</span>
         }
     *@
-    
-    <div class="leftColumn">
-        @foreach (var f in Model.Search.Facets)
-        {
-            <ul>
-                <li>
-                    @(Html.SolrFieldPropName<SolrSeller>(f.Key))
-                    <ul>
-                        <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
-                    </ul>
-                </li>
-            </ul>
-        } 
-    
-    
-        <ul>            
-            @foreach (var f in Model.Facets)
-            { 
-                if ((Html.SolrFieldPropName<SolrSeller>(f.Key) == "Attributes") || (Html.SolrFieldPropName<SolrSeller>(f.Key) == "Rating"))
-                { 
-                <li>
-                    @(Html.SolrFieldPropName<SolrSeller>(f.Key))
-                    <ul>
-                        @foreach (var fv in f.Value.OrderBy(x => x.Key))
-                        { 
-                            <li><input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key</span></li>
-                        }
-                    </ul>
-                </li>
-                }
-                else
-                {
-                <li>
-                    @(Html.SolrFieldPropName<SolrSeller>(f.Key))
-                    <ul>
-                        @foreach (var fv in f.Value.OrderBy(x => x.Key))
-                        { 
-                            <li><input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
-                        }
-                    </ul>
-                </li>
-                } 
+
+        <div class="leftColumn">
+            @foreach (var f in Model.Search.Facets)
+            {
+                <ul>
+                    <li>
+                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        <ul>
+                            <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
+                        </ul>
+                    </li>
+                </ul>
             }
-        </ul>
-            
-    </div>
-    
-    <div class="rightColumn" style="width: 77%">
-    <table style="width: 100%">
-        <thead>
-            <tr>
-                <th style="text-align: left">ID</th>
-                <th style="text-align: left">Seller</th>
-                <th style="text-align: left">City</th>
-                <th style="text-align: left">Attributes</th>
-                <th style="text-align: left">Categories</th>
-                <th style="text-align: left">Rating</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: sellers">
-            <tr>
-                <td>
-                    <span data-bind="text: id"></span>
-                </td>
-                <td>
-                    <span data-bind="text: name"></span>
-                </td>
-                <td>
-                    <span data-bind="text: city"></span>
-                </td>
-                <td>
-                    <ul data-bind="foreach: attributes">
-                        <li data-bind="text: $data"></li> 
-                    </ul>
-                </td>
-                <td>
-                    <ul data-bind="foreach: categories">
-                        <li data-bind="text: $data"></li> 
-                    </ul>
-                </td>
-                <td>
-                    <span data-bind="text: rating"></span>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <br />
-    <button type="submit" class="btn btn-primary btn-large" >Search</button>
-        
-        @Html.ActionLink("Reset", "Index")
-       @* data-bind="click: clickCheckBox"*@
+
+
+            <ul>
+                @foreach (var f in Model.Facets)
+                {
+                    if ((Html.SolrFieldPropName<SolrSeller>(f.Key) == "Attributes") || (Html.SolrFieldPropName<SolrSeller>(f.Key) == "Rating"))
+                    { 
+                    <li>
+                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        <ul>
+                            @foreach (var fv in f.Value.OrderBy(x => x.Key))
+                            { 
+                                <li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key</span></li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                    else
+                    {
+                    <li>
+                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        <ul>
+                            @foreach (var fv in f.Value.OrderBy(x => x.Key))
+                            { 
+                                <li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                            }
+                        </ul>
+                    </li>
+                    }
+                }
+            </ul>
+
         </div>
 
-</form>
+        <div class="rightColumn" style="width: 77%">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th style="text-align: left">ID</th>
+                        <th style="text-align: left">Seller</th>
+                        <th style="text-align: left">City</th>
+                        <th style="text-align: left">Attributes</th>
+                        <th style="text-align: left">Categories</th>
+                        <th style="text-align: left">Rating</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: sellers">
+                    <tr>
+                        <td>
+                            <span data-bind="text: id"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: name"></span>
+                        </td>
+                        <td>
+                            <span data-bind="text: city"></span>
+                        </td>
+                        <td>
+                            <ul data-bind="foreach: attributes">
+                                <li data-bind="text: $data"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul data-bind="foreach: categories">
+                                <li data-bind="text: $data"></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span data-bind="text: rating"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <button type="submit" class="btn btn-primary btn-large">Search</button>
+
+            @Html.ActionLink("Reset", "Index")
+
+        </div>
+
+    </form>
 
 </div>
 
 
 <script>
 
-    var model = @(Html.Raw(Json.Encode(Model)))
-    
     $(document).ready(function () {
 
-        
-    
-        
-        
     });
 
 </script>
 
 <script src="~/Areas/BackOffice/Views/../../../Scripts/ViewModels/SolrViewModel.js"></script>
-        
 
-     
+

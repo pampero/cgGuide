@@ -10,6 +10,7 @@ using Common.Base;
 using Framework.Solr.ViewModels;
 using Microsoft.Practices.ServiceLocation;
 using Model;
+using ServiceStack.Text;
 using Services.Routes.interfaces;
 using SolrNet;
 using SolrNet.Commands.Parameters;
@@ -70,6 +71,7 @@ namespace WebUI.Areas.Solr.Controllers
         {
             public string Key { get; set; }
             public string Value { get; set; }
+            public bool Checked { get; set; }
         }
 
         public class Facet
@@ -81,46 +83,52 @@ namespace WebUI.Areas.Solr.Controllers
      
         // Debería enviar el SearchParameters con el estado actual, posiblemente con un fq sobre Parallels
         //public ActionResult GetAllSellers(SearchParametersDto searchParametersDto)
-        public ActionResult GetAllSellers(List<Parallel> parallelsDto)
+        public ActionResult GetAllSellers(Parallel parallelItemDto)
         {
-            var parameters = (SearchParameters)Session["Parameters"];
+            SearchParameters parameters = null;
 
-            if ((parallelsDto != null) && (parallelsDto.Count > 0))
+            if (ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("SearchParametersCookie"))
             {
-                var firstPass = true;
-                var currentKey = "";
+                var cookie = ControllerContext.HttpContext.Request.Cookies["SearchParametersCookie"];
+                parameters = cookie.Value.FromJson<SearchParameters>();
+            }
 
-                foreach (var parallel in parallelsDto.OrderBy(x=>x.Key))
+            if (parallelItemDto.Key != null)
+            {
+                var facet = parameters.Facets.FirstOrDefault(x => x.Key == parallelItemDto.Key.ToLower());
+
+                if (facet.Key == null)
                 {
-                    var facet = parameters.Facets.FirstOrDefault(x => x.Key == parallel.Key.ToLower());
-
-                    if (facet.Key == null)
+                    if (parallelItemDto.Checked)
                     {
-                        parameters.Facets.Add(new KeyValuePair<string, string>(parallel.Key.ToLower(), parallel.Value));
+                        parameters.Facets.Add(new KeyValuePair<string, string>(parallelItemDto.Key.ToLower(), parallelItemDto.Value));
+                    }
+                }
+                else
+                {
+                    if (parallelItemDto.Checked)
+                    {
+                        // AGREGO
+                        if (!parameters.Facets[facet.Key].Contains(parallelItemDto.Value))
+                            parameters.Facets[facet.Key] = parameters.Facets[facet.Key] + "|" + parallelItemDto.Value;
                     }
                     else
                     {
-                        if (currentKey != parallel.Key.ToLower())
+                        // ELIMINO
+                        if (parameters.Facets[facet.Key].Contains(parallelItemDto.Value))
                         {
-                            currentKey = parallel.Key.ToLower();
-                            firstPass = true;
-                        }
-                    
-                        if (firstPass)
-                        {
-                            firstPass = false;
-                            parameters.Facets[facet.Key] = parallel.Value;
-                        }
-                        else
-                        {
-                            if (!parameters.Facets[facet.Key].Contains(parallel.Value))
-                                parameters.Facets[facet.Key] = parameters.Facets[facet.Key] + "|" + parallel.Value;
-                        }
+                            parameters.Facets[facet.Key] = parameters.Facets[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
+                            if (parameters.Facets[facet.Key] == "")
+                            {
+                                parameters.Facets.Remove(facet.Key);
+                            }
+                        }   
                     }
                 }
             }
 
-            Session["Parameters"] = parameters;
+            var searchParametersCookie = new HttpCookie("SearchParametersCookie") { Value = parameters.ToJson() };
+            ControllerContext.HttpContext.Response.Cookies.Add(searchParametersCookie);
 
             var facetParameters = new FacetParameters
                                           {
@@ -190,8 +198,9 @@ namespace WebUI.Areas.Solr.Controllers
                 AllFacetFields[0] = "subcategories";
             else
                 AllFacetFields[0] = "categories";
-
-            Session["Parameters"] = parameters;
+            
+            var searchParametersCookie = new HttpCookie("SearchParametersCookie") { Value = parameters.ToJson() };
+            ControllerContext.HttpContext.Response.Cookies.Add(searchParametersCookie);
 
             try
             {
