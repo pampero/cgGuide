@@ -97,6 +97,7 @@
     <Compile Include="Model\abstractions\AbstractUpdatableClass.cs" />
     <Compile Include="Model\entities\Attribute.cs" />
     <Compile Include="Model\entities\faceting\Category.cs" />
+    <Compile Include="Model\entities\faceting\GroupCategory.cs" />
     <Compile Include="Model\entities\imaging\PictureSettings.cs" />
     <Compile Include="Model\entities\location\City.cs" />
     <Compile Include="Model\entities\location\Country.cs" />

@@ -81,8 +81,6 @@ namespace WebUI.Areas.Solr.Controllers
         }
 
      
-        // Debería enviar el SearchParameters con el estado actual, posiblemente con un fq sobre Parallels
-        //public ActionResult GetAllSellers(SearchParametersDto searchParametersDto)
         public ActionResult GetAllSellers(Parallel parallelItemDto)
         {
             SearchParameters parameters = null;
@@ -133,7 +131,7 @@ namespace WebUI.Areas.Solr.Controllers
             var facetParameters = new FacetParameters
                                           {
                                               Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                                                  .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
+                                                  .Select(f => new SolrFacetFieldQuery(f) { Prefix = "0/", MinCount = 1 })
                                                   .Cast<ISolrFacetQuery>()
                                                   .ToList(),
                                           };
@@ -210,7 +208,7 @@ namespace WebUI.Areas.Solr.Controllers
                 var facetParameters = new FacetParameters
                                           {
                                               Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-                                                  .Select(f => new SolrFacetFieldQuery(f) { MinCount = 1 })
+                                                  .Select(f => new SolrFacetFieldQuery(f) { Prefix = "0/", MinCount = 1 })
                                                   .Cast<ISolrFacetQuery>()
                                                   .ToList(),
                                           };

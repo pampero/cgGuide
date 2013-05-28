@@ -12,8 +12,6 @@ when 3 then '****'
 when 4 then '*****' 
 End as Rating
         FROM Seller S 
-        INNER JOIN SubCategorySeller SCS on  S.ID = SCS.Seller_ID
-        INNER JOIN SubCategory SC on  SC.ID = SCS.SubCategory_ID
         INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
         INNER JOIN City C on C.ID = L.CityId
         WHERE S.Deleted is null
@@ -25,17 +23,10 @@ End as Rating
             where [AS].Seller_ID ='${TestEntity.ID}'">
         </entity>
 
-        <entity name="subcategories" query="select name AS SubCategories
-            from SubCategory SC
-            inner join SubCategorySeller SCS on SC.ID = SCS.SubCategory_ID
-            where SCS.Seller_ID ='${TestEntity.ID}'">
-        </entity>
-
-         <entity name="categories" query="select distinct C.name AS Categories
-            from SubCategory SC
-            inner join Category C on C.ID = SC.CategoryId
-            inner join SubCategorySeller SCS on SC.ID = SCS.SubCategory_ID
-            where SCS.Seller_ID ='${TestEntity.ID}'">
+         <entity name="categories" query="select distinct C.Name AS Categories
+            from CategorySeller SC
+            inner join Category C on C.ID = SC.Category_ID
+            where SC.Seller_ID = '${TestEntity.ID}'">
         </entity>
 
         <field column="Id" name="id" />

@@ -34,40 +34,41 @@ namespace Model.Migrations
             var attributeTakesReservation = new Model.Attribute { Name = "Toma Reservas", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
            
-            var category1 = new Category {Name = "Categoria 1", Created = DateTime.Now, CreatedBy = "cvazquez"};
-            var category2 = new Category { Name = "Categoria 2", Created = DateTime.Now, CreatedBy = "cvazquez" };
-            var category3 = new Category { Name = "Categoria 3", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category1 = new Category {Name = "0/Categoria1", Created = DateTime.Now, CreatedBy = "cvazquez"};
+            var category2 = new Category { Name = "0/Categoria2", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category3 = new Category { Name = "0/Categoria3", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
-            var subcategory1 = new SubCategory
+            var category11 = new Category
                                    {
-                                       Category = category1,
+                                       Parent = category1,
                                        Created = DateTime.Now,
                                        CreatedBy = "cvazquez",
-                                       Name = "Sub-Categoria 1"
+                                       Name = "1/Categoria1/Categoria1",
+                                       
                                    };
 
-            var subcategory2 = new SubCategory
+            var category21 = new Category
             {
-                Category = category1,
+                Parent = category2,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoria 2"
+                Name = "1/Categoria2/Categoria1"
             };
 
-            var subcategory3 = new SubCategory
+            var category31 = new Category
             {
-                Category = category2,
+                Parent = category3,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoria 3"
+                Name = "1/Categoria3/Categoria1"
             };
-
-            var subcategory4 = new SubCategory
+            
+            var category311 = new Category
             {
-                Category = category3,
+                Parent = category3,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "Sub-Categoria 4"
+                Name = "2/Categoria3/Categoria1/Categoria1"
             };
 
             
@@ -91,7 +92,7 @@ namespace Model.Migrations
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
                                  CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
-                                 SubCategories = new List<SubCategory> { subcategory1, subcategory2, subcategory3 },
+                                 Categories = new List<Category> { category1, category11 },
                                  Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
                                  Rating = Rating.FiveStars
                              };
@@ -104,7 +105,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "19 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory3 },
+                Categories = new List<Category> { category2, category21 },
                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly },
                 Rating = Rating.OneStar
             };
@@ -117,7 +118,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "20 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory2, subcategory1 },
+                Categories = new List<Category> { category3, category31 },
                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
                 Rating = Rating.FiveStars
             };
@@ -130,7 +131,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "21 West 31st Street New York NY - 10001",
-                SubCategories = new List<SubCategory> { subcategory4 },
+                Categories = new List<Category> { category3, category31, category311 },
                 Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
                 Rating = Rating.FourStars
             };

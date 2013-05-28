@@ -9,12 +9,6 @@ function ProductReservation(id, name, city, attributes, categories, rating) {
     self.rating = rating;
 }
 
-function SearchParameters(freeSearch, facets, parallels) {
-    var self = this;
-    self.FreeSearch = freeSearch;
-    self.FacetCollection = facets;
-    self.Parallels = parallels;
-}
 
 function ParallelItem(key, value) {
     var self = this;
@@ -79,9 +73,6 @@ function SellersViewModel() {
             }
         });
     };
-
-    
-   
 }
 
 var sellerViewModel = new SellersViewModel();
