@@ -40,46 +40,12 @@ namespace WebUI.Areas.Solr.Controllers
             //var dato = this.Cache.Get<int>("Dato");
         }
 
-        //public class SearchParametersDto
-        //{
-        //    public string FreeSearch { get; set; }
-        //    public List<Facet> Facets { get; set; }
-        //    public List<Parallel> Parallels { get; set; }
-        //    //  public List<FacetCollection> Facets { get; set; }
-        //    //    public List<ParallelCollection> Parallels { get; set; }
-
-        //    public SearchParametersDto()
-        //    {
-        //        Facets = new List<Facet>();
-        //        Parallels = new List<Parallel>();
-        //    }
-
-        //}
-
-        //public class FacetCollection
-        //{
-        //    public string Key { get; set; }
-        //    public List<Facet> Facets { get; set; }
-        //}
-
-        //public class ParallelCollection
-        //{
-        //    public string Key { get; set; }
-        //    public List<Parallel> Parallels { get; set; }
-        //}
-
         public class Parallel
         {
             public string Key { get; set; }
             public string Value { get; set; }
             public bool Checked { get; set; }
         }
-
-        //public class Facet
-        //{
-        //    public string Key { get; set; }
-        //    public string Value { get; set; }
-        //}
 
         // LISTA LOS SELLERS DE ACUERDO A LA BUSQUEDA INICIAL Y A LA SELECCION DE LOS CHECKBOX 'parallelItemDto'
         public ActionResult GetAllSellers(Parallel parallelItemDto)
@@ -94,14 +60,14 @@ namespace WebUI.Areas.Solr.Controllers
 
             if (parallelItemDto.Key != null)
             {
-                var facet = parameters.SelectedFacets.FirstOrDefault(x => x.Key == parallelItemDto.Key.ToLower());
+                var facet = parameters.BreadCrumb.FirstOrDefault(x => x.Key == parallelItemDto.Key.ToLower());
 
                 if (facet.Key == null)
                 {
                     if (parallelItemDto.Checked)
                     {
                         // TODO: Si está hay que hacer lo mismo que abajo para que no de error
-                        parameters.SelectedFacets.Add(new KeyValuePair<string, string>(parallelItemDto.Key.ToLower(), parallelItemDto.Value));
+                        parameters.BreadCrumb.Add(new KeyValuePair<string, string>(parallelItemDto.Key.ToLower(), parallelItemDto.Value));
                     }
                 }
                 else
@@ -109,18 +75,18 @@ namespace WebUI.Areas.Solr.Controllers
                     if (parallelItemDto.Checked)
                     {
                         // AGREGO
-                        if (!parameters.SelectedFacets[facet.Key].Contains(parallelItemDto.Value))
-                            parameters.SelectedFacets[facet.Key] = parameters.SelectedFacets[facet.Key] + "|" + parallelItemDto.Value;
+                        if (!parameters.BreadCrumb[facet.Key].Contains(parallelItemDto.Value))
+                            parameters.BreadCrumb[facet.Key] = parameters.BreadCrumb[facet.Key] + "|" + parallelItemDto.Value;
                     }
                     else
                     {
                         // ELIMINO
-                        if (parameters.SelectedFacets[facet.Key].Contains(parallelItemDto.Value))
+                        if (parameters.BreadCrumb[facet.Key].Contains(parallelItemDto.Value))
                         {
-                            parameters.SelectedFacets[facet.Key] = parameters.SelectedFacets[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
-                            if (parameters.SelectedFacets[facet.Key] == "")
+                            parameters.BreadCrumb[facet.Key] = parameters.BreadCrumb[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
+                            if (parameters.BreadCrumb[facet.Key] == "")
                             {
-                                parameters.SelectedFacets.Remove(facet.Key);
+                                parameters.BreadCrumb.Remove(facet.Key);
                             }
                         }   
                     }
@@ -170,8 +136,8 @@ namespace WebUI.Areas.Solr.Controllers
         // BUSQUEDA PARA LISTADO
         public ICollection<ISolrQuery> BuildFilterSelectedFacets(SearchParameters parameters)
         {
-            var listFromParallel = parameters.SelectedFacets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|'))).ToList();
-            var listFromFacet = parameters.SelectedFacets.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value)).ToList();
+            var listFromParallel = parameters.BreadCrumb.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|'))).ToList();
+            var listFromFacet = parameters.BreadCrumb.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value)).ToList();
 
             listFromFacet.AddRange(listFromParallel);
 
@@ -202,6 +168,13 @@ namespace WebUI.Areas.Solr.Controllers
                     {
                         string prefix = string.Empty;
                         var facet = parameters.Facets.SingleOrDefault(x => x.Key == "paths");
+
+                         // AGREGA AL BREADCRUMB
+                        foreach (var facetAux in parameters.Facets)
+                        {
+                            parameters.BreadCrumb.Add(new KeyValuePair<string, string>(facetAux.Key, facetAux.Value));
+                        }
+
                         parameters.Facets.Clear();
 
 

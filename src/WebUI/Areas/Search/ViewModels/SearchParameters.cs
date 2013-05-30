@@ -9,7 +9,7 @@ namespace Framework.Solr.ViewModels
         public SearchParameters()
         {
             Facets = new Dictionary<string, string>();
-            SelectedFacets = new Dictionary<string, string>();
+            BreadCrumb = new Dictionary<string, string>();
             PageSize = DefaultPageSize;
             PageIndex = 1;
         }
@@ -19,7 +19,7 @@ namespace Framework.Solr.ViewModels
         public int PageSize { get; set; }
         public IDictionary<string, string> Facets { get; set; }
         public string Sort { get; set; }
-        public IDictionary<string, string> SelectedFacets { get; set; }
+        public IDictionary<string, string> BreadCrumb { get; set; }
         
         public int FirstItemIndex
         {

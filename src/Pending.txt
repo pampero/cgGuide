@@ -33,9 +33,11 @@ OK -. Facetado
 PENDIENTES
 
 -. Poner "Y" en atributos.
+-. Refactorizar estructura del proyecto.
 -. Hacer Back en los seleccionados
 -. SEO - URL REWRITE
 -. Hacer BreadCrumb.
+-. Chequear que no funciona correctamente la búsqueda "Seller 2"
 -. Autocomplete.
 
 OK -. Hacer Drill-Down sobre Categoría
