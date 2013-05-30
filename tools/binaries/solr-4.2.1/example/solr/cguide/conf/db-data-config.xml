@@ -1,15 +1,15 @@
 <dataConfig>  
     <dataSource type="JdbcDataSource"
             driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-            url="jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=el78Taxi;" 	/> 
+            url="jdbc:sqlserver://localhost\SQLEXPRESS2008;databaseName=Guide;user=sa;password=Passw0rd;" 	/> 
              
     <document>  
     
-	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Case Rating when 0 then '*'
-when 1 then '**' 
-when 2 then '***' 
-when 3 then '****' 
-when 4 then '*****' 
+	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Case Rating when 0 then '0/*'
+when 1 then '0/**' 
+when 2 then '0/***' 
+when 3 then '0/****' 
+when 4 then '0/*****' 
 End as Rating
         FROM Seller S 
         INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
@@ -23,10 +23,12 @@ End as Rating
             where [AS].Seller_ID ='${TestEntity.ID}'">
         </entity>
 
-         <entity name="categories" query="select distinct C.Name AS Categories
-            from CategorySeller SC
-            inner join Category C on C.ID = SC.Category_ID
-            where SC.Seller_ID = '${TestEntity.ID}'">
+        <entity name="categories" query="[sp_GetCategories] '${TestEntity.ID}'">
+            <field column="Categories" name="categories" />
+        </entity>
+
+        <entity name="paths" query="[sp_GetPaths] '${TestEntity.ID}'">
+            <field column="Paths" name="paths" />             
         </entity>
 
         <field column="Id" name="id" />

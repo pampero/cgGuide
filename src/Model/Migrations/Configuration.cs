@@ -33,18 +33,16 @@ namespace Model.Migrations
             var attributeCashOnly = new Model.Attribute { Name = "No Acepta Tarjetas", Created = DateTime.Now, CreatedBy = "cvazquez" };
             var attributeTakesReservation = new Model.Attribute { Name = "Toma Reservas", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
-           
-            var category1 = new Category {Name = "0/Categoria1", Created = DateTime.Now, CreatedBy = "cvazquez"};
-            var category2 = new Category { Name = "0/Categoria2", Created = DateTime.Now, CreatedBy = "cvazquez" };
-            var category3 = new Category { Name = "0/Categoria3", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category1 = new Category { Name = "Categoria1", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category2 = new Category { Name = "Categoria2", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category3 = new Category { Name = "Categoria3", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
             var category11 = new Category
                                    {
                                        Parent = category1,
                                        Created = DateTime.Now,
                                        CreatedBy = "cvazquez",
-                                       Name = "1/Categoria1/Categoria1",
-                                       
+                                       Name = "Categoria11"
                                    };
 
             var category21 = new Category
@@ -52,7 +50,7 @@ namespace Model.Migrations
                 Parent = category2,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "1/Categoria2/Categoria1"
+                Name = "Categoria21"
             };
 
             var category31 = new Category
@@ -60,15 +58,15 @@ namespace Model.Migrations
                 Parent = category3,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "1/Categoria3/Categoria1"
+                Name = "Categoria31"
             };
             
             var category311 = new Category
             {
-                Parent = category3,
+                Parent = category31,
                 Created = DateTime.Now,
                 CreatedBy = "cvazquez",
-                Name = "2/Categoria3/Categoria1/Categoria1"
+                Name= "Categoria311"
             };
 
             
@@ -92,7 +90,7 @@ namespace Model.Migrations
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
                                  CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
-                                 Categories = new List<Category> { category1, category11 },
+                                 Categories = new List<Category> { category11 },
                                  Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
                                  Rating = Rating.FiveStars
                              };
@@ -105,7 +103,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "19 West 31st Street New York NY - 10001",
-                Categories = new List<Category> { category2, category21 },
+                Categories = new List<Category> { category21 },
                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly },
                 Rating = Rating.OneStar
             };
@@ -118,7 +116,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "20 West 31st Street New York NY - 10001",
-                Categories = new List<Category> { category3, category31 },
+                Categories = new List<Category> { category31 },
                 Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
                 Rating = Rating.FiveStars
             };
@@ -131,7 +129,7 @@ namespace Model.Migrations
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
                 CompleteAddress = "21 West 31st Street New York NY - 10001",
-                Categories = new List<Category> { category3, category31, category311 },
+                Categories = new List<Category> {  category311 },
                 Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
                 Rating = Rating.FourStars
             };
@@ -140,6 +138,75 @@ namespace Model.Migrations
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller2);
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller3);
             appDbContext.Sellers.AddOrUpdate(c => c.Name, seller4);
+
+            appDbContext.Database.ExecuteSqlCommand(@"
+CREATE PROCEDURE sp_GetCategories
+
+	@seller_id as integer
+
+AS
+
+	SET NOCOUNT ON
+
+SELECT Name as Categories
+FROM Category 
+WHERE Id IN (SELECT Category_ID FROM CategorySeller WHERE Seller_ID = @seller_id)");
+
+
+            appDbContext.Database.ExecuteSqlCommand(@"
+CREATE PROCEDURE sp_GetPaths
+
+	@seller_id as integer
+
+AS
+
+	SET NOCOUNT ON
+
+declare @T table(ID int, Name varchar(500), Parent_Id int);
+
+;WITH Cat
+AS
+(
+    SELECT Id AS StartingId, Id, Parent_Id, Name
+    FROM Category
+
+    UNION ALL
+
+    SELECT Cat.StartingId, C.Id, C.Parent_Id, C.Name
+    FROM Category C INNER JOIN Cat ON C.Id = Cat.Parent_Id
+)
+INSERT INTO @T (ID, Name, Parent_Id)
+SELECT Id, Name, Parent_Id
+FROM Cat 
+WHERE Cat.StartingId IN (SELECT Category_ID FROM CategorySeller WHERE Seller_ID = @seller_id)
+
+;with C as
+(
+  select ID,
+         Name,
+         Parent_Id,
+         cast('' as varchar(max)) as ParentNames,
+         0 As Generation
+  from @T
+  where Parent_Id is null
+  union all
+  select T.ID,
+         T.Name,
+         T.Parent_Id,
+         C.ParentNames + '/' + C.Name,
+         Generation + 1 As Generation
+  from @T as T         
+    inner join C
+      on C.ID = T.Parent_Id
+)      
+select ID,
+       Name as Categories,
+       CASE WHEN ParentNames = '' THEN
+			'0/' + Name
+       ELSE
+			Convert(varchar, Generation) + '/' + stuff(ParentNames, 1, 1, '') + '/' + Name 
+       END as Paths
+from C;");
 
             appDbContext.SaveChanges();
         }

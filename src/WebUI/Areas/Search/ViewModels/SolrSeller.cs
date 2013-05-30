@@ -18,11 +18,11 @@ namespace Framework.Solr.ViewModels
         [SolrField("attributes")] 
         public ICollection<string> Attributes { get; set; }
 
-        [SolrField("subcategories")]
-        public ICollection<string> Subcategories { get; set; }
-
         [SolrField("categories")]
-        public ICollection<string> Categories { get; set; }
+        public string Categories { get; set; }
+
+        [SolrField("paths")]
+        public ICollection<string> Paths { get; set; }
 
         [SolrField("rating")]
         public string Rating { get; set; }

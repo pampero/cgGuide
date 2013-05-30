@@ -27,13 +27,13 @@
     *@
 
         <div class="leftColumn">
-            @foreach (var f in Model.Search.Facets)
+            @foreach (var f in Model.Search.SelectedFacets)
             {
                 <ul>
                     <li>
                         @(Html.SolrFieldPropName<SolrSeller>(f.Key))
                         <ul>
-                            <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
+                            <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value.ToSolrFacet()</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,7 +51,7 @@
                             @foreach (var fv in f.Value.OrderBy(x => x.Key))
                             { 
                                 <li>
-                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key</span></li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key.ToSolrFacet()</span></li>
                             }
                         </ul>
                     </li>
@@ -64,7 +64,7 @@
                             @foreach (var fv in f.Value.OrderBy(x => x.Key))
                             { 
                                 <li>
-                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key</a> <span>(@fv.Value)</span></li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key.ToSolrFacet()</a> <span>(@fv.Value)</span></li>
                             }
                         </ul>
                     </li>
@@ -103,9 +103,8 @@
                             </ul>
                         </td>
                         <td>
-                            <ul data-bind="foreach: categories">
-                                <li data-bind="text: $data"></li>
-                            </ul>
+                          <span data-bind="text: categories"></span>
+
                         </td>
                         <td>
                             <span data-bind="text: rating"></span>
