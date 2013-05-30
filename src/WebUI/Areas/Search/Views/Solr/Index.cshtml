@@ -15,25 +15,14 @@
             <hr>
         </div>
 
-        @*  
-        @if (!string.IsNullOrEmpty(Model.DidYouMean)) 
-        {
-            <span>Did you mean <strong><em><a href=@Url.ForQuery(Model.DidYouMean)>@Model.DidYouMean</a></em></strong></span>
-        }
-        @if (Model.QueryError) 
-        { 
-            <span class="error">Invalid query</span>
-        }
-    *@
-
         <div class="leftColumn">
             @foreach (var f in Model.Search.SelectedFacets)
             {
                 <ul>
                     <li>
-                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        Selected
                         <ul>
-                            <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value.ToSolrFacet()</a></li>
+                            <li><a class="removeFacet" href=@Url.RemoveFacet(f.Key)>@f.Value</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -59,7 +48,7 @@
                     else
                     {
                     <li>
-                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        Categories
                         <ul>
                             @foreach (var fv in f.Value.OrderBy(x => x.Key))
                             { 
@@ -133,5 +122,4 @@
 </script>
 
 <script src="~/Areas/BackOffice/Views/../../../Scripts/ViewModels/SolrViewModel.js"></script>
-
 

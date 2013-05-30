@@ -20,7 +20,7 @@ namespace Framework.Solr.ViewModels
         public IDictionary<string, string> Facets { get; set; }
         public string Sort { get; set; }
         public IDictionary<string, string> SelectedFacets { get; set; }
-
+        
         public int FirstItemIndex
         {
             get

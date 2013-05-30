@@ -25,7 +25,7 @@ function SellersViewModel() {
 
     $.ajax({
         type: 'POST',
-        url: "http://localhost:1586/Search/GetAllSellers",
+        url: "/Search/GetAllSellers",
         contentType: "application/json; charset=utf-8",
         traditional: true,
         data: JSON.stringify({ parallelsDto: self.parallels }),
@@ -56,7 +56,7 @@ function SellersViewModel() {
 
         $.ajax({
             type: 'POST',
-            url: "http://localhost:1586/Search/GetAllSellers",
+            url: "/Search/GetAllSellers",
             contentType: "application/json; charset=utf-8",
             traditional: true,
             data: JSON.stringify({ parallelItemDto: parallelItem }),

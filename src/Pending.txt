@@ -32,8 +32,14 @@ OK -. Facetado
 
 PENDIENTES
 
-Hacer Drill-Down sobre Categoría
-Hacer búsqueda paralela sobre rating
+-. Poner "Y" en atributos.
+-. Hacer Back en los seleccionados
+-. SEO - URL REWRITE
+-. Hacer BreadCrumb.
+-. Autocomplete.
+
+OK -. Hacer Drill-Down sobre Categoría
+OK -. Hacer búsqueda paralela sobre rating
 Hacer DidYouMean y spellchecking
 Mostrar toda la info en la grilla para poder corroborar si funciona correctamente el facetado.
 Investigar mas a fondo QueryOptions, SortOrder, etc.

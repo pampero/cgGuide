@@ -23,7 +23,7 @@ namespace WebUI.Areas.Solr.Controllers
     // http://wiki.apache.org/solr/CommonQueryParameters#fq
     // PENDIENTE: DrillDown
     [Authorize]
-    public class SolrController : BaseController
+    public partial class SolrController : BaseController
     {
         private readonly ISolrOperations<SolrSeller> solr;
         private readonly string[] AllFacetFields = new[] { "paths", "attributes", "rating" };
@@ -40,33 +40,33 @@ namespace WebUI.Areas.Solr.Controllers
             //var dato = this.Cache.Get<int>("Dato");
         }
 
-        public class SearchParametersDto
-        {
-            public string FreeSearch { get; set; }
-            public List<Facet> Facets { get; set; }
-            public List<Parallel> Parallels { get; set; }
-            //  public List<FacetCollection> Facets { get; set; }
-            //    public List<ParallelCollection> Parallels { get; set; }
+        //public class SearchParametersDto
+        //{
+        //    public string FreeSearch { get; set; }
+        //    public List<Facet> Facets { get; set; }
+        //    public List<Parallel> Parallels { get; set; }
+        //    //  public List<FacetCollection> Facets { get; set; }
+        //    //    public List<ParallelCollection> Parallels { get; set; }
 
-            public SearchParametersDto()
-            {
-                Facets = new List<Facet>();
-                Parallels = new List<Parallel>();
-            }
+        //    public SearchParametersDto()
+        //    {
+        //        Facets = new List<Facet>();
+        //        Parallels = new List<Parallel>();
+        //    }
 
-        }
+        //}
 
-        public class FacetCollection
-        {
-            public string Key { get; set; }
-            public List<Facet> Facets { get; set; }
-        }
+        //public class FacetCollection
+        //{
+        //    public string Key { get; set; }
+        //    public List<Facet> Facets { get; set; }
+        //}
 
-        public class ParallelCollection
-        {
-            public string Key { get; set; }
-            public List<Parallel> Parallels { get; set; }
-        }
+        //public class ParallelCollection
+        //{
+        //    public string Key { get; set; }
+        //    public List<Parallel> Parallels { get; set; }
+        //}
 
         public class Parallel
         {
@@ -75,13 +75,13 @@ namespace WebUI.Areas.Solr.Controllers
             public bool Checked { get; set; }
         }
 
-        public class Facet
-        {
-            public string Key { get; set; }
-            public string Value { get; set; }
-        }
+        //public class Facet
+        //{
+        //    public string Key { get; set; }
+        //    public string Value { get; set; }
+        //}
 
-     
+        // LISTA LOS SELLERS DE ACUERDO A LA BUSQUEDA INICIAL Y A LA SELECCION DE LOS CHECKBOX 'parallelItemDto'
         public ActionResult GetAllSellers(Parallel parallelItemDto)
         {
             SearchParameters parameters = null;
@@ -94,13 +94,14 @@ namespace WebUI.Areas.Solr.Controllers
 
             if (parallelItemDto.Key != null)
             {
-                var facet = parameters.Facets.FirstOrDefault(x => x.Key == parallelItemDto.Key.ToLower());
+                var facet = parameters.SelectedFacets.FirstOrDefault(x => x.Key == parallelItemDto.Key.ToLower());
 
                 if (facet.Key == null)
                 {
                     if (parallelItemDto.Checked)
                     {
-                        parameters.Facets.Add(new KeyValuePair<string, string>(parallelItemDto.Key.ToLower(), parallelItemDto.Value.ToSolrFacet()));
+                        // TODO: Si está hay que hacer lo mismo que abajo para que no de error
+                        parameters.SelectedFacets.Add(new KeyValuePair<string, string>(parallelItemDto.Key.ToLower(), parallelItemDto.Value));
                     }
                 }
                 else
@@ -108,18 +109,18 @@ namespace WebUI.Areas.Solr.Controllers
                     if (parallelItemDto.Checked)
                     {
                         // AGREGO
-                        if (!parameters.Facets[facet.Key].Contains(parallelItemDto.Value))
-                            parameters.Facets[facet.Key] = parameters.Facets[facet.Key] + "|" + parallelItemDto.Value;
+                        if (!parameters.SelectedFacets[facet.Key].Contains(parallelItemDto.Value))
+                            parameters.SelectedFacets[facet.Key] = parameters.SelectedFacets[facet.Key] + "|" + parallelItemDto.Value;
                     }
                     else
                     {
                         // ELIMINO
-                        if (parameters.Facets[facet.Key].Contains(parallelItemDto.Value))
+                        if (parameters.SelectedFacets[facet.Key].Contains(parallelItemDto.Value))
                         {
-                            parameters.Facets[facet.Key] = parameters.Facets[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
-                            if (parameters.Facets[facet.Key] == "")
+                            parameters.SelectedFacets[facet.Key] = parameters.SelectedFacets[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
+                            if (parameters.SelectedFacets[facet.Key] == "")
                             {
-                                parameters.Facets.Remove(facet.Key);
+                                parameters.SelectedFacets.Remove(facet.Key);
                             }
                         }   
                     }
@@ -129,43 +130,7 @@ namespace WebUI.Areas.Solr.Controllers
             var searchParametersCookie = new HttpCookie("SearchParametersCookie") { Value = parameters.ToJson() };
             ControllerContext.HttpContext.Response.Cookies.Add(searchParametersCookie);
 
-            //var facetParameters = new FacetParameters
-            //                              {
-            //                                  Queries = AllFacetFields.Except(SelectedFacetFields(parameters))
-            //                                      .Select(f => new SolrFacetFieldQuery(f) { Prefix = "0/", MinCount = 1 })
-            //                                      .Cast<ISolrFacetQuery>()
-            //                                      .ToList(),
-            //                              };
-            
-            var facetParameters = new FacetParameters();
-
-            foreach (var data in AllFacetFields)
-            {
-                ISolrFacetQuery facetQuery;
-
-                if (data == "paths")
-                {
-                    string prefix = "0/";
-                    var facet = parameters.SelectedFacets.SingleOrDefault(x => x.Key == "paths");
-
-                    
-                    if (facet.Key != null)
-                    {
-                        prefix = "1/" + facet.Value.ToSolrFacet();
-                    }
-
-                    facetQuery = new SolrFacetFieldQuery("paths") { MinCount = 1, Prefix = prefix };
-                }
-                else
-                {
-                    facetQuery = new SolrFacetFieldQuery(data) { MinCount = 1 };
-                }
-
-                facetParameters.Queries.Add(facetQuery);
-            }
-
-            //TODO: Agregar paths:'0/Categoria3'
-            var fq = BuildFilterParallels(parameters);
+            var fq = BuildFilterSelectedFacets(parameters);
 
             var sellers = solr.Query(BuildQuery(parameters), new QueryOptions
                                                                          {
@@ -173,19 +138,18 @@ namespace WebUI.Areas.Solr.Controllers
                                                                              FilterQueries = fq,
                                                                              Rows = 5,
                                                                              Start = 0,
-                                                                             SpellCheck = new SpellCheckingParameters(),
-                                                                             Facet = facetParameters
+                                                                             SpellCheck = new SpellCheckingParameters()
                                                                          });
 
             return Json(new { sellers }, JsonRequestBehavior.AllowGet);
         }
 
 
-
+        // BUSQUEDA LIBRE
         public ISolrQuery BuildQuery(SearchParameters parameters)
         {
             if (!string.IsNullOrEmpty(parameters.FreeSearch))
-                return new SolrQuery(parameters.FreeSearch);
+                return new SolrQuery(parameters.FreeSearch + "*");
             return SolrQuery.All;
         }
 
@@ -195,29 +159,19 @@ namespace WebUI.Areas.Solr.Controllers
             return new[] { SortOrder.Parse(parameters.Sort) }.Where(o => o != null).ToArray();
         }
 
-
-        public ICollection<ISolrQuery> BuildFilterQueries(SearchParameters parameters)
+        // BUSQUEDA PARA FACETADO
+        public ICollection<ISolrQuery> BuildFilterFacets(SearchParameters parameters)
         {
-            var queriesFromParallels = parameters.Facets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|')));
-
-            var queriesFromFacets = parameters.Facets.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
-
-            //List<ISolrQuery> listFromFacet = queriesFromFacets.ToList();
-            List<ISolrQuery> listFromParallel = queriesFromParallels.ToList();
-
-            //listFromFacet.AddRange(listFromParallel);
-
-            return listFromParallel;
+            var queriesFromFacets = parameters.Facets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|')));
+            List<ISolrQuery> listFromFacets = queriesFromFacets.ToList();
+            return listFromFacets;
         }
 
-        public ICollection<ISolrQuery> BuildFilterParallels(SearchParameters parameters)
+        // BUSQUEDA PARA LISTADO
+        public ICollection<ISolrQuery> BuildFilterSelectedFacets(SearchParameters parameters)
         {
-            var queriesFromParallels = parameters.Facets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|')));
-
-            var queriesFromFacets = parameters.Facets.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value));
-
-            List<ISolrQuery> listFromFacet = queriesFromFacets.ToList();
-            List<ISolrQuery> listFromParallel = queriesFromParallels.ToList();
+            var listFromParallel = parameters.SelectedFacets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|'))).ToList();
+            var listFromFacet = parameters.SelectedFacets.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value)).ToList();
 
             listFromFacet.AddRange(listFromParallel);
 
@@ -231,9 +185,9 @@ namespace WebUI.Areas.Solr.Controllers
 
 
         // El argumento parameters almacena los parametros de búsqueda en la vista, tanto el freesearch como las facetas seleccionadas
+        // SE ENCARGA SOLO DEL ARMADO DEL FACETADO
         public ActionResult Index(SearchParameters parameters)
         {
-          
             try
             {
                 var start = (parameters.PageIndex - 1) * parameters.PageSize;
@@ -246,20 +200,20 @@ namespace WebUI.Areas.Solr.Controllers
 
                     if (data == "paths")
                     {
-                        string prefix = "0/";
+                        string prefix = string.Empty;
                         var facet = parameters.Facets.SingleOrDefault(x => x.Key == "paths");
-
-                        // SOLO PARA BREADCRUMB
-                        foreach (var facetAux in parameters.Facets)
-                        {
-                            parameters.SelectedFacets.Add(new KeyValuePair<string, string>(facetAux.Key, facetAux.Value));
-                        }
-                       
-
                         parameters.Facets.Clear();
+
+
                         if (facet.Key != null)
                         {
-                            prefix = "1/" + facet.Value;
+                            var depth = facet.Value.Split('/').Count() - 1 + "/";
+
+                            prefix = facet.Value.Replace(facet.Value.Substring(0, facet.Value.IndexOf('/') + 1), depth);
+                        }
+                        else
+                        { 
+                            prefix = "0/";
                         }
 
                         facetQuery = new SolrFacetFieldQuery("paths") {MinCount = 1, Prefix = prefix };
@@ -278,8 +232,7 @@ namespace WebUI.Areas.Solr.Controllers
 
                  var queryOptions = new QueryOptions
                                        {
-                                           // Facetas ya seleccionadas -Drill Down-
-                                           FilterQueries = BuildFilterQueries(parameters),
+                                           FilterQueries = BuildFilterFacets(parameters),
                                            Rows = parameters.PageSize,
                                            Start = start,
                                            OrderBy = GetSelectedSort(parameters),
@@ -295,8 +248,7 @@ namespace WebUI.Areas.Solr.Controllers
                     Sellers = matchingSellers,
                     Search = parameters,
                     TotalCount = matchingSellers.NumFound,
-                    Facets = matchingSellers.FacetFields//,
-                    //  DidYouMean = GetSpellCheckingResult(matchingSellers),
+                    Facets = matchingSellers.FacetFields
                 };
 
                 return View(view);
@@ -309,55 +261,6 @@ namespace WebUI.Areas.Solr.Controllers
                 });
             }
         }
-
-        // public ActionResult AddProduct()
-        // {
-        //     var product = new Product
-        //     {
-        //         Id = new Random().Next().ToString(),
-        //         InStock = true,
-        //         Manufacturer = "Apple",
-        //         Price = 50m,
-        //         Weight = 20,
-        //         Categories = new[] { "Computers", "Electronics" }
-        //     };
-
-        //     solr.Add(product);
-        //     solr.Commit();
-
-        //     return Json(new { product }, JsonRequestBehavior.AllowGet);
-        // }
-
-
-        //public ActionResult RemoveAll()
-        //{
-        //    var message = string.Empty;
-
-        //    solr.Delete(SolrQuery.All);
-        //    solr.Commit();
-
-        //    return Json(new { message }, JsonRequestBehavior.AllowGet);
-        //}
-
-
-        //public ActionResult Remove(Product product)
-        // {
-        //    var ok = false;
-
-        //    try
-        //    {
-        //        solr.Delete(product.Id);
-        //        solr.Commit();
-        //        ok = true;
-        //    }
-        //    catch (Exception exception)
-        //    {
-
-        //    }
-
-        //     return Json(new { ok }, JsonRequestBehavior.AllowGet);
-        // }
-
 
     }
 }
