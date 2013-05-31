@@ -29,6 +29,7 @@ namespace Framework.Solr.ViewModels.Binders
             var sp = new SearchParameters
             {
                 FreeSearch = StringHelper.EmptyToNull(qs["q"]),
+                SearchCity = StringHelper.EmptyToNull(qs["qCity"]),
                 PageIndex = StringHelper.TryParse(qs["page"], 1),
                 PageSize = StringHelper.TryParse(qs["pageSize"], DefaultPageSize),
                 Sort = StringHelper.EmptyToNull(qs["sort"]),

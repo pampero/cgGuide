@@ -32,7 +32,8 @@ OK -. Facetado
 
 PENDIENTES
 
--. Poner "Y" en atributos.
+OK -. Poner "Y" en atributos.
+OK -. Agregar buscador por ciudad.
 -. Refactorizar estructura del proyecto.
 -. Hacer Back en los seleccionados
 -. SEO - URL REWRITE

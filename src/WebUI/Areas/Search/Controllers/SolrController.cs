@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using Common.Base;
-using Framework.Helpers;
 using Framework.Solr.ViewModels;
 using Microsoft.Practices.ServiceLocation;
-using Model;
 using ServiceStack.Text;
-using Services.Routes.interfaces;
 using SolrNet;
 using SolrNet.Commands.Parameters;
 using SolrNet.DSL;
@@ -25,12 +18,12 @@ namespace WebUI.Areas.Solr.Controllers
     [Authorize]
     public partial class SolrController : BaseController
     {
-        private readonly ISolrOperations<SolrSeller> solr;
+        private readonly ISolrOperations<SolrBusiness> solr;
         private readonly string[] AllFacetFields = new[] { "paths", "attributes", "rating" };
 
         public SolrController()
         {
-            solr = ServiceLocator.Current.GetInstance<ISolrOperations<SolrSeller>>();
+            solr = ServiceLocator.Current.GetInstance<ISolrOperations<SolrBusiness>>();
 
             // Subir Redis y descomentar para usar session y caché
             //this.Session["Dato"] = 1;
@@ -84,10 +77,8 @@ namespace WebUI.Areas.Solr.Controllers
                         if (parameters.BreadCrumb[facet.Key].Contains(parallelItemDto.Value))
                         {
                             parameters.BreadCrumb[facet.Key] = parameters.BreadCrumb[facet.Key].Replace("|" + parallelItemDto.Value, "").Replace(parallelItemDto.Value + "|", "").Replace(parallelItemDto.Value, "");
-                            if (parameters.BreadCrumb[facet.Key] == "")
-                            {
-                                parameters.BreadCrumb.Remove(facet.Key);
-                            }
+                            
+                            if (parameters.BreadCrumb[facet.Key] == "")     parameters.BreadCrumb.Remove(facet.Key);
                         }   
                     }
                 }
@@ -129,20 +120,49 @@ namespace WebUI.Areas.Solr.Controllers
         public ICollection<ISolrQuery> BuildFilterFacets(SearchParameters parameters)
         {
             var queriesFromFacets = parameters.Facets.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|')));
-            List<ISolrQuery> listFromFacets = queriesFromFacets.ToList();
+            var listFromFacets = queriesFromFacets.ToList();
+
+
+            if (!string.IsNullOrEmpty(parameters.SearchCity))
+            {
+                var fq = (ISolrQuery)Query.Field("city").Is(parameters.SearchCity);
+                listFromFacets.Add(fq);
+            }
+
             return listFromFacets;
         }
 
         // BUSQUEDA PARA LISTADO
         public ICollection<ISolrQuery> BuildFilterSelectedFacets(SearchParameters parameters)
         {
-            var listFromParallel = parameters.BreadCrumb.Where(x => x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).In(p.Value.Split('|'))).ToList();
-            var listFromFacet = parameters.BreadCrumb.Where(x => !x.Value.Contains("|")).Select(p => (ISolrQuery)Query.Field(p.Key).Is(p.Value)).ToList();
+            var listFilterQuery  = new List<ISolrQuery>();
 
-            listFromFacet.AddRange(listFromParallel);
+            foreach (var key in parameters.BreadCrumb.Keys)
+            {
+                var values = parameters.BreadCrumb[key.ToLower()].Split('|');
 
-            return listFromFacet;
+                foreach (var value in values)
+                {
+                    var fq = (ISolrQuery)Query.Field(key.ToLower()).Is(value);
+                    listFilterQuery.Add(fq);
+                }
+            }
+            
+            // AGREGA BUSQUEDA DE CIUDAD
+            return AddCitySearch(parameters, listFilterQuery);
         }
+
+        private static ICollection<ISolrQuery> AddCitySearch(SearchParameters parameters, List<ISolrQuery> listFilterQuery)
+        {
+            if (!string.IsNullOrEmpty(parameters.SearchCity))
+            {
+                var fq = (ISolrQuery) Query.Field("city").Is(parameters.SearchCity);
+                listFilterQuery.Add(fq);
+            }
+
+            return listFilterQuery;
+        }
+
 
         public IEnumerable<string> SelectedFacetFields(SearchParameters parameters)
         {
@@ -177,7 +197,6 @@ namespace WebUI.Areas.Solr.Controllers
 
                         parameters.Facets.Clear();
 
-
                         if (facet.Key != null)
                         {
                             var depth = facet.Value.Split('/').Count() - 1 + "/";
@@ -203,7 +222,7 @@ namespace WebUI.Areas.Solr.Controllers
                 var searchParametersCookie = new HttpCookie("SearchParametersCookie") { Value = parameters.ToJson() };
                 ControllerContext.HttpContext.Response.Cookies.Add(searchParametersCookie);
 
-                 var queryOptions = new QueryOptions
+                var queryOptions = new QueryOptions
                                        {
                                            FilterQueries = BuildFilterFacets(parameters),
                                            Rows = parameters.PageSize,
@@ -216,7 +235,7 @@ namespace WebUI.Areas.Solr.Controllers
 
                 var matchingSellers = solr.Query(BuildQuery(parameters), queryOptions);
 
-                var view = new SolrSellerViewModel
+                var view = new SolrBussinesViewModel
                 {
                     Sellers = matchingSellers,
                     Search = parameters,
@@ -228,7 +247,7 @@ namespace WebUI.Areas.Solr.Controllers
             }
             catch (InvalidFieldException)
             {
-                return View(new SolrSellerViewModel
+                return View(new SolrBussinesViewModel
                 {
                     QueryError = true,
                 });

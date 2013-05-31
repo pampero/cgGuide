@@ -65,12 +65,11 @@
 
 	<fields>       
 		<field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" /> 
-		<field name="seller" type="string" indexed="true" stored="true"/>
+		<field name="business" type="string" indexed="true" stored="true"/>
 		<field name="city" type="string" indexed="true" stored="true"/>
     <field name="paths" type="string" indexed="true" stored="true" multiValued="true"/>
      <field name="categories" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="attributes" type="string" indexed="true" stored="true" multiValued="true"/>
-    
     <field name="latlng" type="location" indexed="true" stored="true" />
 		<field name="_version_" type="long" indexed="true" stored="true"/> 
 		<dynamicField name="*_coordinate" type="double" indexed="true" stored="false" multiValued="false" />
@@ -80,9 +79,8 @@
 
 	<uniqueKey>id</uniqueKey>
 
-	<copyField source="seller" dest="text"/>
+	<copyField source="business" dest="text"/>
 	<copyField source="city" dest="text"/>
-<!--	<copyField source="categories" dest="text"/>-->
 	<copyField source="attributes" dest="text"/>
 	<copyField source="rating" dest="text"/>
  <copyField source="paths" dest="text"/>

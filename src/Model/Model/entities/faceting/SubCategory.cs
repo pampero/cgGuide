@@ -14,6 +14,6 @@ namespace Model
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public List<Seller> Sellers { get; set; }
+        public List<Business> Sellers { get; set; }
     }
 }

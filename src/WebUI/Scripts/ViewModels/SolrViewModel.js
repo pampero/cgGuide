@@ -1,5 +1,5 @@
 ﻿// Class to represent a row in the seat reservations grid
-function ProductReservation(id, name, city, attributes, categories, rating) {
+function BusinessEntity(id, name, city, attributes, categories, rating) {
     var self = this;
     self.id = id;
     self.name = name;
@@ -19,9 +19,9 @@ function ParallelItem(key, value) {
 
 
 // Overall viewmodel for this screen, along with initial state
-function SellersViewModel() {
+function BusinessesViewModel() {
     var self = this;
-    self.sellers = ko.observableArray([]);
+    self.businesses = ko.observableArray([]);
 
     $.ajax({
         type: 'POST',
@@ -30,10 +30,10 @@ function SellersViewModel() {
         traditional: true,
         data: JSON.stringify({ parallelsDto: self.parallels }),
         success: function (result) {
-            self.sellers.removeAll();
-            $.map(result.sellers, function (seller) {
-                var newSeller = new ProductReservation(seller.id, seller.name, seller.city, seller.attributes, seller.categories, seller.rating);
-                self.sellers.push(newSeller);
+            self.businesses.removeAll();
+            $.map(result.sellers, function (biz) {
+                var newBusiness = new BusinessEntity(biz.id, biz.name, biz.city, biz.attributes, biz.categories, biz.rating);
+                self.businesses.push(newBusiness);
             });
         },
         error: function (xhr, ajaxOptions, error) {
@@ -61,10 +61,10 @@ function SellersViewModel() {
             traditional: true,
             data: JSON.stringify({ parallelItemDto: parallelItem }),
             success: function (result) {
-                self.sellers.removeAll();
-                $.map(result.sellers, function (seller) {
-                    var newSeller = new ProductReservation(seller.id, seller.name, seller.city, seller.attributes, seller.categories, seller.rating);
-                    self.sellers.push(newSeller);
+                self.businesses.removeAll();
+                $.map(result.sellers, function (biz) {
+                    var newBusiness = new BusinessEntity(biz.id, biz.name, biz.city, biz.attributes, biz.categories, biz.rating);
+                    self.businesses.push(newBusiness);
                 });
             },
             error: function (xhr, ajaxOptions, error) {
@@ -75,5 +75,5 @@ function SellersViewModel() {
     };
 }
 
-var sellerViewModel = new SellersViewModel();
-ko.applyBindings(sellerViewModel);
+var businessesViewModel = new BusinessesViewModel();
+ko.applyBindings(businessesViewModel);

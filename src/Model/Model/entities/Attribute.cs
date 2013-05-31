@@ -16,6 +16,6 @@ namespace Model
         public string Description { get; set; }
       //  public bool Value { get; set; }
 
-        public List<Seller> Sellers { get; set; }
+        public List<Business> Sellers { get; set; }
     }
 }

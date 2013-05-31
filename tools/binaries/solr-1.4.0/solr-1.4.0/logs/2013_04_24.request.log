@@ -1,8 +1,0 @@
-127.0.0.1 -  -  [24/04/2013:12:59:53 +0000] "GET /solr HTTP/1.1" 302 0 
-127.0.0.1 -  -  [24/04/2013:12:59:53 +0000] "GET /solr/ HTTP/1.1" 200 446 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:07:38 +0000] "GET /solr/select?q=*%3a*&start=0&rows=5&facet=true&facet.field=cat&f.cat.facet.mincount=1&facet.field=manu_exact&f.manu_exact.facet.mincount=1&spellcheck=true&version=2.2 HTTP/1.1" 200 4485 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:07:41 +0000] "GET /solr/select?q=price%3a%5b10+TO+100%5d&rows=100000000&version=2.2 HTTP/1.1" 200 2172 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:11:44 +0000] "POST /solr/update?version=2.2 HTTP/1.1" 200 149 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:11:45 +0000] "POST /solr/update?version=2.2 HTTP/1.1" 200 149 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:11:57 +0000] "POST /solr/update?version=2.2 HTTP/1.1" 200 148 
-0:0:0:0:0:0:0:1 -  -  [24/04/2013:13:11:57 +0000] "POST /solr/update?version=2.2 HTTP/1.1" 200 148 

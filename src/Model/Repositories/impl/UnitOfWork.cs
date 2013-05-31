@@ -10,7 +10,7 @@ namespace Model
     {
         private AppDbContext context = new AppDbContext();
         private IGenericRepository<Route> _routesRepository;
-        private IGenericRepository<Seller> _sellersRepository;
+        private IGenericRepository<Business> _businessesRepository;
         
         public ILog Logger { get; set; }
 
@@ -28,15 +28,15 @@ namespace Model
                 return _routesRepository; }
         }
 
-        public IGenericRepository<Seller> SellersRepository
+        public IGenericRepository<Business> BusinessesRepository
         {
             get
             {
-                if (this._sellersRepository == null)
+                if (this._businessesRepository == null)
                 {
-                    this._sellersRepository = new SellersRepository(context);
+                    this._businessesRepository = new BusinessesRepository(context);
                 }
-                return _sellersRepository;
+                return _businessesRepository;
             }
         }
 

@@ -52,7 +52,7 @@ namespace WebUI
            Database.SetInitializer<AppDbContext>(null);
            WebSecurity.InitializeDatabaseConnection("AppDbContext", "UserProfile", "UserId", "UserName", autoCreateTables: false);
 
-           Startup.Init<SolrSeller>(ConfigurationManager.AppSettings["SolrServer"]);
+           Startup.Init<SolrBusiness>(ConfigurationManager.AppSettings["SolrServer"]);
 
            ModelBinders.Binders[typeof(SearchParameters)] = new SearchParametersBinder();
         }

@@ -15,6 +15,7 @@ namespace Framework.Solr.ViewModels
         }
 
         public string FreeSearch { get; set; }
+        public string SearchCity { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
         public IDictionary<string, string> Facets { get; set; }

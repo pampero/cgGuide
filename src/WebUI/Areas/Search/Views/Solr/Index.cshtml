@@ -1,6 +1,6 @@
 ﻿@using Framework.Helpers
 @using Framework.Solr.ViewModels
-@model SolrSellerViewModel
+@model SolrBussinesViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Search/Views/Shared/_LayoutSolr.cshtml";
@@ -11,7 +11,8 @@
 
     <form method="get" action=@Url.Action("Index")>
         <div>
-            @Html.TextBox("q", Model.Search.FreeSearch)
+            <input id="q" name="q" type="text" placeholder="Encontrar negocios" value="@Model.Search.FreeSearch" />
+            <input id="qCountry" name="qCity" type="text" placeholder="Cerca de Buenos Aires?" value="@Model.Search.SearchCity" />
             <hr>
         </div>
 
@@ -32,15 +33,16 @@
             <ul>
                 @foreach (var f in Model.Facets)
                 {
-                    if ((Html.SolrFieldPropName<SolrSeller>(f.Key) == "Attributes") || (Html.SolrFieldPropName<SolrSeller>(f.Key) == "Rating"))
+                    if ((Html.SolrFieldPropName<SolrBusiness>(f.Key) == "Attributes") || (Html.SolrFieldPropName<SolrBusiness>(f.Key) == "Rating"))
                     { 
                     <li>
-                        @(Html.SolrFieldPropName<SolrSeller>(f.Key))
+                        @(Html.SolrFieldPropName<SolrBusiness>(f.Key))
                         <ul>
                             @foreach (var fv in f.Value.OrderBy(x => x.Key))
                             { 
                                 <li>
-                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key.ToSolrFacet()</span></li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrBusiness>(f.Key) + '|' + fv.Key)" value="" onclick="businessesViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<span>@fv.Key.ToSolrFacet()</span>
+                                </li>
                             }
                         </ul>
                     </li>
@@ -53,7 +55,8 @@
                             @foreach (var fv in f.Value.OrderBy(x => x.Key))
                             { 
                                 <li>
-                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrSeller>(f.Key) + '|' + fv.Key)" value="" onclick="sellerViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key.ToSolrFacet()</a> <span>(@fv.Value)</span></li>
+                                    <input type="checkbox" id="@(Html.SolrFieldPropName<SolrBusiness>(f.Key) + '|' + fv.Key)" value="" onclick="businessesViewModel.clickCheckBox(this);" />&nbsp;&nbsp;<a href=@Url.SetFacet(f.Key, fv.Key)>@fv.Key.ToSolrFacet()</a> <span>(@fv.Value)</span>
+                                </li>
                             }
                         </ul>
                     </li>
@@ -68,14 +71,14 @@
                 <thead>
                     <tr>
                         <th style="text-align: left">ID</th>
-                        <th style="text-align: left">Seller</th>
+                        <th style="text-align: left">Business</th>
                         <th style="text-align: left">City</th>
                         <th style="text-align: left">Attributes</th>
                         <th style="text-align: left">Categories</th>
                         <th style="text-align: left">Rating</th>
                     </tr>
                 </thead>
-                <tbody data-bind="foreach: sellers">
+                <tbody data-bind="foreach: businesses">
                     <tr>
                         <td>
                             <span data-bind="text: id"></span>

@@ -5,22 +5,22 @@
              
     <document>  
     
-	<entity name="TestEntity" query="SELECT DISTINCT S.ID, S.Name as Seller, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Case Rating when 0 then '0/*'
+	<entity name="TestEntity" query="SELECT DISTINCT B.ID, B.Name as Business, C.Name as City, Convert(varchar, Latitude) + ',' + Convert(varchar, Longitude) as LatLng, Case Rating when 0 then '0/*'
 when 1 then '0/**' 
 when 2 then '0/***' 
 when 3 then '0/****' 
 when 4 then '0/*****' 
 End as Rating
-        FROM Seller S 
-        INNER JOIN Location L on S.HeadLocationId = L.ID AND L.Deleted is null
+        FROM Business B 
+        INNER JOIN Location L on B.HeadLocationId = L.ID AND L.Deleted is null
         INNER JOIN City C on C.ID = L.CityId
-        WHERE S.Deleted is null
+        WHERE B.Deleted is null
         ORDER BY Rating">
 
         <entity name="attributes" query="select name AS Attributes
             from Attribute A
-            inner join AttributeSeller [AS] on A.ID = [AS].Attribute_ID
-            where [AS].Seller_ID ='${TestEntity.ID}'">
+            inner join AttributeBusiness [AS] on A.ID = [AS].Attribute_ID
+            where [AS].Business_ID ='${TestEntity.ID}'">
         </entity>
 
         <entity name="categories" query="[sp_GetCategories] '${TestEntity.ID}'">
@@ -32,7 +32,7 @@ End as Rating
         </entity>
 
         <field column="Id" name="id" />
-        <field column="Seller" name="seller" />  
+        <field column="Business" name="business" />  
         <field column="City" name="city" />  
 	    <field column="LatLng" name="latlng" />  
 		<field column="Rating" name="rating" />  

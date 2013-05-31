@@ -106,7 +106,7 @@
     <Compile Include="Model\entities\imaging\Picture.cs" />
     <Compile Include="Model\entities\faceting\SubCategory.cs" />
     <Compile Include="Model\entities\Customer.cs" />
-    <Compile Include="Model\entities\Seller.cs" />
+    <Compile Include="Model\entities\Business.cs" />
     <Compile Include="Model\entities\Route.cs" />
     <Compile Include="Model\enums\RatingRange.cs" />
     <Compile Include="Model\enums\PriceRange.cs" />

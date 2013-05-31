@@ -7,19 +7,19 @@ using Model.Repositories.interfaces;
 
 namespace Model.Repositories.impl
 {
-    public class SellersRepository : GenericUpdatableRepository<Seller>, IGenericRepository<Seller>
+    public class BusinessesRepository : GenericUpdatableRepository<Business>, IGenericRepository<Business>
     {
-        public SellersRepository(AppDbContext context)
+        public BusinessesRepository(AppDbContext context)
             : base(context)
         {
 
         }
 
 
-        public List<Seller> GetAll()
+        public List<Business> GetAll()
         {
             // TODO: SOLO RETORNAR IQueryable. No es PERFORMANTE con el ToList en este punto.
-            return context.Sellers.Where(x => !x.IsDeleted).OrderByDescending(x => x.Created).ToList();
+            return context.Businesses.Where(x => !x.IsDeleted).OrderByDescending(x => x.Created).ToList();
         }
     }
 }

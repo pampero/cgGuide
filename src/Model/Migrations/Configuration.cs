@@ -81,11 +81,11 @@ namespace Model.Migrations
             var location1 = new Location {Description = "Main Address", Latitude = 45.1761F, Longitude = -93.8734F, City = city1, Created = DateTime.Now, CreatedBy = "cvazquez"};
 
             var location2 = new Location { Description = "Main Address", Latitude = 40.7143F, Longitude = -74.006F, City = city2, Created = DateTime.Now, CreatedBy = "cvazquez" };
-          
-            var seller1 = new Seller
+
+            var business1 = new Business
                              {
                                  Comments = "Comment 1",
-                                 Name = "Seller 1",
+                                 Name = "Business 1",
                                  Created = DateTime.Now,
                                  CreatedBy = "CVazquez",
                                  HeadLocation = location1,
@@ -95,10 +95,10 @@ namespace Model.Migrations
                                  Rating = Rating.FiveStars
                              };
 
-            var seller2 = new Seller
+            var business2 = new Business
             {
                 Comments = "Comment 2",
-                Name = "Seller 2",
+                Name = "Business 2",
                 Created = DateTime.Now,
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
@@ -108,10 +108,10 @@ namespace Model.Migrations
                 Rating = Rating.OneStar
             };
 
-            var seller3 = new Seller
+            var business3 = new Business
             {
                 Comments = "Comment 3",
-                Name = "Seller 3",
+                Name = "Business 3",
                 Created = DateTime.Now,
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
@@ -121,10 +121,10 @@ namespace Model.Migrations
                 Rating = Rating.FiveStars
             };
 
-            var seller4 = new Seller
+            var business4 = new Business
             {
                 Comments = "Comment 4",
-                Name = "Seller 4",
+                Name = "Business 4",
                 Created = DateTime.Now,
                 CreatedBy = "CVazquez",
                 HeadLocation = location2,
@@ -134,15 +134,15 @@ namespace Model.Migrations
                 Rating = Rating.FourStars
             };
 
-            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller1);
-            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller2);
-            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller3);
-            appDbContext.Sellers.AddOrUpdate(c => c.Name, seller4);
+            appDbContext.Businesses.AddOrUpdate(c => c.Name, business1);
+            appDbContext.Businesses.AddOrUpdate(c => c.Name, business2);
+            appDbContext.Businesses.AddOrUpdate(c => c.Name, business3);
+            appDbContext.Businesses.AddOrUpdate(c => c.Name, business4);
 
             appDbContext.Database.ExecuteSqlCommand(@"
 CREATE PROCEDURE sp_GetCategories
 
-	@seller_id as integer
+	@business_id as integer
 
 AS
 
@@ -150,13 +150,13 @@ AS
 
 SELECT Name as Categories
 FROM Category 
-WHERE Id IN (SELECT Category_ID FROM CategorySeller WHERE Seller_ID = @seller_id)");
+WHERE Id IN (SELECT Category_ID FROM Categorybusiness WHERE Business_ID = @business_id)");
 
 
             appDbContext.Database.ExecuteSqlCommand(@"
 CREATE PROCEDURE sp_GetPaths
 
-	@seller_id as integer
+	@business_id as integer
 
 AS
 
@@ -178,7 +178,7 @@ AS
 INSERT INTO @T (ID, Name, Parent_Id)
 SELECT Id, Name, Parent_Id
 FROM Cat 
-WHERE Cat.StartingId IN (SELECT Category_ID FROM CategorySeller WHERE Seller_ID = @seller_id)
+WHERE Cat.StartingId IN (SELECT Category_ID FROM CategoryBusiness WHERE Business_ID = @business_id)
 
 ;with C as
 (

@@ -13,7 +13,7 @@ namespace Model
         }
 
         public DbSet<Route> Routes { get; set; }
-        public DbSet<Seller> Sellers { get; set; }
+        public DbSet<Business> Businesses { get; set; }
         public DbSet<UserProfile> UserProfiles{ get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
