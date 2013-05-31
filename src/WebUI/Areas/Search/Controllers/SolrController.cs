@@ -74,9 +74,7 @@ namespace WebUI.Areas.Solr.Controllers
             }
         }
 
-
-        // LISTA LOS SELLERS DE ACUERDO A LA BUSQUEDA INICIAL Y A LA SELECCION DE LOS CHECKBOX 'checkedItemDtoItemDto'
-        public ActionResult GetAllBussines(CheckedItemDto checkedItemDto)
+        private SearchParameters GetSearchParametersFromCookie()
         {
             SearchParameters parameters = null;
 
@@ -86,10 +84,17 @@ namespace WebUI.Areas.Solr.Controllers
                 parameters = cookie.Value.FromJson<SearchParameters>();
             }
 
+            return parameters;
+        }
+
+        // LISTA LOS SELLERS DE ACUERDO A LA BUSQUEDA INICIAL Y A LA SELECCION DE LOS CHECKBOX 'checkedItemDtoItemDto'
+        public ActionResult GetAllBussines(CheckedItemDto checkedItemDto)
+        {
+            var parameters = GetSearchParametersFromCookie();
+
             UpdateBreadCrumbForFilterQuery(checkedItemDto, parameters);
 
-            var searchParametersCookie = new HttpCookie("SearchParametersCookie") { Value = parameters.ToJson() };
-            ControllerContext.HttpContext.Response.Cookies.Add(searchParametersCookie);
+            WriteCookie(parameters);
 
             // UTILIZA FILTER QUERY PARA FILTRAR SOBRE LO YA SELECCIONADO EN LAS FACETAS -ACTION INDEX-
             var sellers = solr.Query(BuildQuery(parameters), new QueryOptions
