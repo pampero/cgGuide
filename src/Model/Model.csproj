@@ -89,6 +89,7 @@
     <Compile Include="BusinessRules\ValidationDataType.cs" />
     <Compile Include="BusinessRules\ValidationOperator.cs" />
     <Compile Include="DBInitializer\AppDbContext.cs" />
+    <Compile Include="Enums\SearchType.cs" />
     <Compile Include="Mappings\BaseClassMap.cs" />
     <Compile Include="Mappings\CustomerMap.cs" />
     <Compile Include="Mappings\RouteMap.cs" />

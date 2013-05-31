@@ -10,7 +10,7 @@ function BusinessEntity(id, name, city, attributes, categories, rating) {
 }
 
 
-function ParallelItem(key, value) {
+function CheckedItem(key, value) {
     var self = this;
     self.Key = key;
     self.Value = value;
@@ -25,10 +25,10 @@ function BusinessesViewModel() {
 
     $.ajax({
         type: 'POST',
-        url: "/Search/GetAllSellers",
+        url: "/Search/GetAllBussines",
         contentType: "application/json; charset=utf-8",
         traditional: true,
-        data: JSON.stringify({ parallelsDto: self.parallels }),
+        data: JSON.stringify({ checkedItemDto: null }),
         success: function (result) {
             self.businesses.removeAll();
             $.map(result.sellers, function (biz) {
@@ -41,25 +41,25 @@ function BusinessesViewModel() {
             alert('Error: ' + xhr.responseText);
         }
     });
-   
-    // PENDIENTE: HACER EL OBJETO SEARCHPARAMETERS PARA MANEJARLO ENTERAMENTE CON KNOCKOUT.
+
+
     self.clickCheckBox = function (input) {
         
-        var parallelItem = new ParallelItem(input.id.split("|")[0], input.id.split("|")[1]);
+        var checkedItem = new CheckedItem(input.id.split("|")[0], input.id.split("|")[1]);
 
         if (input.checked) {
-            parallelItem.Checked = true;
+            checkedItem.Checked = true;
         }
         else {
-            parallelItem.Checked = false;
+            checkedItem.Checked = false;
         }
 
         $.ajax({
             type: 'POST',
-            url: "/Search/GetAllSellers",
+            url: "/Search/GetAllBussines",
             contentType: "application/json; charset=utf-8",
             traditional: true,
-            data: JSON.stringify({ parallelItemDto: parallelItem }),
+            data: JSON.stringify({ checkedItemDto: checkedItem }),
             success: function (result) {
                 self.businesses.removeAll();
                 $.map(result.sellers, function (biz) {

@@ -12,3 +12,11 @@ http://www.uxmatters.com/mt/archives/2009/09/best-practices-for-designing-facete
 http://www.thingsontop.com/3-quick-patterns-better-facet-design-889.html
 http://isquared.wordpress.com/2009/07/19/ui-design-patterns-for-search-information-discovery/
 http://www.flickr.com/photos/morville/collections/72157603785835882/
+
+
+// Subir Redis y descomentar para usar session y caché
+//this.Session["Dato"] = 1;
+//var sessionData = Session["Dato"];
+
+//this.Cache.Set("Dato", 1);
+//var dato = this.Cache.Get<int>("Dato");
