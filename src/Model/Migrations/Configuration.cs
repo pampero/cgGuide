@@ -9,11 +9,9 @@ namespace Model.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
     using System.Threading;
-    using System.Web.Security;
     using Framework.Models;
-    using WebMatrix.WebData;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Model.AppDbContext>
+    internal sealed partial class Configuration : DbMigrationsConfiguration<Model.AppDbContext>
     {
         public Configuration()
         {
@@ -23,6 +21,7 @@ namespace Model.Migrations
         protected override void Seed(Model.AppDbContext appDbContext)
         {
             SeedSecurity();
+            SeedSQLProcedures(appDbContext);
             SeedBuisness(appDbContext);
         }
 
@@ -34,210 +33,138 @@ namespace Model.Migrations
             var attributeTakesReservation = new Model.Attribute { Name = "Toma Reservas", Created = DateTime.Now, CreatedBy = "cvazquez" };
 
             var category1 = new Category { Name = "Categoria1", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category11 = new Category { Parent = category1, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria11" };
+
             var category2 = new Category { Name = "Categoria2", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category21 = new Category { Parent = category2, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria21" };
+            var category22 = new Category { Parent = category2, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria22" };
+            var category23 = new Category { Parent = category2, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria23" };
+
             var category3 = new Category { Name = "Categoria3", Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var category31 = new Category { Parent = category3, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria31" };
+            var category311 = new Category { Parent = category31, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria311" };
+            var category312 = new Category { Parent = category31, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria312" };
+            var category313 = new Category { Parent = category31, Created = DateTime.Now, CreatedBy = "cvazquez", Name = "Categoria313" };
 
-            var category11 = new Category
-                                   {
-                                       Parent = category1,
-                                       Created = DateTime.Now,
-                                       CreatedBy = "cvazquez",
-                                       Name = "Categoria11"
-                                   };
-
-            var category21 = new Category
-            {
-                Parent = category2,
-                Created = DateTime.Now,
-                CreatedBy = "cvazquez",
-                Name = "Categoria21"
-            };
-
-            var category31 = new Category
-            {
-                Parent = category3,
-                Created = DateTime.Now,
-                CreatedBy = "cvazquez",
-                Name = "Categoria31"
-            };
-            
-            var category311 = new Category
-            {
-                Parent = category31,
-                Created = DateTime.Now,
-                CreatedBy = "cvazquez",
-                Name= "Categoria311"
-            };
-
-            
             var country = new Country { Created = DateTime.Now, Name = "USA", CreatedBy = "CVazquez" };
-
             var state = new State { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", Country = country};
 
-            var city1 = new City { Created = DateTime.Now, Name = "Buffalo", CreatedBy = "CVazquez", State = state };
-
-            var city2 = new City { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", State = state };
-
-            var location1 = new Location {Description = "Main Address", Latitude = 45.1761F, Longitude = -93.8734F, City = city1, Created = DateTime.Now, CreatedBy = "cvazquez"};
-
-            var location2 = new Location { Description = "Main Address", Latitude = 40.7143F, Longitude = -74.006F, City = city2, Created = DateTime.Now, CreatedBy = "cvazquez" };
+            var buffalo = new City { Created = DateTime.Now, Name = "Buffalo", CreatedBy = "CVazquez", State = state };
+            var newYork = new City { Created = DateTime.Now, Name = "New York", CreatedBy = "CVazquez", State = state };
+            var brooklyn = new City { Created = DateTime.Now, Name = "Brooklyn", CreatedBy = "CVazquez", State = state };
+            var hoboken = new City { Created = DateTime.Now, Name = "Hoboken", CreatedBy = "CVazquez", State = state };
+            var bronx = new City { Created = DateTime.Now, Name = "Bronx", CreatedBy = "CVazquez", State = state };
 
             var business1 = new Business
                              {
                                  Comments = "Comment 1",
-                                 Name = "Business 1",
+                                 Name = "Buffalo Business",
                                  Created = DateTime.Now,
                                  CreatedBy = "CVazquez",
-                                 HeadLocation = location1,
+                                 HeadLocation = new Location {Description = "Main Address", Latitude = 45.1761F, Longitude = -93.8734F, City = buffalo, Created = DateTime.Now, CreatedBy = "cvazquez"},
                                  CompleteAddress = "435 West 5th Street Buffalo NY - 10101",
                                  Categories = new List<Category> { category11 },
                                  Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
                                  Rating = Rating.FiveStars
                              };
 
-            var business2 = new Business
-            {
-                Comments = "Comment 2",
-                Name = "Business 2",
-                Created = DateTime.Now,
-                CreatedBy = "CVazquez",
-                HeadLocation = location2,
-                CompleteAddress = "19 West 31st Street New York NY - 10001",
-                Categories = new List<Category> { category21 },
-                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly },
-                Rating = Rating.OneStar
-            };
+            appDbContext.Businesses.AddOrUpdate(c => c.Name, business1);
 
-            var business3 = new Business
-            {
-                Comments = "Comment 3",
-                Name = "Business 3",
-                Created = DateTime.Now,
-                CreatedBy = "CVazquez",
-                HeadLocation = location2,
-                CompleteAddress = "20 West 31st Street New York NY - 10001",
-                Categories = new List<Category> { category31 },
-                Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeTakesReservation },
-                Rating = Rating.FiveStars
-            };
-
+            // HOBOKEN
             var business4 = new Business
             {
                 Comments = "Comment 4",
-                Name = "Business 4",
+                Name = "Hoboken Business",
                 Created = DateTime.Now,
                 CreatedBy = "CVazquez",
-                HeadLocation = location2,
-                CompleteAddress = "21 West 31st Street New York NY - 10001",
-                Categories = new List<Category> {  category311 },
+                HeadLocation = new Location { Description = "Main Address", Latitude = 40.7439F, Longitude = -74.0328F, City = hoboken, Created = DateTime.Now, CreatedBy = "cvazquez" },
+                CompleteAddress = "21 West 31st Street Hoboken NJ - 10101",
+                Categories = new List<Category> { category311 },
                 Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
                 Rating = Rating.FourStars
             };
 
-            appDbContext.Businesses.AddOrUpdate(c => c.Name, business1);
-            appDbContext.Businesses.AddOrUpdate(c => c.Name, business2);
-            appDbContext.Businesses.AddOrUpdate(c => c.Name, business3);
             appDbContext.Businesses.AddOrUpdate(c => c.Name, business4);
 
-            appDbContext.Database.ExecuteSqlCommand(@"
-CREATE PROCEDURE sp_GetCategories
+            // NEW YORK
+            for (int i = 1; i <= 3; i++)
+            {
+                var categories = new List<Category>();
 
-	@business_id as integer
+                switch (i % 3)
+                {
+                    case 0:
+                        categories = new List<Category> { category21 };
+                        break;
+                    case 1:
+                        categories = new List<Category> { category22 };
+                        break;
+                    case 2:
+                        categories = new List<Category> { category23 };
+                        break;
+                    default:
+                        break;
+                }
 
-AS
+                var business = new Business
+                {
+                    Comments = "Comment 2",
+                    Name = "New York Business " + i,
+                    Created = DateTime.Now,
+                    CreatedBy = "CVazquez",
+                    HeadLocation = new Location { Description = "Main Address", Latitude = 40.7143F, Longitude = -74.006F, City = newYork, Created = DateTime.Now, CreatedBy = "cvazquez" },
+                    CompleteAddress = "1" + i.ToString() + " West 31st Street New York NY - 10001",
+                    Categories = categories,
+                    Attributes = new List<Model.Attribute> { attributeAirConditioner, attributeCashOnly },
+                    Rating = Rating.OneStar
+                };
 
-	SET NOCOUNT ON
+                appDbContext.Businesses.AddOrUpdate(c => c.Name, business);
+            }
 
-SELECT Name as Categories
-FROM Category 
-WHERE Id IN (SELECT Category_ID FROM Categorybusiness WHERE Business_ID = @business_id)");
+            // BROOKLYN
+            for (int i = 1; i <= 19; i++)
+            {
 
+                var business = new Business
+                {
+                    Comments = "Comment 4",
+                    Name = "Brooklyn Business " + i,
+                    Created = DateTime.Now,
+                    CreatedBy = "CVazquez",
+                    HeadLocation = new Location { Description = "Main Address", Latitude = 40.6500F, Longitude = -73.9500F, City = brooklyn, Created = DateTime.Now, CreatedBy = "cvazquez" },
+                    CompleteAddress = "Autocompleted",
+                    Categories = new List<Category> { category312 },
+                    Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
+                    Rating = Rating.FourStars
+                };
 
-            appDbContext.Database.ExecuteSqlCommand(@"
-CREATE PROCEDURE sp_GetPaths
+                appDbContext.Businesses.AddOrUpdate(c => c.Name, business);
+            }
 
-	@business_id as integer
+            // BRONX
+            for (int i = 1; i <= 30; i++)
+            {
 
-AS
+                var business = new Business
+                {
+                    Comments = "Comment 4",
+                    Name = "Bronx Business " + i,
+                    Created = DateTime.Now,
+                    CreatedBy = "CVazquez",
+                    HeadLocation = new Location { Description = "Main Address", Latitude = 40.8500F, Longitude = -73.8667F, City = bronx, Created = DateTime.Now, CreatedBy = "cvazquez" },
+                    CompleteAddress = "Autocompleted",
+                    Categories = new List<Category> { category313 },
+                    Attributes = new List<Model.Attribute> { attributeParking, attributeCashOnly },
+                    Rating = Rating.FourStars
+                };
 
-	SET NOCOUNT ON
-
-declare @T table(ID int, Name varchar(500), Parent_Id int);
-
-;WITH Cat
-AS
-(
-    SELECT Id AS StartingId, Id, Parent_Id, Name
-    FROM Category
-
-    UNION ALL
-
-    SELECT Cat.StartingId, C.Id, C.Parent_Id, C.Name
-    FROM Category C INNER JOIN Cat ON C.Id = Cat.Parent_Id
-)
-INSERT INTO @T (ID, Name, Parent_Id)
-SELECT Id, Name, Parent_Id
-FROM Cat 
-WHERE Cat.StartingId IN (SELECT Category_ID FROM CategoryBusiness WHERE Business_ID = @business_id)
-
-;with C as
-(
-  select ID,
-         Name,
-         Parent_Id,
-         cast('' as varchar(max)) as ParentNames,
-         0 As Generation
-  from @T
-  where Parent_Id is null
-  union all
-  select T.ID,
-         T.Name,
-         T.Parent_Id,
-         C.ParentNames + '/' + C.Name,
-         Generation + 1 As Generation
-  from @T as T         
-    inner join C
-      on C.ID = T.Parent_Id
-)      
-select ID,
-       Name as Categories,
-       CASE WHEN ParentNames = '' THEN
-			'0/' + Name
-       ELSE
-			Convert(varchar, Generation) + '/' + stuff(ParentNames, 1, 1, '') + '/' + Name 
-       END as Paths
-from C;");
+                appDbContext.Businesses.AddOrUpdate(c => c.Name, business);
+            }
 
             appDbContext.SaveChanges();
         }
 
-        // No se usa EF porque al crear el Profile también crea el Membership con su clave encriptada automáticamente.
-        private static void SeedSecurity()
-        {
-            WebSecurity.InitializeDatabaseConnection("AppDbContext", "UserProfile", "UserId ", "UserName", autoCreateTables: true);
-
-            var roles = (SimpleRoleProvider)Roles.Provider;
-            var membership = (SimpleMembershipProvider)Membership.Provider;
-
-            if (!roles.RoleExists("Admin"))
-            {
-                roles.CreateRole("Admin");
-            }
-            if (!roles.RoleExists("Guest"))
-            {
-                roles.CreateRole("Guest");
-            }
-            if (!roles.RoleExists("Premium"))
-            {
-                roles.CreateRole("Premium");
-            }
-            if (membership.GetUser("admin", false) == null)
-            {
-                WebSecurity.CreateUserAndAccount("admin", "Passw0rd", new { FirstName = "Carlos", LastName = "Daniel", Email = "carlos.vazquez@outlook.com" }); 
-                   
-                Roles.AddUserToRole("admin", "Admin");
-            }
-        }
     }
 
        

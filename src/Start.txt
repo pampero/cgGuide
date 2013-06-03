@@ -1,3 +1,5 @@
+https://www.divergames.com.ar/svn/GC
+
 -. Crear el siguiente alias de base de datos desde Sql Server Configuration
 
 Alias Name: GuideDbServer

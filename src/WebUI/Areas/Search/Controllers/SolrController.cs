@@ -27,13 +27,7 @@ namespace WebUI.Areas.Solr.Controllers
             solr = ServiceLocator.Current.GetInstance<ISolrOperations<SolrBusiness>>();
         }
 
-        public class CheckedItemDto
-        {
-            public string Key { get; set; }
-            public string Value { get; set; }
-            public bool Checked { get; set; }
-        }
-
+      
         // El argumento parameters almacena los parametros de búsqueda en la vista, tanto el freesearch como las facetas seleccionadas
         // SE ENCARGA SOLO DEL ARMADO DEL FACETADO
         public ActionResult Index(SearchParameters parameters)
@@ -100,7 +94,7 @@ namespace WebUI.Areas.Solr.Controllers
             var sellers = solr.Query(BuildQuery(parameters), new QueryOptions
                             {
                                 FilterQueries = BuildFilterQuery(parameters, SearchType.ListSearch),
-                                Rows = 5,
+                                Rows = 10,
                                 Start = 0,
                                 SpellCheck = new SpellCheckingParameters()
                             });
@@ -190,7 +184,9 @@ namespace WebUI.Areas.Solr.Controllers
         {
             if (!string.IsNullOrEmpty(parameters.SearchCity))
             {
-                var fq = (ISolrQuery) Query.Field("city").Is(parameters.SearchCity + "*");
+                var fq = new SolrQueryByField("city", parameters.SearchCity + "*");
+                fq.Quoted = false;
+                //var fq = (ISolrQuery) Query.Field("city").Is(parameters.SearchCity + "*");
                 listFilterQuery.Add(fq);
             }
 

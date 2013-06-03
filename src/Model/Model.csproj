@@ -94,6 +94,8 @@
     <Compile Include="Mappings\CustomerMap.cs" />
     <Compile Include="Mappings\RouteMap.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\ConfigurationSQL.cs" />
+    <Compile Include="Migrations\ConfigurationSecurity.cs" />
     <Compile Include="Model\abstractions\AbstractReadOnlyClass.cs" />
     <Compile Include="Model\abstractions\AbstractUpdatableClass.cs" />
     <Compile Include="Model\entities\Attribute.cs" />

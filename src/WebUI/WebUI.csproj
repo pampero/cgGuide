@@ -236,6 +236,7 @@
     <Compile Include="Areas\Search\Controllers\SolrController.cs" />
     <Compile Include="Areas\Search\SolrAreaRegistration.cs" />
     <Compile Include="Areas\Search\ViewModels\Binders\SearchParametersBinder.cs" />
+    <Compile Include="Areas\Search\ViewModels\CheckedItemDto.cs" />
     <Compile Include="Areas\Search\ViewModels\SolrBussinesViewModel.cs" />
     <Compile Include="Areas\Search\ViewModels\SolrBusiness.cs" />
     <Compile Include="Areas\Search\ViewModels\SearchParameters.cs" />
